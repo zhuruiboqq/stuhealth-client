@@ -1,0 +1,1117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="StudentAppraise4Multi" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c0a0e8fb-eaad-455c-bc08-df2f4fdc01d5">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="ireport.layers" value="##Sun May 26 12:57:39 CST 2013\nlayer.1.name=Layer 2\nlayer.1.visible=true\nlayer.1.id=1\nlayer.0.name=Background\nlayer.0.visible=true\nlayer.0.id=0"/>
+	<template><![CDATA[$P{p_SUBREPORT_DIR}+"NormalStyleTemplate.jrtx"]]></template>
+	<parameter name="p_ids" class="java.util.Set">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="p_SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select ID, TJND, Term
+, ifnull(BH,'') BH
+, ifnull(SCHOOLBH,'') SCHOOLBH
+, ifnull(GRADEBH,'') GRADEBH
+, ifnull(CLASSBH,'') CLASSBH
+, ifnull(RXSJ,'') RXSJ
+, ifnull(XH,'') XH
+, ifnull(SCHOOL_NAME,'') SCHOOL_NAME
+, ifnull(GRADE_NAME,'') GRADE_NAME
+, ifnull(CLASS_NAME,'') CLASS_NAME
+, ifnull(XM,'') XM
+, ifnull(XB,'') XB
+, ifnull(CSRQ,'') CSRQ
+, ifnull(MZ,'') MZ
+, ifnull(ZZMM,'') ZZMM
+, ifnull(SY,'') SY
+, ifnull(TJRQ,'') TJRQ
+, ifnull(NL,'') NL
+, ifnull(MARK,'') MARK
+, ifnull(round(SG,1),'') SG
+, ifnull(SGDJQ,'') SGDJQ
+, ifnull(SGDJD,'') SGDJD
+, ifnull((select ItemResult from ItemResult where FieldMc = 'SGBJ' and ItemCode = SGBJ), ifnull(SGBJ,'')) SGBJ
+, ifnull(round(TZ,1),'') TZ
+, ifnull(TZDJQ,'') TZDJQ
+, ifnull(TZDJD,'') TZDJD
+, ifnull((select ItemResult from ItemResult where FieldMc = 'TZBJ' and ItemCode = TZBJ), ifnull(TZBJ,'')) TZBJ
+, ifnull(YYPJ,'') YYPJ
+, ifnull(YYPJX,'') YYPJX
+, ifnull(TXPJ,'') TXPJ
+, ifnull(FYPJ,'') FYPJ
+, ifnull(round(XW,1),'') XW
+, ifnull(XWDJQ,'') XWDJQ
+, ifnull(XWDJD,'') XWDJD
+, ifnull((select ItemResult from ItemResult where FieldMc = 'XWBJ' and ItemCode = XWBJ), ifnull(XWBJ,'')) XWBJ
+, ifnull(round(FHL,1),'') FHL
+, ifnull(FHLDJQ,'') FHLDJQ
+, ifnull(FHLDJD,'') FHLDJD
+, ifnull((select ItemResult from ItemResult where FieldMc = 'FHLBJ' and ItemCode = FHLBJ), ifnull(FHLBJ,'')) FHLBJ
+, ifnull(WL,'') WL
+, ifnull(WLDJQ,'') WLDJQ
+, ifnull(WLDJD,'') WLDJD
+, ifnull((select ItemResult from ItemResult where FieldMc = 'WLBJ' and ItemCode = WLBJ), ifnull(WLBJ,'')) WLBJ
+, ifnull(round(MB,0),'') MB
+, ifnull((select ItemResult from ItemResult where FieldMc = 'MBBJ' and ItemCode = MBBJ), ifnull(MBBJ,'')) MBBJ
+, ifnull(SSY,'') SSY
+, ifnull(SSYBJ,'') SSYBJ
+, ifnull(SZY,'') SZY
+, ifnull(SZYBJ,'') SZYBJ
+, ifnull(round(LSL,1),'') LSL
+, ifnull(round(RSL,1),'') RSL
+, ifnull(QTYB,'') QTYB
+, ifnull((select ItemResult from ItemResult where FieldMc = 'LQG' and ItemCode = LQG), ifnull(LQG,'')) LQG
+, ifnull((select ItemResult from ItemResult where FieldMc = 'RQG' and ItemCode = RQG), ifnull(RQG,'')) RQG
+, ifnull((select ItemResult from ItemResult where FieldMc = 'LSY' and ItemCode = LSY), ifnull(LSY,'')) LSY
+, ifnull((select ItemResult from ItemResult where FieldMc = 'RSY' and ItemCode = RSY), ifnull(RSY,'')) RSY
+, ifnull((select ItemResult from ItemResult where FieldMc = 'BS' and ItemCode = BS), ifnull(BS,'')) BS
+, ifnull((select ItemResult from ItemResult where FieldMc = 'TL' and ItemCode = TL), ifnull(TL,'')) TL
+, ifnull((select ItemResult from ItemResult where FieldMc = 'XJ' and ItemCode = XJ), ifnull(XJ,'')) XJ
+, ifnull((select ItemResult from ItemResult where FieldMc = 'BB' and ItemCode = BB), ifnull(BB,'')) BB
+, ifnull(QSBNUM,'') QSBNUM
+, ifnull(RQB,'') RQB
+, ifnull(RQS,'') RQS
+, ifnull(RQH,'') RQH
+, ifnull(HQB,'') HQB
+, ifnull(HQS,'') HQS
+, ifnull(HQH,'') HQH
+, ifnull((select ItemResult from ItemResult where FieldMc = 'YZB' and ItemCode = YZB), ifnull(YZB,'')) YZB
+, ifnull((select ItemResult from ItemResult where FieldMc = 'BTT' and ItemCode = BTT), ifnull(BTT,'')) BTT
+, ifnull((select ItemResult from ItemResult where FieldMc = 'XK' and ItemCode = XK), ifnull(XK,'')) XK
+, ifnull((select ItemResult from ItemResult where FieldMc = 'JZ' and ItemCode = JZ), ifnull(JZ,'')) JZ
+, ifnull((select ItemResult from ItemResult where FieldMc = 'SZ' and ItemCode = SZ), ifnull(SZ,'')) SZ
+, ifnull((select ItemResult from ItemResult where FieldMc = 'PZ' and ItemCode = PZ), ifnull(PZ,'')) PZ
+, ifnull((select ItemResult from ItemResult where FieldMc = 'XZ' and ItemCode = XZ), ifnull(XZ,'')) XZ
+, ifnull((select ItemResult from ItemResult where FieldMc = 'GP' and ItemCode = GP), ifnull(GP,'')) GP
+, ifnull((select ItemResult from ItemResult where FieldMc = 'FEI' and ItemCode = FEI), ifnull(FEI,'')) FEI
+, ifnull((select ItemResult from ItemResult where FieldMc = 'XT' and ItemCode = XT), ifnull(XT,'')) XT
+, ifnull(XHDB,'') XHDB
+, ifnull((select ItemResult from ItemResult where FieldMc = 'FHCL' and ItemCode = FHCL), ifnull(FHCL,'')) FHCL
+, ifnull((select ItemResult from ItemResult where FieldMc = 'PFB' and ItemCode = PFB), ifnull(PFB,'')) PFB
+, ifnull(ZG,'') ZG
+, ifnull(ZGDJQ,'') ZGDJQ
+, ifnull(ZGDJD,'') ZGDJD
+, ifnull((select ItemResult from ItemResult where FieldMc = 'ZGBJ' and ItemCode = ZGBJ), ifnull(ZGBJ,'')) ZGBJ
+, ifnull(JK,'') JK
+, ifnull(JKDJQ,'') JKDJQ
+, ifnull(JKDJD,'') JKDJD
+, ifnull((select ItemResult from ItemResult where FieldMc = 'JKBJ' and ItemCode = JKBJ), ifnull(JKBJ,'')) JKBJ
+, ifnull(GPK,'') GPK
+, ifnull(GPKDJQ,'') GPKDJQ
+, ifnull(GPKDJD,'') GPKDJD
+, ifnull((select ItemResult from ItemResult where FieldMc = 'GPKBJ' and ItemCode = GPKBJ), ifnull(GPKBJ,'')) GPKBJ
+, ifnull(BJL,'') BJL
+, ifnull(GSTJ,'') GSTJ
+, ifnull(JJX,'') JJX
+, ifnull((select ItemResult from ItemResult where FieldMc = 'BMKY' and ItemCode = BMKY), ifnull(BMKY,'')) BMKY
+, ifnull((select ItemResult from ItemResult where FieldMc = 'SJSR' and ItemCode = SJSR), ifnull(SJSR,'')) SJSR
+, ifnull(WSM,'') WSM
+, ifnull(WSMDJQ,'') WSMDJQ
+, ifnull(WSMDJD,'') WSMDJD
+, ifnull((select ItemResult from ItemResult where FieldMc = 'WSMBJ' and ItemCode = WSMBJ), ifnull(WSMBJ,'')) WSMBJ
+, ifnull(LDTY,'') LDTY
+, ifnull(LDTYDJQ,'') LDTYDJQ
+, ifnull(LDTYDJD,'') LDTYDJD
+, ifnull((select ItemResult from ItemResult where FieldMc = 'LDTYBJ' and ItemCode = LDTYBJ), ifnull(LDTYBJ,'')) LDTYBJ
+, ifnull(LL,'') LL
+, ifnull(LLDJQ,'') LLDJQ
+, ifnull(LLDJD,'') LLDJD
+, ifnull((select ItemResult from ItemResult where FieldMc = 'LLBJ' and ItemCode = LLBJ), ifnull(LLBJ,'')) LLBJ
+, ifnull(NNL,'') NNL
+, ifnull(NNLDJQ,'') NNLDJQ
+, ifnull(NNLDJD,'') NNLDJD
+, ifnull((select ItemResult from ItemResult where FieldMc = 'NNLBJ' and ItemCode = NNLBJ), ifnull(NNLBJ,'')) NNLBJ
+, ifnull(ZWT,'') ZWT
+, ifnull(ZWTDJQ,'') ZWTDJQ
+, ifnull(ZWTDJD,'') ZWTDJD
+, ifnull((select ItemResult from ItemResult where FieldMc = 'ZWTBJ' and ItemCode = ZWTBJ), ifnull(ZWTBJ,'')) ZWTBJ
+, ifnull(T1Name,'') T1Name
+, ifnull(T1,'') T1
+, ifnull(T2name,'') T2name
+, ifnull(T2,'') T2
+, ifnull(T3Name,'') T3Name
+, ifnull(T3,'') T3
+, ifnull(T4Name,'') T4Name
+, ifnull(T4,'') T4
+, ifnull(T5Name,'') T5Name
+, ifnull(T5,'') T5
+, ifnull(T6Name,'') T6Name
+, ifnull(T6,'') T6
+, ifnull(T7Name,'') T7Name
+, ifnull(T7,'') T7
+, ifnull(T8Name,'') T8Name
+, ifnull(T8,'') T8
+, ifnull(T9Name,'') T9Name
+, ifnull(T9,'') T9
+, ifnull(T10Name,'') T10Name
+, ifnull(T10,'') T10
+, ifnull((select ItemResult from ItemResult where FieldMc = 'SLBH' and ItemCode = SLBH), ifnull(SLBH,'')) SLBH
+, ifnull(MBPJ,'') MBPJ
+, ifnull(SSYPJ,'') SSYPJ
+, ifnull(SZYPJ,'') SZYPJ
+, ifnull(PXPJ,'') PXPJ
+, ifnull(SLPJ,'') SLPJ
+, ifnull(XJH,'') XJH
+, ifnull(YYPJB,'') YYPJB
+, ifnull(TJSY,'') TJSY
+, ifnull(MB1,'') MB1
+, ifnull(MB2,'') MB2
+, ifnull(MB3,'') MB3
+, ifnull(TJFS,'') TJFS
+, ifnull(TJPJ,'') TJPJ
+, ifnull(YYPJH,'') YYPJH
+, ifnull(XMPY,'') XMPY
+, ifnull(HXP,'') HXP
+, ifnull(HXPPJ,'') HXPPJ
+, ifnull((select ItemResult from ItemResult where FieldMc = 'EB' and ItemCode = EB), ifnull(EB,'')) EB
+, ifnull((select ItemResult from ItemResult where FieldMc = 'YB' and ItemCode = YB), ifnull(YB,'')) YB
+, ifnull((select ItemResult from ItemResult where FieldMc = 'TB' and ItemCode = TB), ifnull(TB,'')) TB
+, ifnull((select ItemResult from ItemResult where FieldMc = 'JB' and ItemCode = JB), ifnull(JB,'')) JB
+, ifnull((select ItemResult from ItemResult where FieldMc = 'PF' and ItemCode = PF), ifnull(PF,'')) PF
+, ifnull((select ItemResult from ItemResult where FieldMc = 'JZX' and ItemCode = JZX), ifnull(JZX,'')) JZX
+, ifnull((select ItemResult from ItemResult where FieldMc = 'LBJ' and ItemCode = LBJ), ifnull(LBJ,'')) LBJ
+, ifnull((select ItemResult from ItemResult where FieldMc = 'JHJS' and ItemCode = JHJS), ifnull(JHJS,'')) JHJS
+, ifnull(GBZAM,'') GBZAM
+, ifnull(DHSA,'') DHSA
+, ifnull(DHSZ,'') DHSZ
+, ifnull((select ItemResult from ItemResult where FieldMc = 'GG' and ItemCode = GG), ifnull(GG,'')) GG
+, ifnull((select ItemResult from ItemResult where FieldMc = 'BMKT' and ItemCode = BMKT), ifnull(BMKT,'')) BMKT
+, ifnull((select ItemResult from ItemResult where FieldMc = 'YGHKT' and ItemCode = YGHKT), ifnull(YGHKT,'')) YGHKT
+, ifnull((select ItemResult from ItemResult where FieldMc = 'YGEKY' and ItemCode = YGEKY), ifnull(YGEKY,'')) YGEKY
+, ifnull((select ItemResult from ItemResult where FieldMc = 'YGEKT' and ItemCode = YGEKT), ifnull(YGEKT,'')) YGEKT
+, ifnull((select ItemResult from ItemResult where FieldMc = 'BLOOD' and ItemCode = BLOOD), ifnull(BLOOD,'')) BLOOD
+, ifnull(round(YW,1),'') YW
+, ifnull(round(TW,1),'') TW
+, ifnull(CXBH,'') CXBH
+, ifnull(LJSL,'') LJSL
+, ifnull(RJSL,'') RJSL
+, ifnull((select ItemResult from ItemResult where FieldMc = 'JMY' and ItemCode = JMY), ifnull(JMY,'')) JMY
+, ifnull((select ItemResult from ItemResult where FieldMc = 'WGFB' and ItemCode = WGFB), ifnull(WGFB,'')) WGFB
+, ifnull((select ItemResult from ItemResult where FieldMc = 'YYB' and ItemCode = YYB), ifnull(YYB,'')) YYB
+, ifnull((select ItemResult from ItemResult where FieldMc = 'PEI' and ItemCode = PEI), ifnull(PEI,'')) PEI
+, ifnull(LSLS,'') LSLS
+, ifnull(RSLS,'') RSLS
+, ifnull(LJSLS,'') LJSLS
+, ifnull(RJSLS,'') RJSLS
+, ifnull((select ItemResult from ItemResult where FieldMc = 'RTL' and ItemCode = RTL), ifnull(RTL,'')) RTL
+, ifnull((select ItemResult from ItemResult where FieldMc = 'WSZQ' and ItemCode = WSZQ), ifnull(WSZQ,'')) WSZQ
+, ifnull(RS,'') RS
+, ifnull(BXP,'') BXP
+, ifnull(XXB,'') XXB
+, ifnull(SFZH,'') SFZH
+, ifnull(DH,'') DH
+, ifnull(ADDRESS,'') ADDRESS
+, ifnull(RXYFJZS,'') RXYFJZS
+, ifnull(YMA,'') YMA
+, ifnull(YMAJY,'') YMAJY
+, ifnull(YMB,'') YMB
+, ifnull(YMBJY,'') YMBJY
+, ifnull(YMC,'') YMC
+, ifnull(YMCJY,'') YMCJY
+, ifnull(YMD,'') YMD
+, ifnull(YMDJY,'') YMDJY
+, ifnull(YME,'') YME
+, ifnull(YMEJY,'') YMEJY
+, ifnull(YMQT,'') YMQT
+, ifnull(RXHJZS,'') RXHJZS
+, ifnull(JWBS,'') JWBS
+, ifnull(QCQFY,'') QCQFY
+, ifnull(STUDGUID,'') STUDGUID
+, ifnull(SCHOOLID,'') SCHOOLID
+, ifnull(STUDNUM,'') STUDNUM
+, ifnull(YMF,'') YMF
+, ifnull(YMFJY,'') YMFJY
+, ifnull(V1Name,'') V1Name
+, ifnull(V1,'') V1
+, ifnull(V2Name,'') V2Name
+, ifnull(V2,'') V2
+, ifnull(V3Name,'') V3Name
+, ifnull(V3,'') V3
+, ifnull(V4Name,'') V4Name
+, ifnull(V4,'') V4
+, ifnull(V5Name,'') V5Name
+, ifnull(V5,'') V5,
+CONCAT_WS('  ',(case when yma is null then '' else CONCAT('卡介苗：',yma) end)
+,(case when ymb is null then '' else CONCAT('乙型肝炎疫苗：',ymb) end)
+,(case when ymc is null then '' else CONCAT('麻疹疫苗：',ymc) end)
+,(case when ymd is null then '' else CONCAT('脊髓灰质炎疫苗：',ymd) end)
+,(case when yme is null then '' else CONCAT('百白破疫苗：',yme) end)
+,(case when V1 is null then '' else CONCAT(V1Name,V1) end)
+,(case when V2 is null then '' else CONCAT(V2Name,V2) end)
+,(case when V3 is null then '' else CONCAT(V3Name,V3) end)
+,(case when V4 is null then '' else CONCAT(V4Name,V4) end)
+,(case when V5 is null then '' else CONCAT(V5Name,V5) end)) YMJZ_CAL
+,case when ljsl<5.0 or rjsl<5.0 then '视力低下' when ljsl>=5.0 and rjsl>=5.0 then '正常' else '' end JSL_CAL
+,case when LSY=0 and RSY=0 then '无'
+     when (LSY=1 or RSY=1) and LSY!=2 and RSY!=2 then '可疑'
+     when LSY=2 or RSY=2 then '有沙'
+     else '' end SY_CAL
+,case when XB='男' then CONCAT('男生：若出现遗精，首次遗精年龄', QCQFY ,  '岁')
+     when XB='女' then CONCAT('女生：若出现月经，初潮年龄', QCQFY , '岁')
+     else '' end QCQ_CAL
+,case when SZYPJ='高血压' or SSYPJ='高血压' then '高血压' else '正常' end XY_CAL
+,case when qsbnum>0 then '龋齿' else '无龋齿' end YC_CAL
+from result
+where $X{IN, ID, p_ids}
+order by schoolBH,ClassBH,XM]]>
+	</queryString>
+	<field name="ID" class="java.lang.String"/>
+	<field name="TJND" class="java.lang.String"/>
+	<field name="BH" class="java.lang.String"/>
+	<field name="SCHOOLBH" class="java.lang.String"/>
+	<field name="GRADEBH" class="java.lang.String"/>
+	<field name="CLASSBH" class="java.lang.String"/>
+	<field name="RXSJ" class="java.lang.String"/>
+	<field name="XH" class="java.lang.String"/>
+	<field name="SCHOOL_NAME" class="java.lang.String"/>
+	<field name="GRADE_NAME" class="java.lang.String"/>
+	<field name="CLASS_NAME" class="java.lang.String"/>
+	<field name="XM" class="java.lang.String"/>
+	<field name="XB" class="java.lang.String"/>
+	<field name="CSRQ" class="java.lang.String"/>
+	<field name="MZ" class="java.lang.String"/>
+	<field name="ZZMM" class="java.lang.String"/>
+	<field name="SY" class="java.lang.String"/>
+	<field name="TJRQ" class="java.lang.String"/>
+	<field name="NL" class="java.lang.String"/>
+	<field name="MARK" class="java.lang.String"/>
+	<field name="SG" class="java.lang.String"/>
+	<field name="SGDJQ" class="java.lang.String"/>
+	<field name="SGDJD" class="java.lang.String"/>
+	<field name="SGBJ" class="java.lang.String"/>
+	<field name="TZ" class="java.lang.String"/>
+	<field name="TZDJQ" class="java.lang.String"/>
+	<field name="TZDJD" class="java.lang.String"/>
+	<field name="TZBJ" class="java.lang.String"/>
+	<field name="YYPJ" class="java.lang.String"/>
+	<field name="YYPJX" class="java.lang.String"/>
+	<field name="TXPJ" class="java.lang.String"/>
+	<field name="FYPJ" class="java.lang.String"/>
+	<field name="XW" class="java.lang.String"/>
+	<field name="XWDJQ" class="java.lang.String"/>
+	<field name="XWDJD" class="java.lang.String"/>
+	<field name="XWBJ" class="java.lang.String"/>
+	<field name="FHL" class="java.lang.String"/>
+	<field name="FHLDJQ" class="java.lang.String"/>
+	<field name="FHLDJD" class="java.lang.String"/>
+	<field name="FHLBJ" class="java.lang.String"/>
+	<field name="WL" class="java.lang.String"/>
+	<field name="WLDJQ" class="java.lang.String"/>
+	<field name="WLDJD" class="java.lang.String"/>
+	<field name="WLBJ" class="java.lang.String"/>
+	<field name="MB" class="java.lang.String"/>
+	<field name="MBBJ" class="java.lang.String"/>
+	<field name="SSY" class="java.lang.String"/>
+	<field name="SSYBJ" class="java.lang.String"/>
+	<field name="SZY" class="java.lang.String"/>
+	<field name="SZYBJ" class="java.lang.String"/>
+	<field name="LSL" class="java.lang.String"/>
+	<field name="RSL" class="java.lang.String"/>
+	<field name="QTYB" class="java.lang.String"/>
+	<field name="LQG" class="java.lang.String"/>
+	<field name="RQG" class="java.lang.String"/>
+	<field name="LSY" class="java.lang.String"/>
+	<field name="RSY" class="java.lang.String"/>
+	<field name="BS" class="java.lang.String"/>
+	<field name="TL" class="java.lang.String"/>
+	<field name="XJ" class="java.lang.String"/>
+	<field name="BB" class="java.lang.String"/>
+	<field name="QSBNUM" class="java.lang.String"/>
+	<field name="RQB" class="java.lang.String"/>
+	<field name="RQS" class="java.lang.String"/>
+	<field name="RQH" class="java.lang.String"/>
+	<field name="HQB" class="java.lang.String"/>
+	<field name="HQS" class="java.lang.String"/>
+	<field name="HQH" class="java.lang.String"/>
+	<field name="YZB" class="java.lang.String"/>
+	<field name="BTT" class="java.lang.String"/>
+	<field name="XK" class="java.lang.String"/>
+	<field name="JZ" class="java.lang.String"/>
+	<field name="SZ" class="java.lang.String"/>
+	<field name="PZ" class="java.lang.String"/>
+	<field name="XZ" class="java.lang.String"/>
+	<field name="GP" class="java.lang.String"/>
+	<field name="FEI" class="java.lang.String"/>
+	<field name="XT" class="java.lang.String"/>
+	<field name="XHDB" class="java.lang.String"/>
+	<field name="FHCL" class="java.lang.String"/>
+	<field name="PFB" class="java.lang.String"/>
+	<field name="ZG" class="java.lang.String"/>
+	<field name="ZGDJQ" class="java.lang.String"/>
+	<field name="ZGDJD" class="java.lang.String"/>
+	<field name="ZGBJ" class="java.lang.String"/>
+	<field name="JK" class="java.lang.String"/>
+	<field name="JKDJQ" class="java.lang.String"/>
+	<field name="JKDJD" class="java.lang.String"/>
+	<field name="JKBJ" class="java.lang.String"/>
+	<field name="GPK" class="java.lang.String"/>
+	<field name="GPKDJQ" class="java.lang.String"/>
+	<field name="GPKDJD" class="java.lang.String"/>
+	<field name="GPKBJ" class="java.lang.String"/>
+	<field name="BJL" class="java.lang.String"/>
+	<field name="GSTJ" class="java.lang.String"/>
+	<field name="JJX" class="java.lang.String"/>
+	<field name="BMKY" class="java.lang.String"/>
+	<field name="SJSR" class="java.lang.String"/>
+	<field name="WSM" class="java.lang.String"/>
+	<field name="WSMDJQ" class="java.lang.String"/>
+	<field name="WSMDJD" class="java.lang.String"/>
+	<field name="WSMBJ" class="java.lang.String"/>
+	<field name="LDTY" class="java.lang.String"/>
+	<field name="LDTYDJQ" class="java.lang.String"/>
+	<field name="LDTYDJD" class="java.lang.String"/>
+	<field name="LDTYBJ" class="java.lang.String"/>
+	<field name="LL" class="java.lang.String"/>
+	<field name="LLDJQ" class="java.lang.String"/>
+	<field name="LLDJD" class="java.lang.String"/>
+	<field name="LLBJ" class="java.lang.String"/>
+	<field name="NNL" class="java.lang.String"/>
+	<field name="NNLDJQ" class="java.lang.String"/>
+	<field name="NNLDJD" class="java.lang.String"/>
+	<field name="NNLBJ" class="java.lang.String"/>
+	<field name="ZWT" class="java.lang.String"/>
+	<field name="ZWTDJQ" class="java.lang.String"/>
+	<field name="ZWTDJD" class="java.lang.String"/>
+	<field name="ZWTBJ" class="java.lang.String"/>
+	<field name="T1" class="java.lang.String"/>
+	<field name="T2" class="java.lang.String"/>
+	<field name="T3" class="java.lang.String"/>
+	<field name="T4" class="java.lang.String"/>
+	<field name="T5" class="java.lang.String"/>
+	<field name="T6" class="java.lang.String"/>
+	<field name="T7" class="java.lang.String"/>
+	<field name="T8" class="java.lang.String"/>
+	<field name="T9" class="java.lang.String"/>
+	<field name="T10" class="java.lang.String"/>
+	<field name="SLBH" class="java.lang.String"/>
+	<field name="MBPJ" class="java.lang.String"/>
+	<field name="SSYPJ" class="java.lang.String"/>
+	<field name="SZYPJ" class="java.lang.String"/>
+	<field name="PXPJ" class="java.lang.String"/>
+	<field name="SLPJ" class="java.lang.String"/>
+	<field name="XJH" class="java.lang.String"/>
+	<field name="YYPJB" class="java.lang.String"/>
+	<field name="TJSY" class="java.lang.String"/>
+	<field name="MB1" class="java.lang.String"/>
+	<field name="MB2" class="java.lang.String"/>
+	<field name="MB3" class="java.lang.String"/>
+	<field name="TJFS" class="java.lang.String"/>
+	<field name="TJPJ" class="java.lang.String"/>
+	<field name="YYPJH" class="java.lang.String"/>
+	<field name="XMPY" class="java.lang.String"/>
+	<field name="HXP" class="java.lang.String"/>
+	<field name="HXPPJ" class="java.lang.String"/>
+	<field name="EB" class="java.lang.String"/>
+	<field name="YB" class="java.lang.String"/>
+	<field name="TB" class="java.lang.String"/>
+	<field name="JB" class="java.lang.String"/>
+	<field name="PF" class="java.lang.String"/>
+	<field name="JZX" class="java.lang.String"/>
+	<field name="LBJ" class="java.lang.String"/>
+	<field name="JHJS" class="java.lang.String"/>
+	<field name="GBZAM" class="java.lang.String"/>
+	<field name="DHSA" class="java.lang.String"/>
+	<field name="DHSZ" class="java.lang.String"/>
+	<field name="GG" class="java.lang.String"/>
+	<field name="BMKT" class="java.lang.String"/>
+	<field name="YGHKT" class="java.lang.String"/>
+	<field name="YGEKY" class="java.lang.String"/>
+	<field name="YGEKT" class="java.lang.String"/>
+	<field name="BLOOD" class="java.lang.String"/>
+	<field name="YW" class="java.lang.String"/>
+	<field name="TW" class="java.lang.String"/>
+	<field name="CXBH" class="java.lang.String"/>
+	<field name="LJSL" class="java.lang.String"/>
+	<field name="RJSL" class="java.lang.String"/>
+	<field name="JMY" class="java.lang.String"/>
+	<field name="WGFB" class="java.lang.String"/>
+	<field name="YYB" class="java.lang.String"/>
+	<field name="PEI" class="java.lang.String"/>
+	<field name="LSLS" class="java.lang.String"/>
+	<field name="RSLS" class="java.lang.String"/>
+	<field name="LJSLS" class="java.lang.String"/>
+	<field name="RJSLS" class="java.lang.String"/>
+	<field name="RTL" class="java.lang.String"/>
+	<field name="WSZQ" class="java.lang.String"/>
+	<field name="RS" class="java.lang.String"/>
+	<field name="BXP" class="java.lang.String"/>
+	<field name="XXB" class="java.lang.String"/>
+	<field name="SFZH" class="java.lang.String"/>
+	<field name="DH" class="java.lang.String"/>
+	<field name="ADDRESS" class="java.lang.String"/>
+	<field name="RXYFJZS" class="java.lang.String"/>
+	<field name="YMA" class="java.lang.String"/>
+	<field name="YMAJY" class="java.lang.String"/>
+	<field name="YMB" class="java.lang.String"/>
+	<field name="YMBJY" class="java.lang.String"/>
+	<field name="YMC" class="java.lang.String"/>
+	<field name="YMCJY" class="java.lang.String"/>
+	<field name="YMD" class="java.lang.String"/>
+	<field name="YMDJY" class="java.lang.String"/>
+	<field name="YME" class="java.lang.String"/>
+	<field name="YMEJY" class="java.lang.String"/>
+	<field name="YMQT" class="java.lang.String"/>
+	<field name="RXHJZS" class="java.lang.String"/>
+	<field name="JWBS" class="java.lang.String"/>
+	<field name="QCQFY" class="java.lang.String"/>
+	<field name="STUDGUID" class="java.lang.String"/>
+	<field name="SCHOOLID" class="java.lang.String"/>
+	<field name="STUDNUM" class="java.lang.String"/>
+	<field name="YMF" class="java.lang.String"/>
+	<field name="YMFJY" class="java.lang.String"/>
+	<field name="JSL_CAL" class="java.lang.String"/>
+	<field name="YC_CAL" class="java.lang.String"/>
+	<field name="YMJZ_CAL" class="java.lang.String"/>
+	<field name="SY_CAL" class="java.lang.String"/>
+	<field name="QCQ_CAL" class="java.lang.String"/>
+	<field name="XY_CAL" class="java.lang.String"/>
+	<variable name="TODAY" class="java.lang.String">
+		<variableExpression><![CDATA[(new SimpleDateFormat("yyyy/MM/dd")).format(new Date())]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="265" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="71592c0f-cb1f-4bd5-b058-800b8afe8544" x="180" y="0" width="172" height="24"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[学生健康体检报告单]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="e2c40c08-de94-4874-9d49-8723c01fe1ba" style="normalNoBorder" x="0" y="31" width="83" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["姓名："+$F{XM}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="20907491-c1fc-4e1d-aed4-4ee54f52a033" style="normalNoBorder" x="83" y="31" width="82" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["性别："+$F{XB}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5e2a3664-f9c5-40fd-a77d-cd3b9b197d6c" style="normalNoBorder" x="165" y="31" width="108" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{CLASS_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="41830525-4287-48f8-8e45-d65b0f314d46" style="normalNoBorder" x="273" y="31" width="170" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["学校名称："+$F{SCHOOL_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1d8f0c12-9605-4687-8a21-0c251db1415b" style="normalNoBorder" x="443" y="31" width="112" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["打印日期："+$V{TODAY}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="d242476b-c159-499a-9ac7-5c320fd06dd9" style="normalCenterWithBorder" x="0" y="47" width="50" height="16"/>
+				<textElement/>
+				<text><![CDATA[身高(cm)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d4b04ff0-161f-45de-8254-3ab2b91cfe9e" style="normalCenterWithBorder" x="50" y="47" width="33" height="16"/>
+				<textElement/>
+				<text><![CDATA[评价]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4b03702b-2484-4a2a-898a-5bfe5f0ba422" style="normalCenterWithBorder" x="83" y="47" width="50" height="16"/>
+				<textElement/>
+				<text><![CDATA[体重(kg)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1ec0d6bc-d446-479c-9a85-355c69250abf" style="normalCenterWithBorder" x="133" y="47" width="33" height="16"/>
+				<textElement/>
+				<text><![CDATA[评价]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="26914c5e-d91f-4df1-b49a-6ad5656f6eb6" style="normalCenterWithBorder" x="166" y="47" width="50" height="16"/>
+				<textElement/>
+				<text><![CDATA[胸围(cm)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="de984979-1ce9-4525-a5eb-3ce8561252ee" style="normalCenterWithBorder" x="216" y="47" width="33" height="16"/>
+				<textElement/>
+				<text><![CDATA[评价]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="10ac8e6b-61fe-45d5-ab35-7bb5d226959e" style="normalCenterWithBorder" x="299" y="47" width="33" height="16"/>
+				<textElement/>
+				<text><![CDATA[评价]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8bda9926-4348-4bf4-a733-65d355987f52" style="normalCenterWithBorder" x="249" y="47" width="50" height="16"/>
+				<textElement/>
+				<text><![CDATA[肺活量(ml)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="65e0d287-9bc8-4b4f-a8f6-96cf0a8e6b04" style="normalCenterWithBorder" x="357" y="47" width="33" height="16"/>
+				<textElement/>
+				<text><![CDATA[评价]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="86c9f8f7-2bed-4d49-b182-ff5f58fa9c31" style="normalCenterWithBorder" x="332" y="47" width="25" height="16"/>
+				<textElement/>
+				<text><![CDATA[脉搏]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a4adfe9c-009e-4d7c-9518-89f42421a68c" style="normalCenterWithBorder" x="390" y="47" width="76" height="16"/>
+				<textElement/>
+				<text><![CDATA[收缩压(mmHg)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5daba211-12b3-4b8a-b860-618d22def310" style="normalWithBorder" x="466" y="47" width="89" height="16"/>
+				<textElement/>
+				<text><![CDATA[评价]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="d6c492f6-e1b0-4c0f-886c-4b59db00b68d" style="normalCenterWithBorder" x="0" y="63" width="50" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{SG}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6b8e38ae-8981-400f-90a1-0414a765cd64" style="normalCenterWithBorder" x="50" y="63" width="33" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{SGDJQ}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="dde7b697-10f8-4c8e-85b2-73604e30d57f" style="normalCenterWithBorder" x="83" y="63" width="50" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{TZ}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4c6ddf23-bb00-4401-b738-98b4ffd70cc8" style="normalCenterWithBorder" x="133" y="63" width="33" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{TZDJQ}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2978e7b6-cda3-40cb-b899-4ce50084e675" style="normalCenterWithBorder" x="166" y="63" width="50" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{XW}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="df60ab6f-3c73-417c-9bd0-065196b0a714" style="normalCenterWithBorder" x="216" y="63" width="33" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{XWDJQ}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b8800321-0de2-4844-8ddb-44e11a332fb3" style="normalCenterWithBorder" x="249" y="63" width="50" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FHL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="be361d3a-07bb-43cc-a5da-67a0ff521fca" style="normalCenterWithBorder" x="299" y="63" width="33" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FHLDJQ}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="79b52447-a6e5-46d2-9982-fa6e61dabb61" style="normalCenterWithBorder" x="332" y="63" width="25" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{MB}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="bee308e8-9887-4d25-9332-b195c8eec0c2" style="normalCenterWithBorder" x="357" y="63" width="33" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{MBPJ}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="44752a7f-6046-4b13-95b5-dfaa8c751470" style="normalCenterWithBorder" x="390" y="63" width="76" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{SSY}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0b84e79c-514b-4b6d-8435-2ad81d21481a" style="normalWithBorder" x="466" y="63" width="89" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{SSYPJ}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="ee86f875-22c0-4e65-9617-67e9997ed61f" style="normalCenterWithBorder" x="0" y="79" width="73" height="16"/>
+				<textElement/>
+				<text><![CDATA[舒张压(mmHg)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cae45b43-bdbd-4552-b383-ddb96a65acc1" style="normalCenterWithBorder" x="73" y="79" width="48" height="16"/>
+				<textElement/>
+				<text><![CDATA[评价]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eb8ef2bc-ee50-4378-9c5b-9d19f6abb294" style="normalCenterWithBorder" x="121" y="79" width="33" height="16"/>
+				<textElement/>
+				<text><![CDATA[左眼]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="378a0f5a-ff58-4479-a277-ca2446285e8b" style="normalCenterWithBorder" x="154" y="79" width="33" height="16"/>
+				<textElement/>
+				<text><![CDATA[右眼]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7c88f57d-e5ac-4ae2-a3d3-39b21ae327fd" style="normalCenterWithBorder" x="187" y="79" width="45" height="16"/>
+				<textElement/>
+				<text><![CDATA[评价]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="62788f7f-5dc7-4029-98c1-16fac9c23314" style="normalCenterWithBorder" x="232" y="79" width="50" height="16"/>
+				<textElement/>
+				<text><![CDATA[近视力左]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ec9e20db-ea09-4434-9f8b-23909f4de435" style="normalCenterWithBorder" x="282" y="79" width="50" height="16"/>
+				<textElement/>
+				<text><![CDATA[近视力右]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0b2cd112-cd0c-447c-b0c1-5455eeccae52" style="normalCenterWithBorder" x="332" y="79" width="39" height="16"/>
+				<textElement/>
+				<text><![CDATA[评价]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4fe412a6-bbad-4c00-ae8e-e96989f588e9" style="normalCenterWithBorder" x="371" y="79" width="50" height="16"/>
+				<textElement/>
+				<text><![CDATA[左眼屈光]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cbe449f6-6a2a-4252-af0d-4fce9e846c09" style="normalCenterWithBorder" x="421" y="79" width="50" height="16"/>
+				<textElement/>
+				<text><![CDATA[右眼屈光]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="83a063ce-8928-4585-9e2f-090832384a20" style="normalCenterWithBorder" x="471" y="79" width="30" height="16"/>
+				<textElement/>
+				<text><![CDATA[弱视]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="48f98160-8e82-445c-bef9-26922c7a3f35" style="normalCenterWithBorder" x="501" y="79" width="54" height="16"/>
+				<textElement/>
+				<text><![CDATA[左沙]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="7a750444-3450-4554-9ece-44f39d002040" style="normalCenterWithBorder" x="0" y="95" width="73" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{SZY}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2dfca8fc-a722-4247-bf3d-7e9235d03b60" style="normalCenterWithBorder" x="73" y="95" width="48" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{SZYPJ}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6bfb09bd-2354-447f-8a72-acdefb22c718" style="normalCenterWithBorder" x="121" y="95" width="33" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{LSL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e47ef527-a28b-42ac-9e6d-80013a7fdeb6" style="normalCenterWithBorder" x="154" y="95" width="33" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{RSL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="fdebd9c2-1245-47aa-aef9-4dbf37515edf" style="normalCenterWithBorder" x="187" y="95" width="45" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{SLPJ}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="de85e888-0648-445f-b58a-73c2bd713240" style="normalCenterWithBorder" x="232" y="95" width="50" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{LJSL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="252609e9-9738-4b1c-b9ff-fa7ee10dfa04" style="normalCenterWithBorder" x="282" y="95" width="50" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{RJSL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7da430b9-4769-4b73-ab2c-4c8ef35b6c65" style="normalCenterWithBorder" x="332" y="95" width="39" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{JSL_CAL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="de1b9e41-7e90-49ad-bd0f-663e8f4b940d" style="normalCenterWithBorder" x="371" y="95" width="50" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{LQG}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e8df49af-b0d5-4cc9-8ccf-d3c55cfb5971" style="normalCenterWithBorder" x="421" y="95" width="50" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{RQG}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9384a21f-ab6f-4a00-b228-1a2c8cedc058" style="normalCenterWithBorder" x="471" y="95" width="30" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{RS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a66bbaf8-14f8-4427-84b8-cd5cf20391f8" style="normalCenterWithBorder" x="501" y="95" width="54" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{LSY}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="b1e053bc-cd80-463f-b80f-71ccfc148a46" style="normalCenterWithBorder" x="0" y="111" width="30" height="16"/>
+				<textElement/>
+				<text><![CDATA[右沙]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c6ddabd3-61fa-453e-ab29-961fdd0f702c" style="normalCenterWithBorder" x="30" y="111" width="30" height="16"/>
+				<textElement/>
+				<text><![CDATA[色觉]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="13b75a7b-4231-4002-8472-b7084a66f0ee" style="normalCenterWithBorder" x="60" y="111" width="38" height="16"/>
+				<textElement/>
+				<text><![CDATA[听力左]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="879b26aa-f235-48f3-80c5-2ba1f27701a1" style="normalCenterWithBorder" x="98" y="111" width="38" height="16"/>
+				<textElement/>
+				<text><![CDATA[听力右]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3bb5da32-3487-4636-84ef-6d987d795340" style="normalCenterWithBorder" x="136" y="111" width="38" height="16"/>
+				<textElement/>
+				<text><![CDATA[牙齿]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="54985b95-b4a0-414b-ac0a-a154b635eaa2" style="normalCenterWithBorder" x="174" y="111" width="65" height="16"/>
+				<textElement/>
+				<text><![CDATA[牙周]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d22c0aa0-b815-41ac-9055-ad158e600eed" style="normalCenterWithBorder" x="239" y="111" width="50" height="16"/>
+				<textElement/>
+				<text><![CDATA[胸部]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="141f1724-f988-4430-85ed-d54ad792ba73" style="normalCenterWithBorder" x="289" y="111" width="50" height="16"/>
+				<textElement/>
+				<text><![CDATA[脊柱]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0c33ebf8-528d-453f-82b5-39cd3f4ef33e" style="normalCenterWithBorder" x="339" y="111" width="51" height="16"/>
+				<textElement/>
+				<text><![CDATA[四肢]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5f176d40-3279-4925-b25b-26e2077a893d" style="normalCenterWithBorder" x="390" y="111" width="81" height="16"/>
+				<textElement/>
+				<text><![CDATA[心]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="07f19ac6-96c8-46e7-b82d-95e3bb42356c" style="normalCenterWithBorder" x="471" y="111" width="84" height="16"/>
+				<textElement/>
+				<text><![CDATA[肝]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="2d1ac813-9a22-4b22-825f-a09a35dfa3af" style="normalCenterWithBorder" x="0" y="127" width="30" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{RSY}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6d3948e5-3f97-45aa-8fa7-4e2c8bcc3119" style="normalCenterWithBorder" x="30" y="127" width="30" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{BS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3442acba-3fb9-485b-8904-49b5e0d1ed3b" style="normalCenterWithBorder" x="60" y="127" width="38" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{TL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="90d02245-6cb0-4b38-8bb8-f8bb903ada09" style="normalCenterWithBorder" x="98" y="127" width="38" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{RTL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b1a1fc9b-821a-406b-9ec2-e083b5276d3e" style="normalCenterWithBorder" x="136" y="127" width="38" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{YC_CAL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="624db89d-e798-47d3-b653-b920b3255839" style="normalCenterWithBorder" x="174" y="127" width="65" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{YZB}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4a35559a-4a33-4f61-8959-7cf3d86c0310" style="normalCenterWithBorder" x="239" y="127" width="50" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{XK}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a5df7a27-6920-4cfa-b506-a48bf881f8a0" style="normalCenterWithBorder" x="289" y="127" width="50" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{JZ}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4d71f795-c226-43ec-b353-c20b1a3df74b" style="normalCenterWithBorder" x="339" y="127" width="51" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{SZ}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="cef3d4b8-99fd-41ad-a731-a42e4e2a2286" style="normalCenterWithBorder" x="390" y="127" width="81" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{XZ}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="93f7e0af-7338-4568-b912-58ababc6e1cb" style="normalCenterWithBorder" x="471" y="127" width="84" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{GP}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="a909e32b-2c2c-46cb-93f2-bd1425a2fc96" style="normalCenterWithBorder" x="30" y="143" width="30" height="16"/>
+				<textElement/>
+				<text><![CDATA[肺]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3492df85-16bf-4f26-847a-14701494f587" style="normalCenterWithBorder" x="0" y="143" width="30" height="16"/>
+				<textElement/>
+				<text><![CDATA[脾]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="89eafc0c-b424-400f-a78f-e4e234dcca64" style="normalCenterWithBorder" x="60" y="143" width="38" height="16"/>
+				<textElement/>
+				<text><![CDATA[蛔虫病]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0919a0be-7c59-4f7e-be3f-a1628aac7116" style="normalCenterWithBorder" x="98" y="143" width="56" height="16"/>
+				<textElement/>
+				<text><![CDATA[神经衰弱]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f7a81129-31f3-4b93-9acb-f1ca264aed44" style="normalCenterWithBorder" x="154" y="143" width="78" height="16"/>
+				<textElement/>
+				<text><![CDATA[血红蛋白(g/L)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="567e28f7-101b-4862-b3b3-10ad92f46595" style="normalCenterWithBorder" x="232" y="143" width="33" height="16"/>
+				<textElement/>
+				<text><![CDATA[评价]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="32d0cbdc-8375-40f7-8d4f-cda800ae6feb" style="normalCenterWithBorder" x="265" y="143" width="38" height="16"/>
+				<textElement/>
+				<text><![CDATA[眼病]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="776a26b2-28bf-40c2-87d8-c6889796034b" style="normalCenterWithBorder" x="333" y="143" width="30" height="16"/>
+				<textElement/>
+				<text><![CDATA[颈部]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c9c0001b-7faa-4ce2-998d-cd9647cd099d" style="normalCenterWithBorder" x="303" y="143" width="30" height="16"/>
+				<textElement/>
+				<text><![CDATA[头部]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7ce28a39-cf94-47ec-b788-1a710a5d35ce" style="normalCenterWithBorder" x="363" y="143" width="30" height="16"/>
+				<textElement/>
+				<text><![CDATA[皮肤]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="17892e1e-fc0b-4894-99e7-07a8da6a21a2" style="normalCenterWithBorder" x="393" y="143" width="38" height="16"/>
+				<textElement/>
+				<text><![CDATA[淋巴结]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a83653c8-27af-4e48-8e65-cb26eddd0d55" style="normalCenterWithBorder" x="431" y="143" width="124" height="16"/>
+				<textElement/>
+				<text><![CDATA[结核菌素试验]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="c0404ff8-4a5b-4e10-bca0-f36797b4224c" style="normalCenterWithBorder" x="0" y="159" width="30" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{PEI}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a86b0211-5b62-457c-a367-b819edad05f9" style="normalCenterWithBorder" x="30" y="159" width="30" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEI}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5bdf0d46-265a-46c9-ac04-3056e111f421" style="normalCenterWithBorder" x="60" y="159" width="38" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FHCL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8679825a-75e9-41bb-bd40-fe1a69260a76" style="normalCenterWithBorder" x="98" y="159" width="56" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{SJSR}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ce0e2efc-d887-41d8-804a-103da82f58c2" style="normalCenterWithBorder" x="154" y="159" width="78" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{XHDB}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4f8c8c4b-8ff6-414a-a200-a9baf33b1bc5" style="normalCenterWithBorder" x="232" y="159" width="33" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{PXPJ}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8137f031-2748-47c7-93bc-f0b014569fc6" style="normalCenterWithBorder" x="265" y="159" width="38" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{YB}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a5d1cdc3-8054-47ec-87e9-918f3c63f045" style="normalCenterWithBorder" x="303" y="159" width="30" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{TB}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2c9b00eb-4b60-4a58-b434-1ba74078fe59" style="normalCenterWithBorder" x="333" y="159" width="30" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{JB}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ce6abab0-de1c-4501-81f6-b59165e838ae" style="normalCenterWithBorder" x="363" y="159" width="30" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{PF}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b1bea192-c081-4693-9d5e-b4b155c9c3ea" style="normalCenterWithBorder" x="393" y="159" width="38" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{LBJ}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c26de729-33cc-409a-bc05-c718231ed914" style="normalCenterWithBorder" x="431" y="159" width="124" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{JHJS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="a09c405f-74c2-4852-b1d8-a0208f736ae8" style="normalCenterWithBorder" x="0" y="175" width="140" height="16"/>
+				<textElement/>
+				<text><![CDATA[谷丙转氨酶(参考值0-40 IU/L)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="240cef66-a933-4630-90e2-5d955e0e9b11" style="normalCenterWithBorder" x="140" y="175" width="140" height="16"/>
+				<textElement/>
+				<text><![CDATA[总胆红素(参考值0-21 umol/L)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5c6b0a24-aac4-44fe-b5ff-5c0a28f9db72" style="normalCenterWithBorder" x="280" y="175" width="140" height="16"/>
+				<textElement/>
+				<text><![CDATA[直胆红素(参考值0-21 umol/L)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f581dee7-7633-4239-9d73-e372b93572c8" style="normalCenterWithBorder" x="420" y="175" width="38" height="16"/>
+				<textElement/>
+				<text><![CDATA[肝功能]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0193aeff-0e2f-4a20-9ed7-01fb36964d46" style="normalCenterWithBorder" x="458" y="175" width="97" height="16"/>
+				<textElement/>
+				<text><![CDATA[表面抗原]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="0934bb08-5e26-4c1f-8ab6-03f473c9b309" style="normalCenterWithBorder" x="0" y="191" width="140" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{GBZAM}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9206fa26-ea86-4a90-8b9e-8e5bad5ffd8e" style="normalCenterWithBorder" x="140" y="191" width="140" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{DHSA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f5ce6930-0103-4a1b-a373-da21c18aa3c5" style="normalCenterWithBorder" x="280" y="191" width="140" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{DHSZ}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b6cfc59e-cad9-4d52-83c4-1b4402e3de3e" style="normalCenterWithBorder" x="420" y="191" width="38" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{GG}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="945b5ad1-f7ee-4896-8cda-91cea17ec409" style="normalCenterWithBorder" x="458" y="191" width="97" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{BMKY}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="d8ea7b78-b8d3-47df-96fb-793f82cde5ed" style="normalCenterWithBorder" x="0" y="207" width="60" height="16"/>
+				<textElement/>
+				<text><![CDATA[表面抗体]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="550342ab-3aad-40c2-9b87-cb7e1a0f1d4f" style="normalCenterWithBorder" x="60" y="207" width="38" height="16"/>
+				<textElement/>
+				<text><![CDATA[结膜炎]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7551da9a-ad91-493b-bcf2-dc0a79fd65c2" style="normalCenterWithBorder" x="98" y="207" width="60" height="16"/>
+				<textElement/>
+				<text><![CDATA[窝沟封闭]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="be2945c9-8a6e-45df-8712-6fcdff6f9671" style="normalCenterWithBorder" x="158" y="207" width="60" height="16"/>
+				<textElement/>
+				<text><![CDATA[牙龈]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4ebc283b-63e1-43e7-bb3d-17546c81590e" style="normalCenterWithBorder" x="218" y="207" width="73" height="16"/>
+				<textElement/>
+				<text><![CDATA[男性外生殖器]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6f1ab763-0bb1-4af6-8372-ab02ff871ded" style="normalCenterWithBorder" x="291" y="207" width="60" height="16"/>
+				<textElement/>
+				<text><![CDATA[营养评价]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="60e3a07f-3167-4326-9c2a-a69398c714d7" style="normalCenterWithBorder" x="351" y="207" width="41" height="16"/>
+				<textElement/>
+				<text><![CDATA[发育]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="f1f4e98f-5bd4-4e74-bec2-8900a6e929c2" style="normalCenterWithBorder" x="0" y="223" width="60" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{BMKT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8b6ea9ef-ea31-40d6-b2cd-ce15177c3dd6" style="normalCenterWithBorder" x="60" y="223" width="38" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{JMY}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="292f5f8f-965f-479d-b96b-0086d19773b6" style="normalCenterWithBorder" x="98" y="223" width="60" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{WGFB}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3e5a80d9-6128-4d3a-986e-bccd4fe1316c" style="normalCenterWithBorder" x="158" y="223" width="60" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{YYB}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b88bd14d-1b93-4471-9920-238b6dc2537e" style="normalCenterWithBorder" x="218" y="223" width="73" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{WSZQ}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="30763a20-2222-4c75-a3ff-7f1ac840042f" style="normalCenterWithBorder" x="291" y="223" width="60" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{YYPJ}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="bb703759-5004-4a41-9cd0-76c29fc243c9" style="normalCenterWithBorder" x="351" y="223" width="41" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FYPJ}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="9c0b2ddb-c513-4b9e-8782-79a65ceb5488" style="normalCenterWithBorder" x="392" y="207" width="163" height="16"/>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="72c11b9e-4cde-4775-883c-89de25dc513c" style="normalCenterWithBorder" x="392" y="223" width="163" height="16"/>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="3958cc6f-12dc-4c5d-9d26-73c11d5a3029" x="0" y="251" width="555" height="1"/>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

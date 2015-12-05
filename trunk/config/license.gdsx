@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!-- 
+	被合并的学校与正常学校平级，被合并的学校（State=”F”）的HostSchoolCode的值代表合并后的学校编码，
+	正常的学校（State=”T”）的HostSchoolCode为空
+ -->
+<School xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="ConsoleApplication2">
+  <HW_School CityId="440100" CityName="广州市" DistrictCode="440106" DistrictName="天河区" 
+  		SchoolCode="4401060100352157957" Name="天河区龙口西小学" Address="fdfdfdf" Email="efefeff@sina.com" 
+  		LinkMan="terttr" MobilePhone="135434344343" OfficePhone="56655555" State="T"  	
+  	  	SchoolCharacter="城镇" SchoolType="小学" 
+  	  	Sign="J4OuCVc5GLIflUbnfv60G3FendbLoFtA1N2HsDngn/UWUUxPegoy1UFpIJn4e7Qb44imu7QXyO/3jKeu3v6zZWOhexSeXgYldiQnQRmKXq8AdRWfN9mnZqAoMbVaSsUR1kkZ8UJMy4dCuUGJAiPtK1I6xyBMpKJ5AWJ+vM+Tj5k="
+  >
+  <!-- MergedSchool 代表被合并的学校，合并后的学校就是上级元素HW_School所描述的学校 -->
+  	<MergedSchool SchoolCode="" HostSchoolCode=""/>
+  	<MergedSchool SchoolCode="" HostSchoolCode=""/>
+  </HW_School>
+</School>

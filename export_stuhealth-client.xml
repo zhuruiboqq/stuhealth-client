@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project stuhealth-client with libraries in sub-folder">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+        <jar destfile="D:/Users/asus/Desktop/stuhealth-client.jar">
+            <manifest>
+                <attribute name="Main-Class" value="com.vastcm.stuhealth.client.MainUI"/>
+                <attribute name="Class-Path" value=". stuhealth-client_lib/httpclient-4.2.2.jar stuhealth-client_lib/httpcore-4.2.2.jar stuhealth-client_lib/commons-logging-1.1.1.jar stuhealth-client_lib/commons-codec-1.6.jar stuhealth-client_lib/gson-2.2.2.jar stuhealth-client_lib/slf4j-api-1.7.2.jar stuhealth-client_lib/slf4j-log4j12-1.7.2.jar stuhealth-client_lib/log4j-1.2.17.jar stuhealth-client_lib/stuhealth-mid-0.6.jar stuhealth-client_lib/AbsoluteLayout-SNAPSHOT.jar stuhealth-client_lib/spring-core-3.1.3.RELEASE.jar stuhealth-client_lib/spring-asm-3.1.3.RELEASE.jar stuhealth-client_lib/spring-context-3.1.3.RELEASE.jar stuhealth-client_lib/spring-aop-3.1.3.RELEASE.jar stuhealth-client_lib/aopalliance-1.0.jar stuhealth-client_lib/spring-beans-3.1.3.RELEASE.jar stuhealth-client_lib/spring-expression-3.1.3.RELEASE.jar stuhealth-client_lib/spring-orm-3.1.3.RELEASE.jar stuhealth-client_lib/spring-jdbc-3.1.3.RELEASE.jar stuhealth-client_lib/spring-tx-3.1.3.RELEASE.jar stuhealth-client_lib/hibernate-core-4.1.9.Final.jar stuhealth-client_lib/antlr-2.7.7.jar stuhealth-client_lib/jboss-logging-3.1.0.GA.jar stuhealth-client_lib/javassist-3.17.1-GA.jar stuhealth-client_lib/jboss-transaction-api_1.1_spec-1.0.0.Final.jar stuhealth-client_lib/dom4j-1.6.1.jar stuhealth-client_lib/hibernate-jpa-2.0-api-1.0.1.Final.jar stuhealth-client_lib/hibernate-commons-annotations-4.0.1.Final.jar stuhealth-client_lib/hibernate-c3p0-4.1.9.Final.jar stuhealth-client_lib/c3p0-0.9.1.jar stuhealth-client_lib/jta-1.0.1B.jar stuhealth-client_lib/ejb3-persistence-1.0.1.GA.jar stuhealth-client_lib/cglib-nodep-2.2.2.jar stuhealth-client_lib/mysql-connector-java-5.1.18-bin-SNAPSHOT.jar stuhealth-client_lib/jtds-1.2.7.jar stuhealth-client_lib/jide-common-2.11.1.jar stuhealth-client_lib/jide-components-2.11.1.jar stuhealth-client_lib/jide-editor-2.11.1.jar stuhealth-client_lib/jide-grids-2.11.1.jar stuhealth-client_lib/jide-pivot-2.11.1.jar stuhealth-client_lib/jupidator-0.8.0.jar stuhealth-client_lib/jcalendar-1.4.jar stuhealth-client_lib/substance-6.3.jar stuhealth-client_lib/trident-1.3.jar stuhealth-client_lib/poi-3.9.jar stuhealth-client_lib/poi-ooxml-3.9.jar stuhealth-client_lib/poi-ooxml-schemas-3.9.jar stuhealth-client_lib/xmlbeans-2.3.0.jar stuhealth-client_lib/stax-api-1.0.1.jar stuhealth-client_lib/miglayout-3.7.4.jar stuhealth-client_lib/jasperreports-5.0.1.jar stuhealth-client_lib/commons-beanutils-1.8.0.jar stuhealth-client_lib/commons-collections-2.1.jar stuhealth-client_lib/commons-digester-2.1.jar stuhealth-client_lib/itext-2.1.7.js1.jar stuhealth-client_lib/bcmail-jdk14-138.jar stuhealth-client_lib/bcprov-jdk14-138.jar stuhealth-client_lib/bctsp-jdk14-1.38.jar stuhealth-client_lib/bcprov-jdk14-1.38.jar stuhealth-client_lib/bcmail-jdk14-1.38.jar stuhealth-client_lib/jcommon-1.0.15.jar stuhealth-client_lib/jfreechart-1.0.12.jar stuhealth-client_lib/xml-apis-1.3.02.jar stuhealth-client_lib/jdtcore-3.1.0.jar stuhealth-client_lib/castor-1.2.jar stuhealth-client_lib/jackson-core-2.0.5.jar stuhealth-client_lib/jackson-databind-2.0.5.jar stuhealth-client_lib/jackson-annotations-2.0.5.jar stuhealth-client_lib/groovy-1.8.3.jar stuhealth-client_lib/asm-3.2.jar stuhealth-client_lib/asm-commons-3.2.jar stuhealth-client_lib/asm-util-3.2.jar stuhealth-client_lib/asm-analysis-3.2.jar stuhealth-client_lib/asm-tree-3.2.jar stuhealth-client_lib/jaybird-jdk16-2.2.3.jar stuhealth-client_lib/connector-api-1.5.jar stuhealth-client_lib/antlr-runtime-3.4.jar stuhealth-client_lib/stringtemplate-3.2.1.jar stuhealth-client_lib/swing-layout-1.0.3.jar stuhealth-client_lib/json-20090211.jar"/>
+            </manifest>
+            <fileset dir="D:/wsAll/ws4eclipse4.2/stuhealth-client/trunk/target/classes"/>
+        </jar>
+        <delete dir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <mkdir dir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/org/apache/httpcomponents/httpclient/4.2.2/httpclient-4.2.2.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/org/apache/httpcomponents/httpcore/4.2.2/httpcore-4.2.2.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/commons-codec/commons-codec/1.6/commons-codec-1.6.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/com/google/code/gson/gson/2.2.2/gson-2.2.2.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/org/slf4j/slf4j-api/1.7.2/slf4j-api-1.7.2.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/org/slf4j/slf4j-log4j12/1.7.2/slf4j-log4j12-1.7.2.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/com/vastcm/stuhealth-mid/0.6/stuhealth-mid-0.6.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/unknown/binary/AbsoluteLayout/SNAPSHOT/AbsoluteLayout-SNAPSHOT.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/org/springframework/spring-core/3.1.3.RELEASE/spring-core-3.1.3.RELEASE.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/org/springframework/spring-asm/3.1.3.RELEASE/spring-asm-3.1.3.RELEASE.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/org/springframework/spring-context/3.1.3.RELEASE/spring-context-3.1.3.RELEASE.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/org/springframework/spring-aop/3.1.3.RELEASE/spring-aop-3.1.3.RELEASE.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/org/springframework/spring-beans/3.1.3.RELEASE/spring-beans-3.1.3.RELEASE.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/org/springframework/spring-expression/3.1.3.RELEASE/spring-expression-3.1.3.RELEASE.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/org/springframework/spring-orm/3.1.3.RELEASE/spring-orm-3.1.3.RELEASE.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/org/springframework/spring-jdbc/3.1.3.RELEASE/spring-jdbc-3.1.3.RELEASE.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/org/springframework/spring-tx/3.1.3.RELEASE/spring-tx-3.1.3.RELEASE.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/org/hibernate/hibernate-core/4.1.9.Final/hibernate-core-4.1.9.Final.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/org/jboss/logging/jboss-logging/3.1.0.GA/jboss-logging-3.1.0.GA.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/org/javassist/javassist/3.17.1-GA/javassist-3.17.1-GA.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/org/jboss/spec/javax/transaction/jboss-transaction-api_1.1_spec/1.0.0.Final/jboss-transaction-api_1.1_spec-1.0.0.Final.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/org/hibernate/javax/persistence/hibernate-jpa-2.0-api/1.0.1.Final/hibernate-jpa-2.0-api-1.0.1.Final.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/org/hibernate/common/hibernate-commons-annotations/4.0.1.Final/hibernate-commons-annotations-4.0.1.Final.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/org/hibernate/hibernate-c3p0/4.1.9.Final/hibernate-c3p0-4.1.9.Final.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/c3p0/c3p0/0.9.1/c3p0-0.9.1.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/javax/transaction/jta/1.0.1B/jta-1.0.1B.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/org/hibernate/ejb3-persistence/1.0.1.GA/ejb3-persistence-1.0.1.GA.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/cglib/cglib-nodep/2.2.2/cglib-nodep-2.2.2.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/unknown/binary/mysql-connector-java-5.1.18-bin/SNAPSHOT/mysql-connector-java-5.1.18-bin-SNAPSHOT.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/net/sourceforge/jtds/jtds/1.2.7/jtds-1.2.7.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/unknown/binary/jide-common/2.11.1/jide-common-2.11.1.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/unknown/binary/jide-components/2.11.1/jide-components-2.11.1.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/unknown/binary/jide-editor/2.11.1/jide-editor-2.11.1.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/unknown/binary/jide-grids/2.11.1/jide-grids-2.11.1.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/unknown/binary/jide-pivot/2.11.1/jide-pivot-2.11.1.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/unknown/binary/jupidator/0.8.0/jupidator-0.8.0.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/unknown/binary/jcalendar/1.4/jcalendar-1.4.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/unknown/binary/substance/6.3/substance-6.3.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/unknown/binary/trident/1.3/trident-1.3.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/org/apache/poi/poi/3.9/poi-3.9.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/org/apache/poi/poi-ooxml/3.9/poi-ooxml-3.9.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/org/apache/poi/poi-ooxml-schemas/3.9/poi-ooxml-schemas-3.9.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/org/apache/xmlbeans/xmlbeans/2.3.0/xmlbeans-2.3.0.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/stax/stax-api/1.0.1/stax-api-1.0.1.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/com/miglayout/miglayout/3.7.4/miglayout-3.7.4.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/net/sf/jasperreports/jasperreports/5.0.1/jasperreports-5.0.1.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/commons-beanutils/commons-beanutils/1.8.0/commons-beanutils-1.8.0.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/commons-collections/commons-collections/2.1/commons-collections-2.1.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/commons-digester/commons-digester/2.1/commons-digester-2.1.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/com/lowagie/itext/2.1.7.js1/itext-2.1.7.js1.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/bouncycastle/bcmail-jdk14/138/bcmail-jdk14-138.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/bouncycastle/bcprov-jdk14/138/bcprov-jdk14-138.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/org/bouncycastle/bctsp-jdk14/1.38/bctsp-jdk14-1.38.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/org/bouncycastle/bcprov-jdk14/1.38/bcprov-jdk14-1.38.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/org/bouncycastle/bcmail-jdk14/1.38/bcmail-jdk14-1.38.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/jfree/jcommon/1.0.15/jcommon-1.0.15.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/jfree/jfreechart/1.0.12/jfreechart-1.0.12.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/xml-apis/xml-apis/1.3.02/xml-apis-1.3.02.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/eclipse/jdtcore/3.1.0/jdtcore-3.1.0.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/org/codehaus/castor/castor/1.2/castor-1.2.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/com/fasterxml/jackson/core/jackson-core/2.0.5/jackson-core-2.0.5.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/com/fasterxml/jackson/core/jackson-databind/2.0.5/jackson-databind-2.0.5.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/com/fasterxml/jackson/core/jackson-annotations/2.0.5/jackson-annotations-2.0.5.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/org/codehaus/groovy/groovy/1.8.3/groovy-1.8.3.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/asm/asm/3.2/asm-3.2.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/asm/asm-commons/3.2/asm-commons-3.2.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/asm/asm-util/3.2/asm-util-3.2.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/asm/asm-analysis/3.2/asm-analysis-3.2.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/asm/asm-tree/3.2/asm-tree-3.2.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/org/firebirdsql/jdbc/jaybird-jdk16/2.2.3/jaybird-jdk16-2.2.3.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/javax/resource/connector-api/1.5/connector-api-1.5.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/org/antlr/antlr-runtime/3.4/antlr-runtime-3.4.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/org/antlr/stringtemplate/3.2.1/stringtemplate-3.2.1.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/org/swinglabs/swing-layout/1.0.3/swing-layout-1.0.3.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+        <copy file="D:/wsAll/open_source/apache-maven-3.0.5/repository/org/json/json/20090211/json-20090211.jar" todir="D:/Users/asus/Desktop/stuhealth-client_lib"/>
+    </target>
+</project>

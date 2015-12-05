@@ -1,0 +1,7 @@
+/.svn
+/mysql/backup/*.gz
+/trunk/target/classes
+/mysql/data
+/trunk/target/test-classes/printtable
+/trunk/logs
+/trunk/target

@@ -1,0 +1,2 @@
+mysqldump -uroot -pkingdee stuhealth_client | gzip > stuhealth_client.sql.gz
+gzip -dc < stuhealth_client.sql.gz | mysql -uroot -pkingdee stuhealth_client

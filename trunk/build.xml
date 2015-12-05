@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     May 8, 2013 10:34:46 PM                                                        
+     
+     stuhealth_client    
+     description
+                   
+     house                                                                
+     ====================================================================== -->
+<project name="stuhealth_client" default="default">
+    <description>
+            description
+    </description>
+
+    <target name="default" depends="deploy" description="description">
+        
+    </target>
+	
+	<target name="buildPrelude">
+		<jar destfile="target/stuhealth_client_prelude.jar">
+			<fileset dir="target/classes" >
+			    <include name="com/vastcm/stuhealth/client/prelude/*" />
+			</fileset>
+		</jar>
+	</target>
+
+    <target name="buildAutoUpdater">
+    	<jar destfile="target/autoupdater.jar">
+    		<fileset dir="target/classes" >
+			    <include name="com/vastcm/stuhealth/client/autoupdate/*"/>
+    			<!--
+    			<include name="com/panayotis/jupidator/*" />
+    			<include name="com/panayotis/jupidator/i18n/*" />
+    			-->
+    			<include name="log4j.properties" />
+			</fileset>
+    	</jar>
+    </target>
+	
+	<target name="buildCorePackage">
+		<jar destfile="target/stuhealth_client_core.jar">
+			<fileset dir="target/classes" >
+			    <include name="com/vastcm/stuhealth/client/entity/core/**"/>
+	   			<include name="com/vastcm/stuhealth/client/entity/service/core/**"/>
+	   			<include name="com/vastcm/stuhealth/client/framework/**"/>
+				<include name="jupidator/**" />
+				<exclude name="com/vastcm/stuhealth/client/framework/report/**"/>
+				<exclude name="com/vastcm/stuhealth/client/prelude/*" />
+			</fileset>
+    	</jar>
+	</target>
+	
+	<target name="buildRptPackage">
+		<jar destfile="target/stuhealth_client_rpt.jar">
+			<fileset dir="target/classes" >
+			    <include name="jasper_report/**"/>
+	   			<include name="com/vastcm/stuhealth/client/**/report/**"/>
+			</fileset>
+    	</jar>
+	</target>
+	
+	<target name="buildImagePackage">
+		<jar destfile="target/stuhealth_client_img.jar">
+			<fileset dir="target/classes" >
+			    <include name="image/**"/>
+				<include name="menu_icon/**"/>
+			</fileset>
+    	</jar>
+	</target>
+	
+	<target name="buildBizPackage">
+		<jar destfile="target/stuhealth_client_biz.jar">
+			<fileset dir="target/classes" >
+			    <exclude name="com/vastcm/stuhealth/client/entity/core/**"/>
+	   			<exclude name="com/vastcm/stuhealth/client/entity/service/core/**"/>
+	   			<exclude name="com/vastcm/stuhealth/client/framework/**"/>
+				<exclude name="com/vastcm/stuhealth/client/**/report/**"/>
+				<exclude name="image/**" />
+				<exclude name="jasper_report/**" />
+				<exclude name="jupidator/**" />
+				<exclude name="com/vastcm/stuhealth/client/prelude/*" />
+			</fileset>
+    	</jar>
+	</target>
+	
+    <target name="buildMainApp" depends="buildPrelude,buildCorePackage,buildRptPackage,buildImagePackage,buildBizPackage" >
+    	<jar destfile="target/stuhealth_client.jar" />
+    </target>
+	
+	<target name="deploy" depends="buildMainApp" >
+		<copy todir="/Applications/apache-tomcat-7.0.37/webapps/files/0.8">
+			<fileset dir="target">
+				<include name="stuhealth_client.jar" />
+			</fileset>
+		</copy>
+	</target>
+	
+	<target name="packageUpdate">
+		<copy todir="/Applications/apache-tomcat-7.0.37/webapps/files/0.8/">
+			<fileset dir="target">
+				<include name="stuhealth_client.jar" />
+			</fileset>
+		</copy>
+	</target>
+
+</project>

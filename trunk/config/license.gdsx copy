@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!-- 
+	被合并的学校与正常学校平级，被合并的学校（State=”F”）的HostSchoolCode的值代表合并后的学校编码，
+	正常的学校（State=”T”）的HostSchoolCode为空
+ -->
+<School xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="ConsoleApplication2">
+  <Schools>
+  	<HW_School CityId="440100" CityName="广州市" DistrictCode="440106" DistrictName="天河区" SchoolCode="4401060100352157957" Name="天河区龙口西小学" Address="fdfdfdf" Email="efefeff@sina.com" LinkMan="terttr" MobilePhone="135434344343" OfficePhone="56655555" State="T" HostSchoolCode="" 					  SchoolCharacter="城镇" SchoolType="小学" Sign="J4OuCVc5GLIflUbnfv60G3FendbLoFtA1N2HsDngn/UWUUxPegoy1UFpIJn4e7Qb44imu7QXyO/3jKeu3v6zZWOhexSeXgYldiQnQRmKXq8AdRWfN9mnZqAoMbVaSsUR1kkZ8UJMy4dCuUGJAiPtK1I6xyBMpKJ5AWJ+vM+Tj5k=" />
+    <HW_School CityId="440100" CityName="广州市" DistrictCode="440106" DistrictName=""      SchoolCode="4401060100352157966" Name="子学校1"        Address="fdfdfdf" Email="efefeff@sina.com" LinkMan="terttr" MobilePhone="135434344343" OfficePhone="56655555" State="F" HostSchoolCode="4401060100352157957" SchoolCharacter="城镇" SchoolType="小学" Sign="J4OuCVc5GLIflUbnfv60G3FendbLoFtA1N2HsDngn/UWUUxPegoy1UFpIJn4e7Qb44imu7QXyO/3jKeu3v6zZWOhexSeXgYldiQnQRmKXq8AdRWfN9mnZqAoMbVaSsUR1kkZ8UJMy4dCuUGJAiPtK1I6xyBMpKJ5AWJ+vM+Tj5k=" />
+    <HW_School CityId="440100" CityName="广州市" DistrictCode="440106" DistrictName=""      SchoolCode="4401060100352157967" Name="子学校2"        Address="fdfdfdf" Email="efefeff@sina.com" LinkMan="terttr" MobilePhone="135434344343" OfficePhone="56655555" State="F" HostSchoolCode="4401060100352157957" SchoolCharacter="城镇" SchoolType="小学" Sign="J4OuCVc5GLIflUbnfv60G3FendbLoFtA1N2HsDngn/UWUUxPegoy1UFpIJn4e7Qb44imu7QXyO/3jKeu3v6zZWOhexSeXgYldiQnQRmKXq8AdRWfN9mnZqAoMbVaSsUR1kkZ8UJMy4dCuUGJAiPtK1I6xyBMpKJ5AWJ+vM+Tj5k=" />
+  </Schools>
+</School>

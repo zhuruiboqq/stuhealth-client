@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="StudentAppraise4Multi_code" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c0a0e8fb-eaad-455c-bc08-df2f4fdc01d5">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="ireport.layers" value="##Sun May 26 12:57:39 CST 2013\nlayer.1.name=Layer 2\nlayer.1.visible=true\nlayer.1.id=1\nlayer.0.name=Background\nlayer.0.visible=true\nlayer.0.id=0"/>
+	<template><![CDATA[$P{p_SUBREPORT_DIR}+"NormalStyleTemplate.jrtx"]]></template>
+	<parameter name="p_ids" class="java.util.Set">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="p_SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select ID, TJND, Term
+, ifnull(BH,'') BH
+, ifnull(SCHOOLBH,'') SCHOOLBH
+, ifnull(GRADEBH,'') GRADEBH
+, ifnull(CLASSBH,'') CLASSBH
+, ifnull(RXSJ,'') RXSJ
+, ifnull(XH,'') XH
+, ifnull(SCHOOL_NAME,'') SCHOOL_NAME
+, ifnull(GRADE_NAME,'') GRADE_NAME
+, ifnull(CLASS_NAME,'') CLASS_NAME
+, ifnull(XM,'') XM
+, ifnull(XB,'') XB
+, ifnull(CSRQ,'') CSRQ
+, ifnull(MZ,'') MZ
+, ifnull(ZZMM,'') ZZMM
+, ifnull(SY,'') SY
+, ifnull(TJRQ,'') TJRQ
+, ifnull(NL,'') NL
+, ifnull(MARK,'') MARK
+, ifnull(round(SG,1),'') SG
+, ifnull(SGDJQ,'') SGDJQ
+, ifnull(SGDJD,'') SGDJD
+, ifnull((select ItemResult from ItemResult where FieldMc = 'SGBJ' and ItemCode = SGBJ), ifnull(SGBJ,'')) SGBJ
+, ifnull(round(TZ,1),'') TZ
+, ifnull(TZDJQ,'') TZDJQ
+, ifnull(TZDJD,'') TZDJD
+, ifnull((select ItemResult from ItemResult where FieldMc = 'TZBJ' and ItemCode = TZBJ), ifnull(TZBJ,'')) TZBJ
+, ifnull(YYPJ,'') YYPJ
+, ifnull(YYPJX,'') YYPJX
+, ifnull(TXPJ,'') TXPJ
+, ifnull(FYPJ,'') FYPJ
+, ifnull(round(XW,1),'') XW
+, ifnull(XWDJQ,'') XWDJQ
+, ifnull(XWDJD,'') XWDJD
+, ifnull((select ItemResult from ItemResult where FieldMc = 'XWBJ' and ItemCode = XWBJ), ifnull(XWBJ,'')) XWBJ
+, ifnull(round(FHL,1),'') FHL
+, ifnull(FHLDJQ,'') FHLDJQ
+, ifnull(FHLDJD,'') FHLDJD
+, ifnull((select ItemResult from ItemResult where FieldMc = 'FHLBJ' and ItemCode = FHLBJ), ifnull(FHLBJ,'')) FHLBJ
+, ifnull(WL,'') WL
+, ifnull(WLDJQ,'') WLDJQ
+, ifnull(WLDJD,'') WLDJD
+, ifnull((select ItemResult from ItemResult where FieldMc = 'WLBJ' and ItemCode = WLBJ), ifnull(WLBJ,'')) WLBJ
+, ifnull(round(MB,0),'') MB
+, ifnull(MBBJ,'') MBBJ
+, ifnull(SSY,'') SSY
+, ifnull(SSYBJ,'') SSYBJ
+, ifnull(SZY,'') SZY
+, ifnull(SZYBJ,'') SZYBJ
+, ifnull(round(LSL,1),'') LSL
+, ifnull(round(RSL,1),'') RSL
+, ifnull(QTYB,'') QTYB
+, ifnull((select ItemResult from ItemResult where FieldMc = 'LQG' and ItemCode = LQG), ifnull(LQG,'')) LQG
+, ifnull((select ItemResult from ItemResult where FieldMc = 'RQG' and ItemCode = RQG), ifnull(RQG,'')) RQG
+, ifnull((select ItemResult from ItemResult where FieldMc = 'LSY' and ItemCode = LSY), ifnull(LSY,'')) LSY
+, ifnull((select ItemResult from ItemResult where FieldMc = 'RSY' and ItemCode = RSY), ifnull(RSY,'')) RSY
+, ifnull((select ItemResult from ItemResult where FieldMc = 'BS' and ItemCode = BS), ifnull(BS,'')) BS
+, ifnull((select ItemResult from ItemResult where FieldMc = 'TL' and ItemCode = TL), ifnull(TL,'')) TL
+, ifnull((select ItemResult from ItemResult where FieldMc = 'XJ' and ItemCode = XJ), ifnull(XJ,'')) XJ
+, ifnull((select ItemResult from ItemResult where FieldMc = 'BB' and ItemCode = BB), ifnull(BB,'')) BB
+, ifnull(QSBNUM,'') QSBNUM
+, ifnull(RQB,'') RQB
+, ifnull(RQS,'') RQS
+, ifnull(RQH,'') RQH
+, ifnull(HQB,'') HQB
+, ifnull(HQS,'') HQS
+, ifnull(HQH,'') HQH
+, ifnull((select ItemResult from ItemResult where FieldMc = 'YZB' and ItemCode = YZB), ifnull(YZB,'')) YZB
+, ifnull((select ItemResult from ItemResult where FieldMc = 'BTT' and ItemCode = BTT), ifnull(BTT,'')) BTT
+, ifnull((select ItemResult from ItemResult where FieldMc = 'XK' and ItemCode = XK), ifnull(XK,'')) XK
+, ifnull((select ItemResult from ItemResult where FieldMc = 'JZ' and ItemCode = JZ), ifnull(JZ,'')) JZ
+, ifnull((select ItemResult from ItemResult where FieldMc = 'SZ' and ItemCode = SZ), ifnull(SZ,'')) SZ
+, ifnull((select ItemResult from ItemResult where FieldMc = 'PZ' and ItemCode = PZ), ifnull(PZ,'')) PZ
+, ifnull((select ItemResult from ItemResult where FieldMc = 'XZ' and ItemCode = XZ), ifnull(XZ,'')) XZ
+, ifnull((select ItemResult from ItemResult where FieldMc = 'GP' and ItemCode = GP), ifnull(GP,'')) GP
+, ifnull((select ItemResult from ItemResult where FieldMc = 'FEI' and ItemCode = FEI), ifnull(FEI,'')) FEI
+, ifnull((select ItemResult from ItemResult where FieldMc = 'XT' and ItemCode = XT), ifnull(XT,'')) XT
+, ifnull(XHDB,'') XHDB
+, ifnull((select ItemResult from ItemResult where FieldMc = 'FHCL' and ItemCode = FHCL), ifnull(FHCL,'')) FHCL
+, ifnull((select ItemResult from ItemResult where FieldMc = 'PFB' and ItemCode = PFB), ifnull(PFB,'')) PFB
+, ifnull(ZG,'') ZG
+, ifnull(ZGDJQ,'') ZGDJQ
+, ifnull(ZGDJD,'') ZGDJD
+, ifnull((select ItemResult from ItemResult where FieldMc = 'ZGBJ' and ItemCode = ZGBJ), ifnull(ZGBJ,'')) ZGBJ
+, ifnull(JK,'') JK
+, ifnull(JKDJQ,'') JKDJQ
+, ifnull(JKDJD,'') JKDJD
+, ifnull((select ItemResult from ItemResult where FieldMc = 'JKBJ' and ItemCode = JKBJ), ifnull(JKBJ,'')) JKBJ
+, ifnull(GPK,'') GPK
+, ifnull(GPKDJQ,'') GPKDJQ
+, ifnull(GPKDJD,'') GPKDJD
+, ifnull((select ItemResult from ItemResult where FieldMc = 'GPKBJ' and ItemCode = GPKBJ), ifnull(GPKBJ,'')) GPKBJ
+, ifnull(BJL,'') BJL
+, ifnull(GSTJ,'') GSTJ
+, ifnull(JJX,'') JJX
+, ifnull((select ItemResult from ItemResult where FieldMc = 'BMKY' and ItemCode = BMKY), ifnull(BMKY,'')) BMKY
+, ifnull((select ItemResult from ItemResult where FieldMc = 'SJSR' and ItemCode = SJSR), ifnull(SJSR,'')) SJSR
+, ifnull(WSM,'') WSM
+, ifnull(WSMDJQ,'') WSMDJQ
+, ifnull(WSMDJD,'') WSMDJD
+, ifnull((select ItemResult from ItemResult where FieldMc = 'WSMBJ' and ItemCode = WSMBJ), ifnull(WSMBJ,'')) WSMBJ
+, ifnull(LDTY,'') LDTY
+, ifnull(LDTYDJQ,'') LDTYDJQ
+, ifnull(LDTYDJD,'') LDTYDJD
+, ifnull((select ItemResult from ItemResult where FieldMc = 'LDTYBJ' and ItemCode = LDTYBJ), ifnull(LDTYBJ,'')) LDTYBJ
+, ifnull(LL,'') LL
+, ifnull(LLDJQ,'') LLDJQ
+, ifnull(LLDJD,'') LLDJD
+, ifnull((select ItemResult from ItemResult where FieldMc = 'LLBJ' and ItemCode = LLBJ), ifnull(LLBJ,'')) LLBJ
+, ifnull(NNL,'') NNL
+, ifnull(NNLDJQ,'') NNLDJQ
+, ifnull(NNLDJD,'') NNLDJD
+, ifnull((select ItemResult from ItemResult where FieldMc = 'NNLBJ' and ItemCode = NNLBJ), ifnull(NNLBJ,'')) NNLBJ
+, ifnull(ZWT,'') ZWT
+, ifnull(ZWTDJQ,'') ZWTDJQ
+, ifnull(ZWTDJD,'') ZWTDJD
+, ifnull((select ItemResult from ItemResult where FieldMc = 'ZWTBJ' and ItemCode = ZWTBJ), ifnull(ZWTBJ,'')) ZWTBJ
+, ifnull(T1Name,'') T1Name
+, ifnull(T1,'') T1
+, ifnull(T2name,'') T2name
+, ifnull(T2,'') T2
+, ifnull(T3Name,'') T3Name
+, ifnull(T3,'') T3
+, ifnull(T4Name,'') T4Name
+, ifnull(T4,'') T4
+, ifnull(T5Name,'') T5Name
+, ifnull(T5,'') T5
+, ifnull(T6Name,'') T6Name
+, ifnull(T6,'') T6
+, ifnull(T7Name,'') T7Name
+, ifnull(T7,'') T7
+, ifnull(T8Name,'') T8Name
+, ifnull(T8,'') T8
+, ifnull(T9Name,'') T9Name
+, ifnull(T9,'') T9
+, ifnull(T10Name,'') T10Name
+, ifnull(T10,'') T10
+, ifnull((select ItemResult from ItemResult where FieldMc = 'SLBH' and ItemCode = SLBH), ifnull(SLBH,'')) SLBH
+, ifnull(MBPJ,'') MBPJ
+, ifnull(SSYPJ,'') SSYPJ
+, ifnull(SZYPJ,'') SZYPJ
+, ifnull(PXPJ,'') PXPJ
+, ifnull(SLPJ,'') SLPJ
+, ifnull(XJH,'') XJH
+, ifnull(YYPJB,'') YYPJB
+, ifnull(TJSY,'') TJSY
+, ifnull(MB1,'') MB1
+, ifnull(MB2,'') MB2
+, ifnull(MB3,'') MB3
+, ifnull(TJFS,'') TJFS
+, ifnull(TJPJ,'') TJPJ
+, ifnull(YYPJH,'') YYPJH
+, ifnull(XMPY,'') XMPY
+, ifnull(HXP,'') HXP
+, ifnull(HXPPJ,'') HXPPJ
+, ifnull((select ItemResult from ItemResult where FieldMc = 'EB' and ItemCode = EB), ifnull(EB,'')) EB
+, ifnull((select ItemResult from ItemResult where FieldMc = 'YB' and ItemCode = YB), ifnull(YB,'')) YB
+, ifnull((select ItemResult from ItemResult where FieldMc = 'TB' and ItemCode = TB), ifnull(TB,'')) TB
+, ifnull((select ItemResult from ItemResult where FieldMc = 'JB' and ItemCode = JB), ifnull(JB,'')) JB
+, ifnull((select ItemResult from ItemResult where FieldMc = 'PF' and ItemCode = PF), ifnull(PF,'')) PF
+, ifnull((select ItemResult from ItemResult where FieldMc = 'JZX' and ItemCode = JZX), ifnull(JZX,'')) JZX
+, ifnull((select ItemResult from ItemResult where FieldMc = 'LBJ' and ItemCode = LBJ), ifnull(LBJ,'')) LBJ
+, ifnull((select ItemResult from ItemResult where FieldMc = 'JHJS' and ItemCode = JHJS), ifnull(JHJS,'')) JHJS
+, ifnull(GBZAM,'') GBZAM
+, ifnull(DHSA,'') DHSA
+, ifnull(DHSZ,'') DHSZ
+, ifnull((select ItemResult from ItemResult where FieldMc = 'GG' and ItemCode = GG), ifnull(GG,'')) GG
+, ifnull((select ItemResult from ItemResult where FieldMc = 'BMKT' and ItemCode = BMKT), ifnull(BMKT,'')) BMKT
+, ifnull((select ItemResult from ItemResult where FieldMc = 'YGHKT' and ItemCode = YGHKT), ifnull(YGHKT,'')) YGHKT
+, ifnull((select ItemResult from ItemResult where FieldMc = 'YGEKY' and ItemCode = YGEKY), ifnull(YGEKY,'')) YGEKY
+, ifnull((select ItemResult from ItemResult where FieldMc = 'YGEKT' and ItemCode = YGEKT), ifnull(YGEKT,'')) YGEKT
+, ifnull((select ItemResult from ItemResult where FieldMc = 'BLOOD' and ItemCode = BLOOD), ifnull(BLOOD,'')) BLOOD
+, ifnull(round(YW,1),'') YW
+, ifnull(round(TW,1),'') TW
+, ifnull(CXBH,'') CXBH
+, ifnull(LJSL,'') LJSL
+, ifnull(RJSL,'') RJSL
+, ifnull((select ItemResult from ItemResult where FieldMc = 'JMY' and ItemCode = JMY), ifnull(JMY,'')) JMY
+, ifnull((select ItemResult from ItemResult where FieldMc = 'WGFB' and ItemCode = WGFB), ifnull(WGFB,'')) WGFB
+, ifnull((select ItemResult from ItemResult where FieldMc = 'YYB' and ItemCode = YYB), ifnull(YYB,'')) YYB
+, ifnull((select ItemResult from ItemResult where FieldMc = 'PEI' and ItemCode = PEI), ifnull(PEI,'')) PEI
+, ifnull(LSLS,'') LSLS
+, ifnull(RSLS,'') RSLS
+, ifnull(LJSLS,'') LJSLS
+, ifnull(RJSLS,'') RJSLS
+, ifnull((select ItemResult from ItemResult where FieldMc = 'RTL' and ItemCode = RTL), ifnull(RTL,'')) RTL
+, ifnull((select ItemResult from ItemResult where FieldMc = 'WSZQ' and ItemCode = WSZQ), ifnull(WSZQ,'')) WSZQ
+, ifnull(RS,'') RS
+, ifnull(BXP,'') BXP
+, ifnull(XXB,'') XXB
+, ifnull(SFZH,'') SFZH
+, ifnull(DH,'') DH
+, ifnull(ADDRESS,'') ADDRESS
+, ifnull(RXYFJZS,'') RXYFJZS
+, ifnull(YMA,'') YMA
+, ifnull(YMAJY,'') YMAJY
+, ifnull(YMB,'') YMB
+, ifnull(YMBJY,'') YMBJY
+, ifnull(YMC,'') YMC
+, ifnull(YMCJY,'') YMCJY
+, ifnull(YMD,'') YMD
+, ifnull(YMDJY,'') YMDJY
+, ifnull(YME,'') YME
+, ifnull(YMEJY,'') YMEJY
+, ifnull(YMQT,'') YMQT
+, ifnull(RXHJZS,'') RXHJZS
+, ifnull(JWBS,'') JWBS
+, ifnull(QCQFY,'') QCQFY
+, ifnull(STUDGUID,'') STUDGUID
+, ifnull(SCHOOLID,'') SCHOOLID
+, ifnull(STUDNUM,'') STUDNUM
+, ifnull(YMF,'') YMF
+, ifnull(YMFJY,'') YMFJY
+, ifnull(V1Name,'') V1Name
+, ifnull(V1,'') V1
+, ifnull(V2Name,'') V2Name
+, ifnull(V2,'') V2
+, ifnull(V3Name,'') V3Name
+, ifnull(V3,'') V3
+, ifnull(V4Name,'') V4Name
+, ifnull(V4,'') V4
+, ifnull(V5Name,'') V5Name
+, ifnull(V5,'') V5,
+CONCAT_WS('  ',(case when yma is null then '' else CONCAT('卡介苗：',yma) end)
+,(case when ymb is null then '' else CONCAT('乙型肝炎疫苗：',ymb) end)
+,(case when ymc is null then '' else CONCAT('麻疹疫苗：',ymc) end)
+,(case when ymd is null then '' else CONCAT('脊髓灰质炎疫苗：',ymd) end)
+,(case when yme is null then '' else CONCAT('百白破疫苗：',yme) end)
+,(case when V1 is null then '' else CONCAT(V1Name,V1) end)
+,(case when V2 is null then '' else CONCAT(V2Name,V2) end)
+,(case when V3 is null then '' else CONCAT(V3Name,V3) end)
+,(case when V4 is null then '' else CONCAT(V4Name,V4) end)
+,(case when V5 is null then '' else CONCAT(V5Name,V5) end)) YMJZ_CAL
+,case when ljsl<5.0 or rjsl<5.0 then '视力低下' when ljsl>=5.0 and rjsl>=5.0 then '正常' else '' end JSL_CAL
+,case when LSY=0 and RSY=0 then '无'
+     when (LSY=1 or RSY=1) and LSY!=2 and RSY!=2 then '可疑'
+     when LSY=2 or RSY=2 then '有沙'
+     else '' end SY_CAL
+,case when XB='男' then CONCAT('男生：若出现遗精，首次遗精年龄', QCQFY ,  '岁')
+     when XB='女' then CONCAT('女生：若出现月经，初潮年龄', QCQFY , '岁')
+     else '' end QCQ_CAL
+,case when SZYPJ='高血压' or SSYPJ='高血压' then '高血压' else '正常' end XY_CAL
+,case when qsbnum>0 then '龋齿' else '无龋齿' end YC_CAL
+from result
+where $X{IN, ID, p_ids}
+order by schoolBH,ClassBH,XM]]>
+	</queryString>
+	<field name="ID" class="java.lang.String"/>
+	<field name="TJND" class="java.lang.String"/>
+	<field name="BH" class="java.lang.String"/>
+	<field name="SCHOOLBH" class="java.lang.String"/>
+	<field name="GRADEBH" class="java.lang.String"/>
+	<field name="CLASSBH" class="java.lang.String"/>
+	<field name="RXSJ" class="java.lang.String"/>
+	<field name="XH" class="java.lang.String"/>
+	<field name="SCHOOL_NAME" class="java.lang.String"/>
+	<field name="GRADE_NAME" class="java.lang.String"/>
+	<field name="CLASS_NAME" class="java.lang.String"/>
+	<field name="XM" class="java.lang.String"/>
+	<field name="XB" class="java.lang.String"/>
+	<field name="CSRQ" class="java.lang.String"/>
+	<field name="MZ" class="java.lang.String"/>
+	<field name="ZZMM" class="java.lang.String"/>
+	<field name="SY" class="java.lang.String"/>
+	<field name="TJRQ" class="java.lang.String"/>
+	<field name="NL" class="java.lang.String"/>
+	<field name="MARK" class="java.lang.String"/>
+	<field name="SG" class="java.lang.String"/>
+	<field name="SGDJQ" class="java.lang.String"/>
+	<field name="SGDJD" class="java.lang.String"/>
+	<field name="SGBJ" class="java.lang.String"/>
+	<field name="TZ" class="java.lang.String"/>
+	<field name="TZDJQ" class="java.lang.String"/>
+	<field name="TZDJD" class="java.lang.String"/>
+	<field name="TZBJ" class="java.lang.String"/>
+	<field name="YYPJ" class="java.lang.String"/>
+	<field name="YYPJX" class="java.lang.String"/>
+	<field name="TXPJ" class="java.lang.String"/>
+	<field name="FYPJ" class="java.lang.String"/>
+	<field name="XW" class="java.lang.String"/>
+	<field name="XWDJQ" class="java.lang.String"/>
+	<field name="XWDJD" class="java.lang.String"/>
+	<field name="XWBJ" class="java.lang.String"/>
+	<field name="FHL" class="java.lang.String"/>
+	<field name="FHLDJQ" class="java.lang.String"/>
+	<field name="FHLDJD" class="java.lang.String"/>
+	<field name="FHLBJ" class="java.lang.String"/>
+	<field name="WL" class="java.lang.String"/>
+	<field name="WLDJQ" class="java.lang.String"/>
+	<field name="WLDJD" class="java.lang.String"/>
+	<field name="WLBJ" class="java.lang.String"/>
+	<field name="MB" class="java.lang.String"/>
+	<field name="MBBJ" class="java.lang.String"/>
+	<field name="SSY" class="java.lang.String"/>
+	<field name="SSYBJ" class="java.lang.String"/>
+	<field name="SZY" class="java.lang.String"/>
+	<field name="SZYBJ" class="java.lang.String"/>
+	<field name="LSL" class="java.lang.String"/>
+	<field name="RSL" class="java.lang.String"/>
+	<field name="QTYB" class="java.lang.String"/>
+	<field name="LQG" class="java.lang.String"/>
+	<field name="RQG" class="java.lang.String"/>
+	<field name="LSY" class="java.lang.String"/>
+	<field name="RSY" class="java.lang.String"/>
+	<field name="BS" class="java.lang.String"/>
+	<field name="TL" class="java.lang.String"/>
+	<field name="XJ" class="java.lang.String"/>
+	<field name="BB" class="java.lang.String"/>
+	<field name="QSBNUM" class="java.lang.String"/>
+	<field name="RQB" class="java.lang.String"/>
+	<field name="RQS" class="java.lang.String"/>
+	<field name="RQH" class="java.lang.String"/>
+	<field name="HQB" class="java.lang.String"/>
+	<field name="HQS" class="java.lang.String"/>
+	<field name="HQH" class="java.lang.String"/>
+	<field name="YZB" class="java.lang.String"/>
+	<field name="BTT" class="java.lang.String"/>
+	<field name="XK" class="java.lang.String"/>
+	<field name="JZ" class="java.lang.String"/>
+	<field name="SZ" class="java.lang.String"/>
+	<field name="PZ" class="java.lang.String"/>
+	<field name="XZ" class="java.lang.String"/>
+	<field name="GP" class="java.lang.String"/>
+	<field name="FEI" class="java.lang.String"/>
+	<field name="XT" class="java.lang.String"/>
+	<field name="XHDB" class="java.lang.String"/>
+	<field name="FHCL" class="java.lang.String"/>
+	<field name="PFB" class="java.lang.String"/>
+	<field name="ZG" class="java.lang.String"/>
+	<field name="ZGDJQ" class="java.lang.String"/>
+	<field name="ZGDJD" class="java.lang.String"/>
+	<field name="ZGBJ" class="java.lang.String"/>
+	<field name="JK" class="java.lang.String"/>
+	<field name="JKDJQ" class="java.lang.String"/>
+	<field name="JKDJD" class="java.lang.String"/>
+	<field name="JKBJ" class="java.lang.String"/>
+	<field name="GPK" class="java.lang.String"/>
+	<field name="GPKDJQ" class="java.lang.String"/>
+	<field name="GPKDJD" class="java.lang.String"/>
+	<field name="GPKBJ" class="java.lang.String"/>
+	<field name="BJL" class="java.lang.String"/>
+	<field name="GSTJ" class="java.lang.String"/>
+	<field name="JJX" class="java.lang.String"/>
+	<field name="BMKY" class="java.lang.String"/>
+	<field name="SJSR" class="java.lang.String"/>
+	<field name="WSM" class="java.lang.String"/>
+	<field name="WSMDJQ" class="java.lang.String"/>
+	<field name="WSMDJD" class="java.lang.String"/>
+	<field name="WSMBJ" class="java.lang.String"/>
+	<field name="LDTY" class="java.lang.String"/>
+	<field name="LDTYDJQ" class="java.lang.String"/>
+	<field name="LDTYDJD" class="java.lang.String"/>
+	<field name="LDTYBJ" class="java.lang.String"/>
+	<field name="LL" class="java.lang.String"/>
+	<field name="LLDJQ" class="java.lang.String"/>
+	<field name="LLDJD" class="java.lang.String"/>
+	<field name="LLBJ" class="java.lang.String"/>
+	<field name="NNL" class="java.lang.String"/>
+	<field name="NNLDJQ" class="java.lang.String"/>
+	<field name="NNLDJD" class="java.lang.String"/>
+	<field name="NNLBJ" class="java.lang.String"/>
+	<field name="ZWT" class="java.lang.String"/>
+	<field name="ZWTDJQ" class="java.lang.String"/>
+	<field name="ZWTDJD" class="java.lang.String"/>
+	<field name="ZWTBJ" class="java.lang.String"/>
+	<field name="T1" class="java.lang.String"/>
+	<field name="T2" class="java.lang.String"/>
+	<field name="T3" class="java.lang.String"/>
+	<field name="T4" class="java.lang.String"/>
+	<field name="T5" class="java.lang.String"/>
+	<field name="T6" class="java.lang.String"/>
+	<field name="T7" class="java.lang.String"/>
+	<field name="T8" class="java.lang.String"/>
+	<field name="T9" class="java.lang.String"/>
+	<field name="T10" class="java.lang.String"/>
+	<field name="SLBH" class="java.lang.String"/>
+	<field name="MBPJ" class="java.lang.String"/>
+	<field name="SSYPJ" class="java.lang.String"/>
+	<field name="SZYPJ" class="java.lang.String"/>
+	<field name="PXPJ" class="java.lang.String"/>
+	<field name="SLPJ" class="java.lang.String"/>
+	<field name="XJH" class="java.lang.String"/>
+	<field name="YYPJB" class="java.lang.String"/>
+	<field name="TJSY" class="java.lang.String"/>
+	<field name="MB1" class="java.lang.String"/>
+	<field name="MB2" class="java.lang.String"/>
+	<field name="MB3" class="java.lang.String"/>
+	<field name="TJFS" class="java.lang.String"/>
+	<field name="TJPJ" class="java.lang.String"/>
+	<field name="YYPJH" class="java.lang.String"/>
+	<field name="XMPY" class="java.lang.String"/>
+	<field name="HXP" class="java.lang.String"/>
+	<field name="HXPPJ" class="java.lang.String"/>
+	<field name="EB" class="java.lang.String"/>
+	<field name="YB" class="java.lang.String"/>
+	<field name="TB" class="java.lang.String"/>
+	<field name="JB" class="java.lang.String"/>
+	<field name="PF" class="java.lang.String"/>
+	<field name="JZX" class="java.lang.String"/>
+	<field name="LBJ" class="java.lang.String"/>
+	<field name="JHJS" class="java.lang.String"/>
+	<field name="GBZAM" class="java.lang.String"/>
+	<field name="DHSA" class="java.lang.String"/>
+	<field name="DHSZ" class="java.lang.String"/>
+	<field name="GG" class="java.lang.String"/>
+	<field name="BMKT" class="java.lang.String"/>
+	<field name="YGHKT" class="java.lang.String"/>
+	<field name="YGEKY" class="java.lang.String"/>
+	<field name="YGEKT" class="java.lang.String"/>
+	<field name="BLOOD" class="java.lang.String"/>
+	<field name="YW" class="java.lang.String"/>
+	<field name="TW" class="java.lang.String"/>
+	<field name="CXBH" class="java.lang.String"/>
+	<field name="LJSL" class="java.lang.String"/>
+	<field name="RJSL" class="java.lang.String"/>
+	<field name="JMY" class="java.lang.String"/>
+	<field name="WGFB" class="java.lang.String"/>
+	<field name="YYB" class="java.lang.String"/>
+	<field name="PEI" class="java.lang.String"/>
+	<field name="LSLS" class="java.lang.String"/>
+	<field name="RSLS" class="java.lang.String"/>
+	<field name="LJSLS" class="java.lang.String"/>
+	<field name="RJSLS" class="java.lang.String"/>
+	<field name="RTL" class="java.lang.String"/>
+	<field name="WSZQ" class="java.lang.String"/>
+	<field name="RS" class="java.lang.String"/>
+	<field name="BXP" class="java.lang.String"/>
+	<field name="XXB" class="java.lang.String"/>
+	<field name="SFZH" class="java.lang.String"/>
+	<field name="DH" class="java.lang.String"/>
+	<field name="ADDRESS" class="java.lang.String"/>
+	<field name="RXYFJZS" class="java.lang.String"/>
+	<field name="YMA" class="java.lang.String"/>
+	<field name="YMAJY" class="java.lang.String"/>
+	<field name="YMB" class="java.lang.String"/>
+	<field name="YMBJY" class="java.lang.String"/>
+	<field name="YMC" class="java.lang.String"/>
+	<field name="YMCJY" class="java.lang.String"/>
+	<field name="YMD" class="java.lang.String"/>
+	<field name="YMDJY" class="java.lang.String"/>
+	<field name="YME" class="java.lang.String"/>
+	<field name="YMEJY" class="java.lang.String"/>
+	<field name="YMQT" class="java.lang.String"/>
+	<field name="RXHJZS" class="java.lang.String"/>
+	<field name="JWBS" class="java.lang.String"/>
+	<field name="QCQFY" class="java.lang.String"/>
+	<field name="STUDGUID" class="java.lang.String"/>
+	<field name="SCHOOLID" class="java.lang.String"/>
+	<field name="STUDNUM" class="java.lang.String"/>
+	<field name="YMF" class="java.lang.String"/>
+	<field name="YMFJY" class="java.lang.String"/>
+	<field name="JSL_CAL" class="java.lang.String"/>
+	<field name="YC_CAL" class="java.lang.String"/>
+	<field name="YMJZ_CAL" class="java.lang.String"/>
+	<field name="SY_CAL" class="java.lang.String"/>
+	<field name="QCQ_CAL" class="java.lang.String"/>
+	<field name="XY_CAL" class="java.lang.String"/>
+	<variable name="TODAY" class="java.lang.String">
+		<variableExpression><![CDATA[(new SimpleDateFormat("yyyy/MM/dd")).format(new Date())]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="265" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="71592c0f-cb1f-4bd5-b058-800b8afe8544" x="180" y="0" width="172" height="24"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[学生健康体检报告单]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="e2c40c08-de94-4874-9d49-8723c01fe1ba" style="normalNoBorder" x="0" y="31" width="83" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["姓名："+$F{XM}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="20907491-c1fc-4e1d-aed4-4ee54f52a033" style="normalNoBorder" x="83" y="31" width="82" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["性别："+$F{XB}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5e2a3664-f9c5-40fd-a77d-cd3b9b197d6c" style="normalNoBorder" x="165" y="31" width="108" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{CLASS_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="41830525-4287-48f8-8e45-d65b0f314d46" style="normalNoBorder" x="273" y="31" width="170" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["学校名称："+$F{SCHOOL_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1d8f0c12-9605-4687-8a21-0c251db1415b" style="normalNoBorder" x="443" y="31" width="112" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["打印日期："+$V{TODAY}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="d242476b-c159-499a-9ac7-5c320fd06dd9" key="customStaticText" style="normalCenterWithBorder" x="0" y="47" width="50" height="16"/>
+				<textElement/>
+				<text><![CDATA[身高自定义]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="d6c492f6-e1b0-4c0f-886c-4b59db00b68d" key="customDynamicText" style="normalCenterWithBorder" x="0" y="63" width="50" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{SG}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="3958cc6f-12dc-4c5d-9d26-73c11d5a3029" key="customSplitor" x="0" y="251" width="555" height="1"/>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

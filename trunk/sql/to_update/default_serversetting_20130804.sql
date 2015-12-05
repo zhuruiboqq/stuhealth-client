@@ -1,0 +1,2 @@
+-- 设置数据上传的默认服务器。如果ServerSetting表中无记录，则插入默认服务器地址
+INSERT INTO ServerSetting (id, ServerIP, ServerPort) SELECT '1' id, '183.62.62.88' ServerIP, '82' ServerPort FROM dual WHERE NOT EXISTS ( SELECT * FROM ServerSetting)

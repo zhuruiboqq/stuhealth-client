@@ -1,0 +1,1312 @@
+-- MySQL dump 10.13  Distrib 5.6.10, for osx10.7 (x86_64)
+--
+-- Host: localhost    Database: stuhealth_client
+-- ------------------------------------------------------
+-- Server version	5.6.10
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `AppUser`
+--
+
+DROP TABLE IF EXISTS `AppUser`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `AppUser` (
+  `id` varchar(255) NOT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `userType` int(11) DEFAULT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `AppUser`
+--
+
+LOCK TABLES `AppUser` WRITE;
+/*!40000 ALTER TABLE `AppUser` DISABLE KEYS */;
+INSERT INTO `AppUser` VALUES ('639e6ee9-7b74-490c-86eb-31e3709571ae','F517DA8A68E6B803D9B41674C7400146',1,'admin');
+/*!40000 ALTER TABLE `AppUser` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `BaseSetting`
+--
+
+DROP TABLE IF EXISTS `BaseSetting`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `BaseSetting` (
+  `id` varchar(255) NOT NULL,
+  `term` int(11) DEFAULT NULL,
+  `year` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `BaseSetting`
+--
+
+LOCK TABLES `BaseSetting` WRITE;
+/*!40000 ALTER TABLE `BaseSetting` DISABLE KEYS */;
+INSERT INTO `BaseSetting` VALUES ('dc769c87-a031-4d22-bca1-3e34ec1ad630',2,2013);
+/*!40000 ALTER TABLE `BaseSetting` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ChooseItem`
+--
+
+DROP TABLE IF EXISTS `ChooseItem`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ChooseItem` (
+  `id` varchar(255) NOT NULL,
+  `BanBen` int(11) DEFAULT NULL,
+  `ItemId` int(11) DEFAULT NULL,
+  `Sort` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ChooseItem`
+--
+
+LOCK TABLES `ChooseItem` WRITE;
+/*!40000 ALTER TABLE `ChooseItem` DISABLE KEYS */;
+INSERT INTO `ChooseItem` VALUES ('1',1,1,1),('10',1,10,10),('11',1,11,11),('12',1,12,12),('13',1,13,13),('14',1,14,14),('15',1,15,15),('2',1,2,2),('3',1,3,3),('4',1,4,4),('5',1,5,5),('6',1,6,6),('7',1,7,7),('8',1,8,8),('9',1,9,9);
+/*!40000 ALTER TABLE `ChooseItem` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `CodeGenerator`
+--
+
+DROP TABLE IF EXISTS `CodeGenerator`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `CodeGenerator` (
+  `id` varchar(255) NOT NULL,
+  `code` varchar(255) DEFAULT NULL,
+  `schoolCode` varchar(255) DEFAULT NULL,
+  `year` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `CodeGenerator`
+--
+
+LOCK TABLES `CodeGenerator` WRITE;
+/*!40000 ALTER TABLE `CodeGenerator` DISABLE KEYS */;
+/*!40000 ALTER TABLE `CodeGenerator` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `CustomSetting`
+--
+
+DROP TABLE IF EXISTS `CustomSetting`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `CustomSetting` (
+  `id` varchar(255) NOT NULL,
+  `lookAndFeel` varchar(255) DEFAULT NULL,
+  `lookAndFeelClassName` varchar(255) DEFAULT NULL,
+  `lookAndFeelName` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `CustomSetting`
+--
+
+LOCK TABLES `CustomSetting` WRITE;
+/*!40000 ALTER TABLE `CustomSetting` DISABLE KEYS */;
+/*!40000 ALTER TABLE `CustomSetting` ENABLE KEYS */;
+UNLOCK TABLES;
+
+DROP TABLE IF EXISTS `Grade`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Grade` (
+  `id` varchar(255) NOT NULL,
+  `GradeCode` varchar(255) DEFAULT NULL,
+  `Name` varchar(255) DEFAULT NULL,
+  `ShortName` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `HW_CheckItem`
+--
+
+LOCK TABLES `Grade` WRITE;
+/*!40000 ALTER TABLE `Grade` DISABLE KEYS */;
+INSERT INTO `Grade` (`id`,`GradeCode`,`Name`,`ShortName`) VALUES ('11','11','小学一年级','小一');
+INSERT INTO `Grade` (`id`,`GradeCode`,`Name`,`ShortName`) VALUES ('12','12','小学二年级','小二');
+INSERT INTO `Grade` (`id`,`GradeCode`,`Name`,`ShortName`) VALUES ('13','13','小学三年级','小三');
+INSERT INTO `Grade` (`id`,`GradeCode`,`Name`,`ShortName`) VALUES ('14','14','小学四年级','小四');
+INSERT INTO `Grade` (`id`,`GradeCode`,`Name`,`ShortName`) VALUES ('15','15','小学五年级','小五');
+INSERT INTO `Grade` (`id`,`GradeCode`,`Name`,`ShortName`) VALUES ('16','16','小学六年级','小六');
+INSERT INTO `Grade` (`id`,`GradeCode`,`Name`,`ShortName`) VALUES ('21','21','初中一年级','初一');
+INSERT INTO `Grade` (`id`,`GradeCode`,`Name`,`ShortName`) VALUES ('22','22','初中二年级','初二');
+INSERT INTO `Grade` (`id`,`GradeCode`,`Name`,`ShortName`) VALUES ('23','23','初中三年级','初三');
+INSERT INTO `Grade` (`id`,`GradeCode`,`Name`,`ShortName`) VALUES ('24','24','初中四年级','初四');
+INSERT INTO `Grade` (`id`,`GradeCode`,`Name`,`ShortName`) VALUES ('31','31','高中一年级','高一');
+INSERT INTO `Grade` (`id`,`GradeCode`,`Name`,`ShortName`) VALUES ('32','32','高中二年级','高二');
+INSERT INTO `Grade` (`id`,`GradeCode`,`Name`,`ShortName`) VALUES ('33','33','高中三年级','高三');
+INSERT INTO `Grade` (`id`,`GradeCode`,`Name`,`ShortName`) VALUES ('34','34','高中四年级','高四');
+INSERT INTO `Grade` (`id`,`GradeCode`,`Name`,`ShortName`) VALUES ('41','41','大学一年级','大一');
+INSERT INTO `Grade` (`id`,`GradeCode`,`Name`,`ShortName`) VALUES ('42','42','大学二年级','大二');
+INSERT INTO `Grade` (`id`,`GradeCode`,`Name`,`ShortName`) VALUES ('43','43','大学三年级','大三');
+INSERT INTO `Grade` (`id`,`GradeCode`,`Name`,`ShortName`) VALUES ('44','44','大学四年级','大四');
+INSERT INTO `Grade` (`id`,`GradeCode`,`Name`,`ShortName`) VALUES ('45','45','大学五年级','大五');
+/*!40000 ALTER TABLE `Grade` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `HW_CheckItem`
+--
+
+DROP TABLE IF EXISTS `HW_CheckItem`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `HW_CheckItem` (
+  `id` varchar(255) NOT NULL,
+  `BanBen` int(11) DEFAULT NULL,
+  `EnCode` varchar(255) DEFAULT NULL,
+  `ItemId` int(11) DEFAULT NULL,
+  `Sort` int(11) DEFAULT NULL,
+  `Status` varchar(255) DEFAULT NULL,
+  `Type` int(11) DEFAULT NULL,
+  `Unit` varchar(255) DEFAULT NULL,
+  `ItemName` varchar(255) DEFAULT NULL,
+  `IsSelected` tinyint(1) DEFAULT NULL,
+  `IsCustom` tinyint(1) DEFAULT NULL,
+  `alias` varchar(255) DEFAULT NULL,
+  `Fieldname` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `HW_CheckItem`
+--
+
+LOCK TABLES `HW_CheckItem` WRITE;
+/*!40000 ALTER TABLE `HW_CheckItem` DISABLE KEYS */;
+INSERT INTO `HW_CheckItem` VALUES ('1',1,'1',1,1,'T',0,'cm','身高',0,0,NULL,'SG'),('10',1,'10',10,10,'T',0,'mmhg','收缩压',0,0,NULL,'SSY'),('100',1,'',100,307,'T',0,'','自定义07',0,1,NULL,'T7'),('101',1,'',101,308,'T',0,'','自定义08',0,1,NULL,'T8'),('102',1,'',102,309,'T',0,'','自定义09',0,1,NULL,'T9'),('103',1,'',103,310,'T',0,'','自定义10',0,1,NULL,'T10'),('11',1,'11',11,11,'T',0,'mmhg','舒张压',0,0,NULL,'SZY'),('12',1,'12',12,12,'T',0,'','左眼视力',0,0,NULL,'LSL'),('13',1,'13',13,13,'T',0,'','右眼视力',0,0,NULL,'RSL'),('14',1,'14',14,14,'T',0,'','左眼屈光不正',0,0,NULL,'LQG'),('15',1,'15',15,15,'T',0,'','右眼屈光不正',0,0,NULL,'RQG'),('16',1,'16',16,16,'T',0,'','其它眼病',0,0,NULL,'QTYB'),('17',1,'17',17,17,'T',0,'','左眼沙眼',0,0,NULL,'LSY'),('18',1,'18',18,18,'T',0,'','右眼沙眼',0,0,NULL,'RSY'),('19',1,'19',19,19,'T',0,'','辨色',0,0,NULL,'BS'),('2',1,'2',2,2,'T',0,'kg','体重',0,0,NULL,'TZ'),('20',1,'20',20,20,'T',0,'','听力',0,0,NULL,'TL'),('21',1,'21',21,21,'T',0,'','嗅觉',0,0,NULL,'XJ'),('22',1,'22',22,22,'T',0,'','鼻病',0,0,NULL,'BB'),('23',1,'23',23,23,'T',0,'','龋失补牙数',0,0,NULL,'QSBNUM'),('24',1,'24',24,24,'T',0,'','乳龋患',0,0,NULL,'RQH'),('25',1,'25',25,25,'T',0,'','乳龋失',0,0,NULL,'RQS'),('26',1,'26',26,26,'T',0,'','乳龋补',0,0,NULL,'RQB'),('27',1,'27',27,27,'T',0,'','恒龋患',0,0,NULL,'HQH'),('28',1,'28',28,28,'T',0,'','恒龋失',0,0,NULL,'HQS'),('29',1,'29',29,29,'T',0,'','恒龋补',0,0,NULL,'HQB'),('3',1,'3',3,3,'T',0,'cm','胸围',0,0,NULL,'XW'),('30',1,'30',30,30,'T',0,'','牙周疾病',0,0,NULL,'YZB'),('31',1,'31',31,31,'T',0,'','扁桃体',0,0,NULL,'BTT'),('32',1,'32',32,32,'T',0,'','胸廓',0,0,NULL,'XK'),('33',1,'33',33,33,'T',0,'','脊柱侧弯',0,0,NULL,'JZ'),('34',1,'34',34,34,'T',0,'','四肢',0,0,NULL,'SZ'),('35',1,'35',35,35,'T',0,'','平足',0,0,NULL,'PZ'),('36',1,'36',36,36,'T',0,'','心脏',0,0,NULL,'XZ'),('37',1,'37',37,37,'T',0,'','肝脾',0,0,NULL,'GP'),('38',1,'38',38,38,'T',0,'','肺',0,0,NULL,'FEI'),('39',1,'39',39,39,'T',0,'','胸透',0,0,NULL,'XT'),('4',0,'4',0,0,NULL,0,NULL,NULL,0,0,NULL,NULL),('40',1,'40',40,40,'T',0,'','血红蛋白',0,0,NULL,'XHDB'),('41',1,'41',41,41,'T',0,'','肠道蠕虫',0,0,NULL,'FHCL'),('42',1,'42',42,42,'T',0,'','皮肤病',0,0,NULL,'PFB'),('43',1,'43',43,43,'T',0,'','背肌力',0,0,NULL,'BJL'),('44',1,'44',44,44,'T',0,'','肱三头肌皮褶厚度',0,0,NULL,'GSTJ'),('45',1,'45',45,45,'T',0,'','肩胛下皮褶厚度',0,0,NULL,'JJX'),('46',1,'46',46,46,'T',0,'','表面抗原',0,0,NULL,'BMKY'),('47',1,'47',47,47,'T',0,'','神经衰弱',0,0,NULL,'SJSR'),('48',1,'48',48,48,'T',0,'秒','50米跑',0,0,NULL,'WSM'),('49',1,'49',49,49,'T',0,'cm','立定跳远',0,0,NULL,'LDTY'),('5',1,'5',5,5,'T',0,'cm','坐高',0,0,NULL,'ZG'),('50',1,'50',50,50,'T',0,'个/分','力量',0,0,NULL,'LL'),('51',1,'51',51,51,'T',0,'秒','耐力',0,0,NULL,'NNL'),('52',1,'52',52,52,'T',0,'cm','坐位体前屈',0,0,NULL,'ZWT'),('53',1,'53',53,53,'T',0,'','台阶试验',0,0,NULL,'TJSY'),('54',1,'54',54,54,'T',0,'','红细胞',0,0,NULL,'HXP'),('55',1,'55',55,55,'T',0,'','耳病',0,0,NULL,'EB'),('56',1,'',56,200,'F',0,'','',0,0,NULL,NULL),('57',1,'',57,201,'F',0,'','',0,0,NULL,NULL),('58',1,'',58,202,'F',0,'','',0,0,NULL,NULL),('59',1,'',59,203,'F',0,'','',0,0,NULL,NULL),('6',1,'6',6,6,'T',0,'cm','肩宽',0,0,NULL,'JK'),('60',1,'',60,204,'F',0,'','',0,0,NULL,NULL),('61',1,'',61,205,'F',0,'','',0,0,NULL,NULL),('62',1,'',62,206,'F',0,'','',0,0,NULL,NULL),('63',1,'',63,207,'F',0,'','',0,0,NULL,NULL),('64',1,'',64,208,'F',0,'','',0,0,NULL,NULL),('65',1,'',65,209,'F',0,'','',0,0,NULL,NULL),('66',1,'66',66,66,'T',0,'','眼病',0,0,NULL,'YB'),('67',1,'67',67,67,'T',0,'','头部',0,0,NULL,'TB'),('68',1,'68',68,68,'T',0,'','颈部',0,0,NULL,'JB'),('69',1,'69',69,69,'T',0,'','皮肤',0,0,NULL,'PF'),('7',1,'7',7,7,'T',0,'cm','骨盆宽',0,0,NULL,'GPK'),('70',1,'70',70,70,'T',0,'','甲状腺',0,0,NULL,'JZX'),('71',1,'71',71,71,'T',0,'','淋巴结',0,0,NULL,'LBJ'),('72',1,'72',72,72,'T',0,'','结核菌素',0,0,NULL,'JHJS'),('73',1,'73',73,73,'T',0,'','谷丙转氨酶',0,0,NULL,'GBZAM'),('74',1,'74',74,74,'T',0,'','总胆红素',0,0,NULL,'DHSA'),('75',1,'75',75,75,'T',0,'','直胆红素',0,0,NULL,'DHSZ'),('76',1,'76',76,76,'T',0,'','肝功',0,0,NULL,'GG'),('77',1,'77',77,77,'T',0,'','表面抗体',0,0,NULL,'BMKT'),('78',1,'78',78,78,'T',0,'','乙肝核心抗体',0,0,NULL,'YGHKT'),('79',1,'79',79,79,'T',0,'','乙肝e抗原',0,0,NULL,'YGEKY'),('8',1,'8',8,8,'T',0,'kg','握力',0,0,NULL,'WL'),('80',1,'80',80,80,'T',0,'','乙肝e抗体',0,0,NULL,'YGEKT'),('81',1,'81',81,81,'T',0,'','血型',0,0,NULL,'BLOOD'),('83',1,'82',83,82,'T',0,'','腰围',0,0,NULL,'YW'),('84',1,'83',84,83,'T',0,'','臀围',0,0,NULL,'TW'),('85',1,'84',85,84,'T',0,'','右近视力',0,0,NULL,'RJSL'),('86',1,'85',86,85,'T',0,'','左近视力',0,0,NULL,'LJSL'),('87',1,'86',87,86,'T',0,'','结膜炎',0,0,NULL,'JMY'),('88',1,'87',88,87,'T',0,'','窝沟封闭',0,0,NULL,'WGFB'),('89',1,'88',89,88,'T',0,'','牙龈',0,0,NULL,'YYB'),('9',1,'9',9,9,'T',0,'次/分','脉搏',0,0,NULL,'MB'),('90',1,'89',90,89,'T',0,'','脾',0,0,NULL,'PEI'),('91',1,'90',91,90,'T',0,'','听力右',0,0,NULL,'RTL'),('92',1,'91',92,91,'T',0,'','男性外生殖器',0,0,NULL,'WSZQ'),('93',1,'92',93,92,'T',0,'','弱视',0,0,NULL,'RS'),('94',1,'301',94,301,'T',0,'','自定义01',0,1,NULL,'T1'),('95',1,'302',95,302,'T',0,'','自定义02',0,1,NULL,'T2'),('96',1,'303',96,303,'T',0,'','自定义03',0,1,NULL,'T3'),('97',1,'',97,304,'T',0,'','自定义04',0,1,NULL,'T4'),('98',1,'',98,305,'T',0,'','自定义05',0,1,NULL,'T5'),('99',1,'306',99,306,'T',0,'','自定义06',0,1,NULL,'T6');
+/*!40000 ALTER TABLE `HW_CheckItem` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `HW_Notice`
+--
+
+DROP TABLE IF EXISTS `HW_Notice`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `HW_Notice` (
+  `id` varchar(255) NOT NULL,
+  `CreateDate` date DEFAULT NULL,
+  `EndDate` date DEFAULT NULL,
+  `NoticeCode` decimal(19,2) DEFAULT NULL,
+  `NoticeContent` varchar(255) DEFAULT NULL,
+  `NoticeTiltle` varchar(255) DEFAULT NULL,
+  `StartDate` date DEFAULT NULL,
+  `URL` varchar(255) DEFAULT NULL,
+  `sdf` tinyblob,
+  `State` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `HW_Notice`
+--
+
+LOCK TABLES `HW_Notice` WRITE;
+/*!40000 ALTER TABLE `HW_Notice` DISABLE KEYS */;
+/*!40000 ALTER TABLE `HW_Notice` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `HW_School`
+--
+
+DROP TABLE IF EXISTS `HW_School`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `HW_School` (
+  `id` varchar(255) NOT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `cityId` varchar(255) DEFAULT NULL,
+  `cityTown` varchar(255) DEFAULT NULL,
+  `createDate` date DEFAULT NULL,
+  `districtCode` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `linkMan` varchar(255) DEFAULT NULL,
+  `mobilePhone` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `officePhone` varchar(255) DEFAULT NULL,
+  `outDate` date DEFAULT NULL,
+  `permit` tinyint(1) DEFAULT NULL,
+  `remark` varchar(255) DEFAULT NULL,
+  `schoolCharacter` varchar(255) DEFAULT NULL,
+  `schoolType` varchar(255) DEFAULT NULL,
+  `schoollCode` varchar(255) DEFAULT NULL,
+  `secCode` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `version` int(11) DEFAULT NULL,
+  `cityName` varchar(255) DEFAULT NULL,
+  `districtName` varchar(255) DEFAULT NULL,
+  `schoolCode` varchar(255) DEFAULT NULL,
+  `hostSchoolCode` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `HW_School`
+--
+
+LOCK TABLES `HW_School` WRITE;
+/*!40000 ALTER TABLE `HW_School` DISABLE KEYS */;
+/*!40000 ALTER TABLE `HW_School` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ItemResult`
+--
+
+DROP TABLE IF EXISTS `ItemResult`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ItemResult` (
+  `id` varchar(255) NOT NULL,
+  `FieldMc` varchar(255) DEFAULT NULL,
+  `ItemCode` varchar(255) DEFAULT NULL,
+  `ItemId` varchar(255) DEFAULT NULL,
+  `ItemResult` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ItemResult`
+--
+
+LOCK TABLES `ItemResult` WRITE;
+/*!40000 ALTER TABLE `ItemResult` DISABLE KEYS */;
+INSERT INTO `ItemResult` VALUES ('140','LQG','0','14','正常'),('141','LQG','1','14','近视'),('142','LQG','2','14','远视'),('143','LQG','3','14','其它'),('150','RQG','0','15','正常'),('151','RQG','1','15','近视'),('152','RQG','2','15','远视'),('153','RQG','3','15','其它'),('160','QTYB','0','16','无'),('161','QTYB','1','16','有'),('170','LSY','0','17','无'),('171','LSY','1','17','可疑'),('172','LSY','2','17','有沙'),('180','RSY','0','18','无'),('181','RSY','1','18','可疑'),('182','RSY','2','18','有沙'),('190','BS','0','19','正常'),('191','BS','1','19','异常'),('192','BS','2','19','色盲'),('193','BS','3','19','色弱'),('200','TL','0','20','正常'),('201','TL','1','20','异常'),('202','TL','2','20','下降'),('210','XJ','0','21','正常'),('211','XJ','1','21','异常'),('220','BB','0','22','正常'),('221','BB','1','22','异常'),('222','BB','2','22','鼻炎'),('223','BB','3','22','鼻窦炎'),('224','BB','4','22','鼻中隔偏曲'),('225','BB','5','22','鼻息肉'),('226','BB','6','22','鼻衄'),('227','BB','7','22','鼻前庭炎'),('300','YZB','0','30','正常'),('301','YZB','1','30','牙结石'),('302','YZB','2','30','牙龈炎'),('303','YZB','3','30','牙结石、牙龈炎'),('304','YZB','4','30','牙周炎'),('310','BTT','0','31','正常'),('311','BTT','1','31','肿大'),('312','BTT','2','31','Ⅰ度肿大'),('313','BTT','3','31','Ⅱ度肿大'),('314','BTT','4','31','Ⅲ度肿大'),('320','XK','0','32','正常'),('321','XK','1','32','异常'),('322','XK','2','32','鸡胸'),('323','XK','3','32','漏斗胸'),('324','XK','4','32','扁平胸'),('330','JZ','0','33','正常'),('331','JZ','1','33','异常'),('332','JZ','2','33','侧弯Ⅰ度'),('333','JZ','3','33','侧弯Ⅱ度'),('334','JZ','4','33','侧弯Ⅲ度'),('340','SZ','0','34','正常'),('341','SZ','1','34','异常'),('342','SZ','2','34','O型腿'),('343','SZ','3','34','并指畸形'),('344','SZ','4','34','内八字'),('345','SZ','5','34','X型腿'),('346','SZ','6','34','关节畸形'),('347','SZ','7','34','关节功能受限'),('348','SZ','8','34','外伤'),('350','PZ','0','35','无'),('351','PZ','1','35','有'),('360','XZ','0','36','正常'),('361','XZ','1','36','异常'),('362','XZ','2','36','心脏杂音'),('363','XZ','3','36','心动过速'),('364','XZ','4','36','心动过缓'),('365','XZ','5','36','先天性心脏病术后'),('366','XZ','6','36','心律不齐'),('370','GP','0','37','正常'),('371','GP','1','37','肿大'),('380','FEI','0','38','正常'),('381','FEI','1','38','异常'),('390','XT','0','39','正常'),('391','XT','1','39','异常'),('410','FHCL','0','41','阴性'),('411','FHCL','1','41','阳性'),('420','PFB','0','42','无'),('421','PFB','1','42','有'),('422','PFB','2','42','湿疹'),('423','PFB','3','42','皮肤癣'),('424','PFB','4','42','白癜风'),('425','PFB','5','42','痣'),('426','PFB','6','42','血管瘤'),('461','BMKY','1','46','阳性'),('462','BMKY','2','46','阴性'),('470','SJSR','0','47','无'),('471','SJSR','1','47','有'),('550','EB','0','55','正常'),('551','EB','1','55','异常'),('552','EB','2','55','耵聍'),('553','EB','3','55','附耳'),('554','EB','4','55','中耳炎'),('555','EB','5','55','耳前瘘管'),('660','YB','0','66','无'),('661','YB','1','66','异常'),('662','YB','2','66','倒睫'),('663','YB','3','66','麦粒肿'),('664','YB','4','66','上睑下垂'),('665','YB','5','66','斜视'),('666','YB','6','66','睑结石'),('670','TB','0','67','正常'),('671','TB','1','67','异常'),('680','JB','0','68','正常'),('681','JB','1','68','异常'),('690','PF','0','69','正常'),('691','PF','1','69','异常'),('700','JZX','0','70','正常'),('701','JZX','1','70','异常'),('710','LBJ','0','71','正常'),('711','LBJ','1','71','肿大'),('720','JHJS','0','72','弱阳性'),('721','JHJS','1','72','中度阳性'),('722','JHJS','2','72','阴性'),('723','JHJS','3','72','强阳性'),('760','GG','0','76','正常'),('761','GG','1','76','异常'),('770','BMKT','0','77','阳性'),('771','BMKT','1','77','阴性'),('780','YGHKT','0','78','阴性'),('781','YGHKT','1','78','阳性'),('790','YGEKY','0','79','阴性'),('791','YGEKY','1','79','阳性'),('800','YGEKT','0','80','阳性'),('801','YGEKT','1','80','阴性'),('810','BLOOD','0','81','A型'),('811','BLOOD','1','81','B型'),('812','BLOOD','2','81','AB型'),('813','BLOOD','3','81','O型'),('870','JMY','0','87','无'),('871','JMY','1','87','有'),('880','WGFB','0','88','无'),('881','WGFB','1','88','4颗封闭完好'),('882','WGFB','2','88','3颗封闭完好'),('883','WGFB','3','88','2颗封闭完好'),('884','WGFB','4','88','1颗封闭完好'),('890','YYB','0','89','正常'),('891','YYB','1','89','轻度炎症'),('892','YYB','2','89','中度炎症'),('893','YYB','3','89','充血水肿溃疡'),('900','PEI','0','90','正常'),('901','PEI','1','90','肿大'),('910','RTL','0','91','正常'),('911','RTL','1','91','异常'),('912','RTL','2','91','下降'),('920','WSZQ','0','92','正常'),('921','WSZQ','1','92','包茎'),('922','WSZQ','2','92','隐睾'),('923','WSZQ','3','92','精索静脉曲张'),('924','WSZQ','4','92','鞘膜积液'),('925','WSZQ','5','92','隐匿性阴茎'),('930','RS','0','93','无'),('931','RS','1','93','有');
+/*!40000 ALTER TABLE `ItemResult` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Nation`
+--
+
+DROP TABLE IF EXISTS `Nation`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Nation` (
+  `id` varchar(255) NOT NULL,
+  `NationCode` varchar(255) DEFAULT NULL,
+  `NationId` int(11) DEFAULT NULL,
+  `NationName` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Nation`
+--
+
+LOCK TABLES `Nation` WRITE;
+/*!40000 ALTER TABLE `Nation` DISABLE KEYS */;
+INSERT INTO `Nation` VALUES ('1','01',1,'汉族'),('10','10',10,'朝鲜族'),('11','11',11,'满族'),('12','12',12,'侗族'),('13','13',13,'瑶族'),('14','14',14,'白族'),('15','15',15,'土家族'),('16','16',16,'哈尼族'),('17','17',17,'哈萨克族'),('18','18',18,'傣族'),('19','19',19,'黎族'),('2','02',2,'蒙古族'),('20','20',20,'傈僳族'),('21','21',21,'佤族'),('22','22',22,'畲族'),('23','23',23,'高山族'),('24','24',24,'拉祜族'),('25','25',25,'水族'),('26','26',26,'东乡族'),('27','27',27,'纳西族'),('28','28',28,'景颇族'),('29','29',29,'柯尔克孜族'),('3','03',3,'回族'),('30','30',30,'土族'),('31','31',31,'达斡尔族'),('32','32',32,'仫佬族'),('33','33',33,'羌族'),('34','34',34,'布朗族'),('35','35',35,'撒拉族'),('36','36',36,'毛南族'),('37','37',37,'仡佬族'),('38','38',38,'锡伯族'),('39','39',39,'阿昌族'),('4','04',4,'藏族'),('40','40',40,'普米族'),('41','41',41,'塔吉克族'),('42','42',42,'怒族'),('43','43',43,'乌孜别克族'),('44','44',44,'俄罗斯族'),('45','45',45,'鄂温克族'),('46','46',46,'德昂族'),('47','47',47,'保安族'),('48','48',48,'裕固族'),('49','49',49,'京族'),('5','05',5,'维吾尔族'),('50','50',50,'塔塔尔族'),('51','51',51,'独龙族'),('52','52',52,'鄂伦春族'),('53','53',53,'赫哲族'),('54','54',54,'门巴族'),('55','55',55,'珞巴族'),('56','56',56,'基诺族'),('57','57',57,'其他'),('58','58',58,'外国血统'),('6','06',6,'苗族'),('7','07',7,'彝族'),('8','08',8,'壮族'),('9','09',9,'布依族');
+/*!40000 ALTER TABLE `Nation` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Report_TB_Age`
+--
+
+DROP TABLE IF EXISTS `Report_TB_Age`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Report_TB_Age` (
+  `id` varchar(255) NOT NULL,
+  `CITYID` varchar(60) DEFAULT NULL,
+  `DISTRICTID` varchar(60) DEFAULT NULL,
+  `Grade` varchar(60) DEFAULT NULL,
+  `GuId` int(11) DEFAULT NULL,
+  `H1` int(11) DEFAULT NULL,
+  `H10` int(11) DEFAULT NULL,
+  `H10B` decimal(19,2) DEFAULT NULL,
+  `H11` int(11) DEFAULT NULL,
+  `H11B` decimal(19,2) DEFAULT NULL,
+  `H12` int(11) DEFAULT NULL,
+  `H12B` decimal(19,2) DEFAULT NULL,
+  `H13` int(11) DEFAULT NULL,
+  `H13B` decimal(19,2) DEFAULT NULL,
+  `H14` int(11) DEFAULT NULL,
+  `H14B` decimal(19,2) DEFAULT NULL,
+  `H15` int(11) DEFAULT NULL,
+  `H15B` decimal(19,2) DEFAULT NULL,
+  `H16` int(11) DEFAULT NULL,
+  `H16B` decimal(19,2) DEFAULT NULL,
+  `H17` int(11) DEFAULT NULL,
+  `H17B` decimal(19,2) DEFAULT NULL,
+  `H18` int(11) DEFAULT NULL,
+  `H18B` decimal(19,2) DEFAULT NULL,
+  `H19` int(11) DEFAULT NULL,
+  `H19B` decimal(19,2) DEFAULT NULL,
+  `H1B` decimal(19,2) DEFAULT NULL,
+  `H2` int(11) DEFAULT NULL,
+  `H20` int(11) DEFAULT NULL,
+  `H20B` decimal(19,2) DEFAULT NULL,
+  `H2B` decimal(19,2) DEFAULT NULL,
+  `H3` int(11) DEFAULT NULL,
+  `H3B` decimal(19,2) DEFAULT NULL,
+  `H4` int(11) DEFAULT NULL,
+  `H4B` decimal(19,2) DEFAULT NULL,
+  `H5` int(11) DEFAULT NULL,
+  `H5B` decimal(19,2) DEFAULT NULL,
+  `H6` int(11) DEFAULT NULL,
+  `H6B` decimal(19,2) DEFAULT NULL,
+  `H7` int(11) DEFAULT NULL,
+  `H7B` decimal(19,2) DEFAULT NULL,
+  `H8` int(11) DEFAULT NULL,
+  `H8B` decimal(19,2) DEFAULT NULL,
+  `H9` int(11) DEFAULT NULL,
+  `H9B` decimal(19,2) DEFAULT NULL,
+  `RID` varchar(30) DEFAULT NULL,
+  `SCHOOLBH` varchar(60) DEFAULT NULL,
+  `SchoolType` varchar(60) DEFAULT NULL,
+  `SJ` int(11) DEFAULT NULL,
+  `Term` varchar(3) DEFAULT NULL,
+  `TJND` varchar(30) DEFAULT NULL,
+  `XB` varchar(30) DEFAULT NULL,
+  `XS` int(11) DEFAULT NULL,
+  `Age` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Report_TB_Age`
+--
+
+LOCK TABLES `Report_TB_Age` WRITE;
+/*!40000 ALTER TABLE `Report_TB_Age` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Report_TB_Age` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Report_TB_Grade`
+--
+
+DROP TABLE IF EXISTS `Report_TB_Grade`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Report_TB_Grade` (
+  `id` varchar(255) NOT NULL,
+  `CITYID` varchar(60) DEFAULT NULL,
+  `DISTRICTID` varchar(60) DEFAULT NULL,
+  `Grade` varchar(60) DEFAULT NULL,
+  `GuId` int(11) DEFAULT NULL,
+  `H1` int(11) DEFAULT NULL,
+  `H10` int(11) DEFAULT NULL,
+  `H10B` decimal(19,2) DEFAULT NULL,
+  `H11` int(11) DEFAULT NULL,
+  `H11B` decimal(19,2) DEFAULT NULL,
+  `H12` int(11) DEFAULT NULL,
+  `H12B` decimal(19,2) DEFAULT NULL,
+  `H13` int(11) DEFAULT NULL,
+  `H13B` decimal(19,2) DEFAULT NULL,
+  `H14` int(11) DEFAULT NULL,
+  `H14B` decimal(19,2) DEFAULT NULL,
+  `H15` int(11) DEFAULT NULL,
+  `H15B` decimal(19,2) DEFAULT NULL,
+  `H16` int(11) DEFAULT NULL,
+  `H16B` decimal(19,2) DEFAULT NULL,
+  `H17` int(11) DEFAULT NULL,
+  `H17B` decimal(19,2) DEFAULT NULL,
+  `H18` int(11) DEFAULT NULL,
+  `H18B` decimal(19,2) DEFAULT NULL,
+  `H19` int(11) DEFAULT NULL,
+  `H19B` decimal(19,2) DEFAULT NULL,
+  `H1B` decimal(19,2) DEFAULT NULL,
+  `H2` int(11) DEFAULT NULL,
+  `H20` int(11) DEFAULT NULL,
+  `H20B` decimal(19,2) DEFAULT NULL,
+  `H2B` decimal(19,2) DEFAULT NULL,
+  `H3` int(11) DEFAULT NULL,
+  `H3B` decimal(19,2) DEFAULT NULL,
+  `H4` int(11) DEFAULT NULL,
+  `H4B` decimal(19,2) DEFAULT NULL,
+  `H5` int(11) DEFAULT NULL,
+  `H5B` decimal(19,2) DEFAULT NULL,
+  `H6` int(11) DEFAULT NULL,
+  `H6B` decimal(19,2) DEFAULT NULL,
+  `H7` int(11) DEFAULT NULL,
+  `H7B` decimal(19,2) DEFAULT NULL,
+  `H8` int(11) DEFAULT NULL,
+  `H8B` decimal(19,2) DEFAULT NULL,
+  `H9` int(11) DEFAULT NULL,
+  `H9B` decimal(19,2) DEFAULT NULL,
+  `RID` varchar(30) DEFAULT NULL,
+  `SCHOOLBH` varchar(60) DEFAULT NULL,
+  `SchoolType` varchar(60) DEFAULT NULL,
+  `SJ` int(11) DEFAULT NULL,
+  `Term` varchar(3) DEFAULT NULL,
+  `TJND` varchar(30) DEFAULT NULL,
+  `XB` varchar(30) DEFAULT NULL,
+  `XS` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Report_TB_Grade`
+--
+
+LOCK TABLES `Report_TB_Grade` WRITE;
+/*!40000 ALTER TABLE `Report_TB_Grade` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Report_TB_Grade` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Report_ZB_Age`
+--
+
+DROP TABLE IF EXISTS `Report_ZB_Age`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Report_ZB_Age` (
+  `id` varchar(255) NOT NULL,
+  `Age` varchar(60) DEFAULT NULL,
+  `CITYID` varchar(60) DEFAULT NULL,
+  `DISTRICTID` varchar(60) DEFAULT NULL,
+  `GuId` int(11) DEFAULT NULL,
+  `H1` int(11) DEFAULT NULL,
+  `H10` int(11) DEFAULT NULL,
+  `H10B` decimal(19,2) DEFAULT NULL,
+  `H11` int(11) DEFAULT NULL,
+  `H11B` decimal(19,2) DEFAULT NULL,
+  `H12` int(11) DEFAULT NULL,
+  `H12B` decimal(19,2) DEFAULT NULL,
+  `H13` int(11) DEFAULT NULL,
+  `H13B` decimal(19,2) DEFAULT NULL,
+  `H14` int(11) DEFAULT NULL,
+  `H14B` decimal(19,2) DEFAULT NULL,
+  `H15` int(11) DEFAULT NULL,
+  `H15B` decimal(19,2) DEFAULT NULL,
+  `H16` int(11) DEFAULT NULL,
+  `H16B` decimal(19,2) DEFAULT NULL,
+  `H17` int(11) DEFAULT NULL,
+  `H17B` decimal(19,2) DEFAULT NULL,
+  `H18` int(11) DEFAULT NULL,
+  `H18B` decimal(19,2) DEFAULT NULL,
+  `H19` int(11) DEFAULT NULL,
+  `H19B` decimal(19,2) DEFAULT NULL,
+  `H1B` decimal(19,2) DEFAULT NULL,
+  `H2` int(11) DEFAULT NULL,
+  `H20` int(11) DEFAULT NULL,
+  `H20B` decimal(19,2) DEFAULT NULL,
+  `H2B` decimal(19,2) DEFAULT NULL,
+  `H3` int(11) DEFAULT NULL,
+  `H3B` decimal(19,2) DEFAULT NULL,
+  `H4` int(11) DEFAULT NULL,
+  `H4B` decimal(19,2) DEFAULT NULL,
+  `H5` int(11) DEFAULT NULL,
+  `H5B` decimal(19,2) DEFAULT NULL,
+  `H6` int(11) DEFAULT NULL,
+  `H6B` decimal(19,2) DEFAULT NULL,
+  `H7` int(11) DEFAULT NULL,
+  `H7B` decimal(19,2) DEFAULT NULL,
+  `H8` int(11) DEFAULT NULL,
+  `H8B` decimal(19,2) DEFAULT NULL,
+  `H9` int(11) DEFAULT NULL,
+  `H9B` decimal(19,2) DEFAULT NULL,
+  `RID` varchar(30) DEFAULT NULL,
+  `SCHOOLBH` varchar(60) DEFAULT NULL,
+  `SchoolType` varchar(60) DEFAULT NULL,
+  `SJ` int(11) DEFAULT NULL,
+  `Term` varchar(3) DEFAULT NULL,
+  `TJND` varchar(30) DEFAULT NULL,
+  `XB` varchar(30) DEFAULT NULL,
+  `XS` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Report_ZB_Age`
+--
+
+LOCK TABLES `Report_ZB_Age` WRITE;
+/*!40000 ALTER TABLE `Report_ZB_Age` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Report_ZB_Age` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Report_ZB_Grade`
+--
+
+DROP TABLE IF EXISTS `Report_ZB_Grade`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Report_ZB_Grade` (
+  `id` varchar(255) NOT NULL,
+  `CITYID` varchar(60) DEFAULT NULL,
+  `DISTRICTID` varchar(60) DEFAULT NULL,
+  `Grade` varchar(60) DEFAULT NULL,
+  `GuId` int(11) DEFAULT NULL,
+  `H1` int(11) DEFAULT NULL,
+  `H10` int(11) DEFAULT NULL,
+  `H10B` decimal(19,2) DEFAULT NULL,
+  `H11` int(11) DEFAULT NULL,
+  `H11B` decimal(19,2) DEFAULT NULL,
+  `H12` int(11) DEFAULT NULL,
+  `H12B` decimal(19,2) DEFAULT NULL,
+  `H13` int(11) DEFAULT NULL,
+  `H13B` decimal(19,2) DEFAULT NULL,
+  `H14` int(11) DEFAULT NULL,
+  `H14B` decimal(19,2) DEFAULT NULL,
+  `H15` int(11) DEFAULT NULL,
+  `H15B` decimal(19,2) DEFAULT NULL,
+  `H16` int(11) DEFAULT NULL,
+  `H16B` decimal(19,2) DEFAULT NULL,
+  `H17` int(11) DEFAULT NULL,
+  `H17B` decimal(19,2) DEFAULT NULL,
+  `H18` int(11) DEFAULT NULL,
+  `H18B` decimal(19,2) DEFAULT NULL,
+  `H19` int(11) DEFAULT NULL,
+  `H19B` decimal(19,2) DEFAULT NULL,
+  `H1B` decimal(19,2) DEFAULT NULL,
+  `H2` int(11) DEFAULT NULL,
+  `H20` int(11) DEFAULT NULL,
+  `H20B` decimal(19,2) DEFAULT NULL,
+  `H2B` decimal(19,2) DEFAULT NULL,
+  `H3` int(11) DEFAULT NULL,
+  `H3B` decimal(19,2) DEFAULT NULL,
+  `H4` int(11) DEFAULT NULL,
+  `H4B` decimal(19,2) DEFAULT NULL,
+  `H5` int(11) DEFAULT NULL,
+  `H5B` decimal(19,2) DEFAULT NULL,
+  `H6` int(11) DEFAULT NULL,
+  `H6B` decimal(19,2) DEFAULT NULL,
+  `H7` int(11) DEFAULT NULL,
+  `H7B` decimal(19,2) DEFAULT NULL,
+  `H8` int(11) DEFAULT NULL,
+  `H8B` decimal(19,2) DEFAULT NULL,
+  `H9` int(11) DEFAULT NULL,
+  `H9B` decimal(19,2) DEFAULT NULL,
+  `RID` varchar(30) DEFAULT NULL,
+  `SCHOOLBH` varchar(60) DEFAULT NULL,
+  `SchoolType` varchar(60) DEFAULT NULL,
+  `SJ` int(11) DEFAULT NULL,
+  `Term` varchar(3) DEFAULT NULL,
+  `TJND` varchar(30) DEFAULT NULL,
+  `XB` varchar(30) DEFAULT NULL,
+  `XS` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Report_ZB_Grade`
+--
+
+LOCK TABLES `Report_ZB_Grade` WRITE;
+/*!40000 ALTER TABLE `Report_ZB_Grade` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Report_ZB_Grade` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Result`
+--
+
+DROP TABLE IF EXISTS `Result`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Result` (
+  `id` varchar(255) NOT NULL,
+  `ADDRESS` varchar(100) DEFAULT NULL,
+  `BB` varchar(24) DEFAULT NULL,
+  `BJL` decimal(19,2) DEFAULT NULL,
+  `BLOOD` varchar(24) DEFAULT NULL,
+  `BMKT` varchar(24) DEFAULT NULL,
+  `BMKY` varchar(24) DEFAULT NULL,
+  `BS` varchar(24) DEFAULT NULL,
+  `BTT` varchar(24) DEFAULT NULL,
+  `BXP` decimal(19,2) DEFAULT NULL,
+  `CHECKID` varchar(255) DEFAULT NULL,
+  `CLASSBH` varchar(10) DEFAULT NULL,
+  `CLASS_NAME` varchar(30) DEFAULT NULL,
+  `CSRQ` date DEFAULT NULL,
+  `CXBH` varchar(24) DEFAULT NULL,
+  `DH` varchar(50) DEFAULT NULL,
+  `DHSA` decimal(19,2) DEFAULT NULL,
+  `DHSZ` decimal(19,2) DEFAULT NULL,
+  `EB` varchar(24) DEFAULT NULL,
+  `FEI` varchar(24) DEFAULT NULL,
+  `FHCL` varchar(24) DEFAULT NULL,
+  `FHL` decimal(19,2) DEFAULT NULL,
+  `FHLBJ` varchar(3) DEFAULT NULL,
+  `FHLDJD` varchar(24) DEFAULT NULL,
+  `FHLDJQ` varchar(24) DEFAULT NULL,
+  `FYPJ` varchar(36) DEFAULT NULL,
+  `GBZAM` decimal(19,2) DEFAULT NULL,
+  `GG` varchar(24) DEFAULT NULL,
+  `GP` varchar(24) DEFAULT NULL,
+  `GPK` decimal(19,2) DEFAULT NULL,
+  `GPKBJ` varchar(3) DEFAULT NULL,
+  `GPKDJD` varchar(24) DEFAULT NULL,
+  `GPKDJQ` varchar(24) DEFAULT NULL,
+  `GRADE_NAME` varchar(30) DEFAULT NULL,
+  `GSTJ` decimal(19,2) DEFAULT NULL,
+  `HQB` int(11) DEFAULT NULL,
+  `HQH` int(11) DEFAULT NULL,
+  `HQS` int(11) DEFAULT NULL,
+  `HXP` decimal(19,2) DEFAULT NULL,
+  `HXPPJ` varchar(30) DEFAULT NULL,
+  `JB` varchar(24) DEFAULT NULL,
+  `JHJS` varchar(24) DEFAULT NULL,
+  `JJX` decimal(19,2) DEFAULT NULL,
+  `JK` decimal(19,2) DEFAULT NULL,
+  `JKBJ` varchar(3) DEFAULT NULL,
+  `JKDJD` varchar(24) DEFAULT NULL,
+  `JKDJQ` varchar(24) DEFAULT NULL,
+  `JMY` varchar(24) DEFAULT NULL,
+  `JWBS` varchar(255) DEFAULT NULL,
+  `JZ` varchar(24) DEFAULT NULL,
+  `JZX` varchar(24) DEFAULT NULL,
+  `LBJ` varchar(24) DEFAULT NULL,
+  `LDTY` decimal(19,2) DEFAULT NULL,
+  `LDTYBJ` varchar(3) DEFAULT NULL,
+  `LDTYDJD` varchar(24) DEFAULT NULL,
+  `LDTYDJQ` varchar(24) DEFAULT NULL,
+  `LJSL` decimal(19,2) DEFAULT NULL,
+  `LJSLS` decimal(19,2) DEFAULT NULL,
+  `LL` decimal(19,2) DEFAULT NULL,
+  `LLBJ` varchar(3) DEFAULT NULL,
+  `LLDJD` varchar(24) DEFAULT NULL,
+  `LLDJQ` varchar(24) DEFAULT NULL,
+  `LQG` varchar(24) DEFAULT NULL,
+  `LSL` decimal(19,2) DEFAULT NULL,
+  `LSLS` decimal(19,2) DEFAULT NULL,
+  `LSY` varchar(24) DEFAULT NULL,
+  `MARK` varchar(100) DEFAULT NULL,
+  `MB` decimal(19,2) DEFAULT NULL,
+  `MB1` int(11) DEFAULT NULL,
+  `MB2` int(11) DEFAULT NULL,
+  `MB3` int(11) DEFAULT NULL,
+  `MBBJ` varchar(3) DEFAULT NULL,
+  `MBPJ` varchar(24) DEFAULT NULL,
+  `MZ` varchar(20) DEFAULT NULL,
+  `NL` int(11) DEFAULT NULL,
+  `NNL` decimal(19,2) DEFAULT NULL,
+  `NNLBJ` varchar(3) DEFAULT NULL,
+  `NNLDJD` varchar(24) DEFAULT NULL,
+  `NNLDJQ` varchar(24) DEFAULT NULL,
+  `PEI` varchar(24) DEFAULT NULL,
+  `PF` varchar(24) DEFAULT NULL,
+  `PFB` varchar(24) DEFAULT NULL,
+  `PXPJ` varchar(24) DEFAULT NULL,
+  `PZ` varchar(24) DEFAULT NULL,
+  `QCQFY` int(11) DEFAULT NULL,
+  `QSBNUM` int(11) DEFAULT NULL,
+  `QTYB` varchar(24) DEFAULT NULL,
+  `RJSL` decimal(19,2) DEFAULT NULL,
+  `RJSLS` decimal(19,2) DEFAULT NULL,
+  `RQB` int(11) DEFAULT NULL,
+  `RQG` varchar(24) DEFAULT NULL,
+  `RQH` int(11) DEFAULT NULL,
+  `RQS` int(11) DEFAULT NULL,
+  `RS` varchar(50) DEFAULT NULL,
+  `RSL` decimal(19,2) DEFAULT NULL,
+  `RSLS` decimal(19,2) DEFAULT NULL,
+  `RSY` varchar(24) DEFAULT NULL,
+  `RTL` varchar(50) DEFAULT NULL,
+  `RXHJZS` varchar(255) DEFAULT NULL,
+  `RXSJ` date DEFAULT NULL,
+  `RXYFJZS` varchar(255) DEFAULT NULL,
+  `SCHOOLBH` varchar(20) DEFAULT NULL,
+  `SCHOOLID` varchar(50) DEFAULT NULL,
+  `SCHOOL_NAME` varchar(50) DEFAULT NULL,
+  `SFZH` varchar(50) DEFAULT NULL,
+  `SG` decimal(19,2) DEFAULT NULL,
+  `SGBJ` varchar(3) DEFAULT NULL,
+  `SGDJD` varchar(24) DEFAULT NULL,
+  `SGDJQ` varchar(24) DEFAULT NULL,
+  `SJSR` varchar(24) DEFAULT NULL,
+  `SLBH` varchar(3) DEFAULT NULL,
+  `SLPJ` varchar(24) DEFAULT NULL,
+  `SSY` decimal(19,2) DEFAULT NULL,
+  `SSYBJ` varchar(3) DEFAULT NULL,
+  `SSYPJ` varchar(24) DEFAULT NULL,
+  `STUDGUID` varchar(50) DEFAULT NULL,
+  `STUDNUM` varchar(50) DEFAULT NULL,
+  `SY` varchar(8) DEFAULT NULL,
+  `SZ` varchar(24) DEFAULT NULL,
+  `SZY` decimal(19,2) DEFAULT NULL,
+  `SZYBJ` varchar(3) DEFAULT NULL,
+  `SZYPJ` varchar(24) DEFAULT NULL,
+  `T1` varchar(50) DEFAULT NULL,
+  `T10` varchar(50) DEFAULT NULL,
+  `T10Name` varchar(50) DEFAULT NULL,
+  `T1Name` varchar(50) DEFAULT NULL,
+  `T2` varchar(50) DEFAULT NULL,
+  `T2Name` varchar(50) DEFAULT NULL,
+  `T3` varchar(50) DEFAULT NULL,
+  `T3Name` varchar(50) DEFAULT NULL,
+  `T4` varchar(50) DEFAULT NULL,
+  `T4Name` varchar(50) DEFAULT NULL,
+  `T5` varchar(50) DEFAULT NULL,
+  `T5Name` varchar(50) DEFAULT NULL,
+  `T6` varchar(50) DEFAULT NULL,
+  `T6Name` varchar(50) DEFAULT NULL,
+  `T7` varchar(50) DEFAULT NULL,
+  `T7Name` varchar(50) DEFAULT NULL,
+  `T8` varchar(50) DEFAULT NULL,
+  `T8Name` varchar(50) DEFAULT NULL,
+  `T9` varchar(50) DEFAULT NULL,
+  `T9Name` varchar(50) DEFAULT NULL,
+  `TB` varchar(24) DEFAULT NULL,
+  `Term` varchar(1) DEFAULT NULL,
+  `TJFS` int(11) DEFAULT NULL,
+  `TJND` varchar(5) DEFAULT NULL,
+  `TJPJ` varchar(24) DEFAULT NULL,
+  `TJRQ` date DEFAULT NULL,
+  `TJSY` int(11) DEFAULT NULL,
+  `TL` varchar(24) DEFAULT NULL,
+  `TW` decimal(19,2) DEFAULT NULL,
+  `TXPJ` varchar(30) DEFAULT NULL,
+  `TZ` decimal(19,2) DEFAULT NULL,
+  `TZBJ` varchar(3) DEFAULT NULL,
+  `TZDJD` varchar(24) DEFAULT NULL,
+  `TZDJQ` varchar(24) DEFAULT NULL,
+  `V1` varchar(50) DEFAULT NULL,
+  `V1Name` varchar(50) DEFAULT NULL,
+  `V2` varchar(50) DEFAULT NULL,
+  `V2Name` varchar(50) DEFAULT NULL,
+  `V3` varchar(50) DEFAULT NULL,
+  `V3Name` varchar(50) DEFAULT NULL,
+  `V4` varchar(50) DEFAULT NULL,
+  `V4Name` varchar(50) DEFAULT NULL,
+  `V5` varchar(50) DEFAULT NULL,
+  `V5Name` varchar(50) DEFAULT NULL,
+  `WGFB` varchar(24) DEFAULT NULL,
+  `WL` decimal(19,2) DEFAULT NULL,
+  `WLBJ` varchar(3) DEFAULT NULL,
+  `WLDJD` varchar(24) DEFAULT NULL,
+  `WLDJQ` varchar(24) DEFAULT NULL,
+  `WSM` decimal(19,2) DEFAULT NULL,
+  `WSMBJ` varchar(3) DEFAULT NULL,
+  `WSMDJD` varchar(24) DEFAULT NULL,
+  `WSMDJQ` varchar(24) DEFAULT NULL,
+  `WSZQ` varchar(50) DEFAULT NULL,
+  `XB` varchar(10) DEFAULT NULL,
+  `XH` varchar(20) DEFAULT NULL,
+  `XHDB` int(11) DEFAULT NULL,
+  `XJ` varchar(24) DEFAULT NULL,
+  `XJH` varchar(50) DEFAULT NULL,
+  `XK` varchar(24) DEFAULT NULL,
+  `XM` varchar(30) DEFAULT NULL,
+  `XMPY` varchar(24) DEFAULT NULL,
+  `XT` varchar(24) DEFAULT NULL,
+  `XW` decimal(19,2) DEFAULT NULL,
+  `XWBJ` varchar(3) DEFAULT NULL,
+  `XWDJD` varchar(24) DEFAULT NULL,
+  `XWDJQ` varchar(24) DEFAULT NULL,
+  `XXB` decimal(19,2) DEFAULT NULL,
+  `XZ` varchar(24) DEFAULT NULL,
+  `YB` varchar(24) DEFAULT NULL,
+  `YGEKT` varchar(24) DEFAULT NULL,
+  `YGEKY` varchar(24) DEFAULT NULL,
+  `YGHKT` varchar(24) DEFAULT NULL,
+  `YMA` varchar(255) DEFAULT NULL,
+  `YMAJY` varchar(255) DEFAULT NULL,
+  `YMB` varchar(255) DEFAULT NULL,
+  `YMBJY` varchar(255) DEFAULT NULL,
+  `YMC` varchar(255) DEFAULT NULL,
+  `YMCJY` varchar(255) DEFAULT NULL,
+  `YMD` varchar(255) DEFAULT NULL,
+  `YMDJY` varchar(255) DEFAULT NULL,
+  `YME` varchar(255) DEFAULT NULL,
+  `YMEJY` varchar(255) DEFAULT NULL,
+  `YMF` varchar(50) DEFAULT NULL,
+  `YMFJY` varchar(255) DEFAULT NULL,
+  `YMQT` varchar(255) DEFAULT NULL,
+  `YW` decimal(19,2) DEFAULT NULL,
+  `YYB` varchar(24) DEFAULT NULL,
+  `YYPJ` varchar(30) DEFAULT NULL,
+  `YYPJB` varchar(50) DEFAULT NULL,
+  `YYPJH` varchar(24) DEFAULT NULL,
+  `YYPJX` varchar(30) DEFAULT NULL,
+  `YZB` varchar(24) DEFAULT NULL,
+  `ZG` decimal(19,2) DEFAULT NULL,
+  `ZGBJ` varchar(3) DEFAULT NULL,
+  `ZGDJD` varchar(24) DEFAULT NULL,
+  `ZGDJQ` varchar(24) DEFAULT NULL,
+  `ZWT` decimal(19,2) DEFAULT NULL,
+  `ZWTBJ` varchar(3) DEFAULT NULL,
+  `ZWTDJD` varchar(24) DEFAULT NULL,
+  `ZWTDJQ` varchar(24) DEFAULT NULL,
+  `ZZMM` varchar(20) DEFAULT NULL,
+  `CLASSLONGNO` varchar(255) DEFAULT NULL,
+  `StudentCode` varchar(200) DEFAULT NULL,
+  `SCHOOL_TYPE` varchar(30) DEFAULT NULL,
+  `SCHOOLTYPE` varchar(30) DEFAULT NULL,
+  `GRADEBH` varchar(20) DEFAULT NULL,
+  `BH` varchar(32) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Result`
+--
+
+LOCK TABLES `Result` WRITE;
+/*!40000 ALTER TABLE `Result` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Result` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ResultFieldMap`
+--
+
+DROP TABLE IF EXISTS `ResultFieldMap`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ResultFieldMap` (
+  `id` varchar(255) NOT NULL,
+  `Alias` varchar(255) DEFAULT NULL,
+  `Field` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ResultFieldMap`
+--
+
+LOCK TABLES `ResultFieldMap` WRITE;
+/*!40000 ALTER TABLE `ResultFieldMap` DISABLE KEYS */;
+INSERT INTO `ResultFieldMap` VALUES ('ADDRESS','地址','ADDRESS'),('BB','鼻病','BB'),('BH','编号','BH'),('BJL','背肌力','BJL'),('BLOOD','血型','BLOOD'),('BMKT','表面抗体','BMKT'),('BMKY','表面抗原','BMKY'),('BS','辨色','BS'),('BTT','扁桃体','BTT'),('BXP','','BXP'),('CHECKID','ID(自增)','CHECKID'),('CLASSBH','班级编号','CLASSBH'),('CLASS_NAME','班级名称','CLASS_NAME'),('CSRQ','出生日期','CSRQ'),('CXBH','','CXBH'),('DH','','DH'),('DHSA','总胆红素','DHSA'),('DHSZ','直胆红素','DHSZ'),('EB','耳病','EB'),('FEI','肺','FEI'),('FHCL','肠道蠕虫','FHCL'),('FHL','肺活量','FHL'),('FHLBJ','肺活量是否正常','FHLBJ'),('FHLDJD','肺活量等级(广东标准)','FHLDJD'),('FHLDJQ','肺活量等级（全国标准)','FHLDJQ'),('FYPJ','发育评价','FYPJ'),('GBZAM','谷丙转氨酶','GBZAM'),('GG','肝功','GG'),('GP','肝脾','GP'),('GPK','骨盆宽','GPK'),('GPKBJ','骨盆宽否正常','GPKBJ'),('GPKDJD','骨盆宽（广东标准)','GPKDJD'),('GPKDJQ','骨盆宽（全国标准)','GPKDJQ'),('GRADEBH','年级编号','GRADEBH'),('GRADE_NAME','年级名称','GRADE_NAME'),('GSTJ','肱三头肌皮褶厚度','GSTJ'),('HQB','恒龋补','HQB'),('HQH','恒龋患','HQH'),('HQS','恒龋失','HQS'),('HXP','红细胞','HXP'),('HXPPJ','红细胞评价','HXPPJ'),('JB','颈部','JB'),('JHJS','结核菌素','JHJS'),('JJX','肩胛下皮褶厚度','JJX'),('JK','肩宽','JK'),('JKBJ','肩宽是否正常','JKBJ'),('JKDJD','肩宽等级(广东标准)','JKDJD'),('JKDJQ','肩宽等级（全国标准)','JKDJQ'),('JMY','结膜炎','JMY'),('JWBS','既往病史','JWBS'),('JZ','脊柱侧弯','JZ'),('JZX','甲状腺','JZX'),('LBJ','淋巴结','LBJ'),('LDTY','立定跳远','LDTY'),('LDTYBJ','立定跳远否正常','LDTYBJ'),('LDTYDJD','立定跳远（广东标准','LDTYDJD'),('LDTYDJQ','立定跳远（全国标准）','LDTYDJQ'),('LJSL','左近视力','LJSL'),('LJSLS','','LJSLS'),('LL','力量','LL'),('LLBJ','力量 否正常','LLBJ'),('LLDJD','力量（广东标准','LLDJD'),('LLDJQ','力量（全国标准）','LLDJQ'),('LQG','左眼屈光不正','LQG'),('LSL','左眼视力','LSL'),('LSLS','','LSLS'),('LSY','左眼沙眼','LSY'),('MARK','备注','MARK'),('MB','脉搏','MB'),('MB1','','MB1'),('MB2','','MB2'),('MB3','','MB3'),('MBBJ','脉搏是否正常','MBBJ'),('MBPJ','脉搏评价','MBPJ'),('MZ','民族','MZ'),('NL','年龄','NL'),('NNL','耐力','NNL'),('NNLBJ','耐力 否正常','NNLBJ'),('NNLDJD','耐力（广东标准','NNLDJD'),('NNLDJQ','耐力（全国标准）','NNLDJQ'),('PEI','脾','PEI'),('PF','皮肤','PF'),('PFB','皮肤病','PFB'),('PXPJ','血红蛋白评价','PXPJ'),('PZ','平足','PZ'),('QCQFY','青春期发育','QCQFY'),('QSBNUM','龋失补牙数','QSBNUM'),('QTYB','其它眼病','QTYB'),('RJSL','右近视力','RJSL'),('RJSLS','','RJSLS'),('RQB','乳龋补','RQB'),('RQG','右眼屈光不正','RQG'),('RQH','乳龋患','RQH'),('RQS','乳龋失','RQS'),('RS','弱视','RS'),('RSL','右眼视力','RSL'),('RSLS','','RSLS'),('RSY','右眼沙眼','RSY'),('RTL','听力右','RTL'),('RXHJZS','入学后预防接种史','RXHJZS'),('RXSJ','入学时间','RXSJ'),('RXYFJZS','入学前接种史','RXYFJZS'),('SCHOOLBH','学校编号','SCHOOLBH'),('SCHOOLID','学校ID','SCHOOLID'),('SCHOOL_NAME','学校名称','SCHOOL_NAME'),('SFZH','','SFZH'),('SG','身高','SG'),('SGBJ','身高是否正常','SGBJ'),('SGDJD','身高等级(广东标准)','SGDJD'),('SGDJQ','身高等级（全国标准)','SGDJQ'),('SJSR','神经衰弱','SJSR'),('SLBH','','SLBH'),('SLPJ','视力评价（视力低下,正常）','SLPJ'),('SSY','收缩压','SSY'),('SSYBJ','收缩压是否正常','SSYBJ'),('SSYPJ','收缩压评价','SSYPJ'),('STUDGUID','无效','STUDGUID'),('STUDNUM','无效','STUDNUM'),('SY','生源','SY'),('SZ','四肢','SZ'),('SZY','舒张压','SZY'),('SZYBJ','舒张压是否正常','SZYBJ'),('SZYPJ','舒张压评价','SZYPJ'),('T1','自定义检查项目','T1'),('T10','自定义检查项目','T10'),('T10Name','自定义检查项目名称','T10Name'),('T1Name','自定义检查项目名称','T1Name'),('T2','自定义检查项目','T2'),('T2name','自定义检查项目名称','T2name'),('T3','自定义检查项目','T3'),('T3Name','自定义检查项目名称','T3Name'),('T4','自定义检查项目','T4'),('T4Name','自定义检查项目名称','T4Name'),('T5','自定义检查项目','T5'),('T5Name','自定义检查项目名称','T5Name'),('T6','自定义检查项目','T6'),('T6Name','自定义检查项目名称','T6Name'),('T7','自定义检查项目','T7'),('T7Name','自定义检查项目名称','T7Name'),('T8','自定义检查项目','T8'),('T8Name','自定义检查项目名称','T8Name'),('T9','自定义检查项目','T9'),('T9Name','自定义检查项目名称','T9Name'),('TB','头部','TB'),('Term','体检学期','Term'),('TJFS','','TJFS'),('TJND','体检年度','TJND'),('TJPJ','','TJPJ'),('TJRQ','体检日期','TJRQ'),('TJSY','台阶试验','TJSY'),('TL','听力','TL'),('TW','臀围','TW'),('TXPJ','体型评价','TXPJ'),('TZ','体重','TZ'),('TZBJ','体重是否正常','TZBJ'),('TZDJD','体重等级(广东标准)','TZDJD'),('TZDJQ','体重等级（全国标准)','TZDJQ'),('V1','自定义疫苗结果','V1'),('V1Name','自定义疫苗名称','V1Name'),('V2','自定义疫苗结果','V2'),('V2Name','自定义疫苗名称','V2Name'),('V3','自定义疫苗结果','V3'),('V3Name','自定义疫苗名称','V3Name'),('V4','自定义疫苗结果','V4'),('V4Name','自定义疫苗名称','V4Name'),('V5','自定义疫苗结果','V5'),('V5Name','自定义疫苗名称','V5Name'),('WGFB','窝沟封闭','WGFB'),('WL','握力','WL'),('WLBJ','握力是否正常','WLBJ'),('WLDJD','握力等级(广东标准)','WLDJD'),('WLDJQ','握力等级（全国标准)','WLDJQ'),('WSM','50米跑','WSM'),('WSMBJ','50米跑否正常','WSMBJ'),('WSMDJD','50米跑（广东标准)','WSMDJD'),('WSMDJQ','50米跑（全国标准）','WSMDJQ'),('WSZQ','男性外生殖器','WSZQ'),('XB','性别','XB'),('XH','学号','XH'),('XHDB','血红蛋白','XHDB'),('XJ','嗅觉','XJ'),('XJH','','XJH'),('XK','胸廓','XK'),('XM','姓名','XM'),('XMPY','','XMPY'),('XT','胸透','XT'),('XW','胸围','XW'),('XWBJ','胸围是否正常','XWBJ'),('XWDJD','胸围等级(广东标准)','XWDJD'),('XWDJQ','胸围等级（全国标准)','XWDJQ'),('XXB','','XXB'),('XZ','心脏','XZ'),('YB','眼病','YB'),('YGEKT','乙肝e抗体','YGEKT'),('YGEKY','乙肝e抗原','YGEKY'),('YGHKT','乙肝核心抗体','YGHKT'),('YMA','卡介苗','YMA'),('YMAJY','卡介苗建议','YMAJY'),('YMB','乙型肝炎疫苗','YMB'),('YMBJY','乙型肝炎疫苗建议','YMBJY'),('YMC','麻疹疫苗','YMC'),('YMCJY','麻疹疫苗建议','YMCJY'),('YMD','脊髓灰质炎疫苗','YMD'),('YMDJY','脊髓灰质炎疫苗建议','YMDJY'),('YME','百白破疫苗','YME'),('YMEJY','百白破疫苗建议','YMEJY'),('YMF','乙脑疫苗','YMF'),('YMFJY','乙脑疫苗建议','YMFJY'),('YMQT','其他疫苗','YMQT'),('YW','腰围','YW'),('YYB','牙龈','YYB'),('YYPJ','营养评价','YYPJ'),('YYPJB','营养评价B','YYPJB'),('YYPJH','','YYPJH'),('YYPJX','营养评价X','YYPJX'),('YZB','牙周疾病','YZB'),('ZG','坐高','ZG'),('ZGBJ','坐高是否正常','ZGBJ'),('ZGDJD','坐高(广东标准)','ZGDJD'),('ZGDJQ','坐高（全国标准)','ZGDJQ'),('ZWT','坐位体前屈','ZWT'),('ZWTBJ','坐位体前屈否正常','ZWTBJ'),('ZWTDJD','坐位体前屈（广东标准','ZWTDJD'),('ZWTDJQ','坐位体前屈（全国标准）','ZWTDJQ'),('ZZMM','政治面貌','ZZMM');
+/*!40000 ALTER TABLE `ResultFieldMap` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `SchoolTree`
+--
+
+DROP TABLE IF EXISTS `SchoolTree`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `SchoolTree` (
+  `id` varchar(255) NOT NULL,
+  `code` varchar(255) DEFAULT NULL,
+  `level` int(11) DEFAULT NULL,
+  `longNumber` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `parentCode` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `type` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `SchoolTree`
+--
+
+LOCK TABLES `SchoolTree` WRITE;
+/*!40000 ALTER TABLE `SchoolTree` DISABLE KEYS */;
+/*!40000 ALTER TABLE `SchoolTree` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ServerSetting`
+--
+
+DROP TABLE IF EXISTS `ServerSetting`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ServerSetting` (
+  `id` varchar(255) NOT NULL,
+  `ServerIP` varchar(255) DEFAULT NULL,
+  `ServerPort` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ServerSetting`
+--
+
+LOCK TABLES `ServerSetting` WRITE;
+/*!40000 ALTER TABLE `ServerSetting` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ServerSetting` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Student`
+--
+
+DROP TABLE IF EXISTS `Student`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Student` (
+  `id` varchar(255) NOT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `bornDate` date DEFAULT NULL,
+  `classLongNumber` varchar(255) DEFAULT NULL,
+  `className` varchar(255) DEFAULT NULL,
+  `classNo` varchar(255) DEFAULT NULL,
+  `enterDate` date DEFAULT NULL,
+  `fqdw` varchar(255) DEFAULT NULL,
+  `fqxm` varchar(255) DEFAULT NULL,
+  `gradeNo` varchar(255) DEFAULT NULL,
+  `mobilePhone` varchar(255) DEFAULT NULL,
+  `mqdw` varchar(255) DEFAULT NULL,
+  `mqxm` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `nation` varchar(255) DEFAULT NULL,
+  `phone` varchar(255) DEFAULT NULL,
+  `schoolNo` varchar(255) DEFAULT NULL,
+  `sex` varchar(255) DEFAULT NULL,
+  `sfz` varchar(255) DEFAULT NULL,
+  `stYear` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `studentCode` varchar(255) DEFAULT NULL,
+  `studentNo` varchar(255) DEFAULT NULL,
+  `studentType` varchar(255) DEFAULT NULL,
+  `sy` varchar(255) DEFAULT NULL,
+  `term` int(11) DEFAULT NULL,
+  `xjh` varchar(255) DEFAULT NULL,
+  `xx` varchar(255) DEFAULT NULL,
+  `zzmm` varchar(255) DEFAULT NULL,
+  `xh` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Student`
+--
+
+LOCK TABLES `Student` WRITE;
+/*!40000 ALTER TABLE `Student` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Student` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `StudentChangeClass`
+--
+
+DROP TABLE IF EXISTS `StudentChangeClass`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `StudentChangeClass` (
+  `id` varchar(255) NOT NULL,
+  `classLongNumber` varchar(255) DEFAULT NULL,
+  `className` varchar(255) DEFAULT NULL,
+  `classNo` varchar(255) DEFAULT NULL,
+  `createTime` datetime DEFAULT NULL,
+  `destClassLongNumber` varchar(255) DEFAULT NULL,
+  `destClassName` varchar(255) DEFAULT NULL,
+  `destClassNo` varchar(255) DEFAULT NULL,
+  `destGradeNo` varchar(255) DEFAULT NULL,
+  `gradeNo` varchar(255) DEFAULT NULL,
+  `schoolNo` varchar(255) DEFAULT NULL,
+  `studentId` varchar(255) NOT NULL,
+  `term` int(11) DEFAULT NULL,
+  `year` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `StudentChangeClass`
+--
+
+LOCK TABLES `StudentChangeClass` WRITE;
+/*!40000 ALTER TABLE `StudentChangeClass` DISABLE KEYS */;
+/*!40000 ALTER TABLE `StudentChangeClass` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Vaccin`
+--
+
+DROP TABLE IF EXISTS `Vaccin`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Vaccin` (
+  `id` varchar(255) NOT NULL,
+  `AcDate` date DEFAULT NULL,
+  `Remark` varchar(255) DEFAULT NULL,
+  `Sort` int(11) DEFAULT NULL,
+  `State` varchar(255) DEFAULT NULL,
+  `VaccinId` int(11) DEFAULT NULL,
+  `VaccinName` varchar(255) DEFAULT NULL,
+  `ChooseSort` int(11) DEFAULT NULL,
+  `ChooseState` varchar(255) DEFAULT NULL,
+  `IsSelected` tinyint(1) DEFAULT NULL,
+  `IsCustom` tinyint(1) DEFAULT NULL,
+  `Fieldname` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Vaccin`
+--
+
+LOCK TABLES `Vaccin` WRITE;
+/*!40000 ALTER TABLE `Vaccin` DISABLE KEYS */;
+INSERT INTO `Vaccin` VALUES ('1',NULL,'',1,'1',1,'卡介苗',1,'1',1,0,'YMA'),('10',NULL,'',10,'1',10,'自定义04',10,'0',1,1,'V4'),('11',NULL,'',11,'1',11,'自定义05',11,'0',0,1,'V5'),('2',NULL,'',2,'1',2,'乙型肝炎疫苗',2,'1',1,0,'YMB'),('3',NULL,'',3,'1',3,'麻疹疫苗',3,'1',1,0,'YMC'),('4',NULL,'',4,'1',4,'脊髓灰质炎疫苗',4,'1',1,0,'YMD'),('5',NULL,'',5,'1',5,'百白破疫苗',5,'1',1,0,'YME'),('6',NULL,'',6,'1',6,'乙脑疫苗',6,'1',1,0,'YMF'),('7',NULL,'',7,'1',7,'自定义01',7,'0',1,1,'V1'),('8',NULL,'',8,'1',8,'自定义02',8,'0',1,1,'V2'),('9',NULL,'',9,'1',9,'自定义03',9,'0',1,1,'V3');
+/*!40000 ALTER TABLE `Vaccin` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `VaccinItem`
+--
+
+DROP TABLE IF EXISTS `VaccinItem`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `VaccinItem` (
+  `id` varchar(255) NOT NULL,
+  `VaccItem` varchar(255) DEFAULT NULL,
+  `VaccItemId` varchar(255) DEFAULT NULL,
+  `VaccinId` varchar(255) DEFAULT NULL,
+  `FieldMc` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `VaccinItem`
+--
+
+LOCK TABLES `VaccinItem` WRITE;
+/*!40000 ALTER TABLE `VaccinItem` DISABLE KEYS */;
+INSERT INTO `VaccinItem` VALUES ('01','已全程接种','0','1','YMA'),('010','已全程接种','0','10','V4'),('011','已全程接种','0','11','V5'),('012','已全程接种','0','12',NULL),('02','已全程接种','0','2','YMB'),('03','已全程接种','0','3','YMC'),('04','已全程接种','0','4','YMD'),('05','已全程接种','0','5','YME'),('06','已全程接种','0','6','YMF'),('07','已全程接种','0','7','V1'),('08','已全程接种','0','8','V2'),('09','已全程接种','0','9','V3'),('11','未接种','1','1','YMA'),('110','未接种','1','10','V4'),('111','未接种','1','11','V5'),('112','未接种','1','12',NULL),('12','未接种','1','2','YMB'),('13','未接种','1','3','YMC'),('14','未接种','1','4','YMD'),('15','未接种','1','5','YME'),('16','未接种','1','6','YMF'),('17','未接种','1','7','V1'),('18','未接种','1','8','V2'),('19','未接种','1','9','V3'),('21','有漏种','2','1','YMA'),('210','有漏种','2','10','V4'),('211','有漏种','2','11','V5'),('212','有漏种','2','12',NULL),('22','有漏种','2','2','YMB'),('23','有漏种','2','3','YMC'),('24','有漏种','2','4','YMD'),('25','有漏种','2','5','YME'),('26','有漏种','2','6','YMF'),('27','有漏种','2','7','V1'),('28','有漏种','2','8','V2'),('29','有漏种','2','9','V3');
+/*!40000 ALTER TABLE `VaccinItem` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `standard_chest`
+--
+
+DROP TABLE IF EXISTS `standard_chest`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `standard_chest` (
+  `id` varchar(255) NOT NULL,
+  `age` int(11) DEFAULT NULL,
+  `p10` decimal(19,2) DEFAULT NULL,
+  `p25` decimal(19,2) DEFAULT NULL,
+  `p75` decimal(19,2) DEFAULT NULL,
+  `p90` decimal(19,2) DEFAULT NULL,
+  `sex` varchar(255) DEFAULT NULL,
+  `version` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `standard_chest`
+--
+
+LOCK TABLES `standard_chest` WRITE;
+/*!40000 ALTER TABLE `standard_chest` DISABLE KEYS */;
+INSERT INTO `standard_chest` VALUES ('1',6,53.00,54.50,59.00,62.50,'男','95'),('10',15,72.00,75.00,83.20,89.00,'男','1'),('11',16,74.50,77.30,85.00,90.10,'男','1'),('12',17,76.00,79.00,86.00,91.00,'男','1'),('13',18,77.00,79.70,87.00,91.50,'男','1'),('14',19,78.00,80.50,87.00,91.50,'男','1'),('15',20,78.00,81.00,87.50,92.00,'男','1'),('16',21,78.40,81.00,88.00,92.00,'男','1'),('17',22,79.00,82.00,88.00,92.50,'男','1'),('18',6,51.00,53.00,57.00,60.00,'女','1'),('19',7,52.50,54.00,59.00,62.00,'女','1'),('1adfawqw',11,NULL,NULL,32.00,NULL,NULL,'2'),('2',7,54.30,56.00,61.00,65.00,'男','1'),('20',8,54.00,56.00,61.20,65.20,'女','1'),('21',9,55.80,57.80,64.00,68.90,'女','1'),('22',10,57.50,60.00,68.00,73.00,'女','1'),('23',11,60.00,63.00,72.00,77.40,'女','1'),('24',12,63.00,66.00,75.00,79.80,'女','1'),('25',13,66.50,69.90,77.60,82.00,'女','1'),('26',14,69.00,72.00,79.50,84.00,'女','1'),('27',15,71.00,73.50,81.00,85.00,'女','1'),('28',16,72.00,75.00,82.00,86.00,'女','1'),('29',17,72.50,75.30,82.00,86.00,'女','1'),('3',8,56.00,58.00,63.60,69.00,'男','1'),('30',18,73.00,75.80,82.00,86.50,'女','1'),('31',19,74.00,76.20,83.00,86.50,'女','1'),('32',20,74.00,76.70,83.00,87.00,'女','1'),('33',21,74.00,76.70,83.00,86.50,'女','1'),('34',22,74.00,76.70,82.90,86.50,'女','1'),('4',9,57.50,59.60,66.50,72.10,'男','1'),('5',10,59.20,61.50,69.50,76.00,'男','1'),('5212asdf',12,NULL,23.00,NULL,NULL,NULL,'2'),('6',11,61.00,63.40,72.40,79.00,'男','1'),('7',12,63.00,65.60,75.20,82.00,'男','1'),('8',13,65.40,68.60,78.10,84.80,'男','1'),('9',14,68.90,72.20,81.00,87.00,'男','1');
+/*!40000 ALTER TABLE `standard_chest` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `standard_height`
+--
+
+DROP TABLE IF EXISTS `standard_height`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `standard_height` (
+  `id` varchar(255) NOT NULL,
+  `age` int(11) DEFAULT NULL,
+  `p10` decimal(19,2) DEFAULT NULL,
+  `p25` decimal(19,2) DEFAULT NULL,
+  `p75` decimal(19,2) DEFAULT NULL,
+  `p90` decimal(19,2) DEFAULT NULL,
+  `sex` varchar(255) DEFAULT NULL,
+  `version` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `standard_height`
+--
+
+LOCK TABLES `standard_height` WRITE;
+/*!40000 ALTER TABLE `standard_height` DISABLE KEYS */;
+INSERT INTO `standard_height` VALUES ('1',6,112.40,115.70,122.80,126.10,'男','1'),('10',15,158.80,163.20,172.50,176.50,'男','1'),('11',16,161.50,165.50,174.10,178.00,'男','1'),('12',17,162.60,166.50,175.00,179.00,'男','1'),('13',18,163.10,166.80,175.10,179.00,'男','1'),('14',19,163.50,167.00,175.00,178.80,'男','1'),('15',20,163.50,167.00,175.20,179.00,'男','1'),('16',21,163.50,167.00,175.00,179.00,'男','1'),('17',22,163.20,167.00,174.80,178.40,'男','1'),('18',6,111.30,114.30,121.20,124.60,'女','1'),('19',7,115.00,118.80,126.70,130.10,'女','1'),('2',7,116.30,120.10,128.20,132.00,'男','1'),('20',8,120.40,124.10,132.40,136.50,'女','1'),('21',9,125.20,129.00,138.30,142.80,'女','1'),('22',10,130.20,134.60,145.00,149.50,'女','1'),('23',11,135.80,140.90,151.50,156.00,'女','1'),('24',12,141.00,146.00,156.00,160.00,'女','1'),('25',13,146.90,151.00,159.20,162.60,'女','1'),('26',14,149.60,153.00,161.00,164.50,'女','1'),('27',15,151.00,154.10,161.80,165.40,'女','1'),('28',16,151.40,154.80,162.30,165.80,'女','1'),('29',17,151.80,155.10,162.80,166.30,'女','1'),('3',8,121.40,125.20,133.80,137.80,'男','1'),('30',18,151.90,155.10,162.50,166.00,'女','1'),('31',19,152.70,156.00,163.10,166.80,'女','1'),('32',20,152.70,156.00,163.00,166.70,'女','1'),('33',21,152.90,156.00,163.10,166.50,'女','1'),('34',22,152.40,156.60,162.60,166.00,'女','1'),('4',9,126.10,130.00,138.70,142.70,'男','1'),('5',10,130.70,134.60,143.90,148.20,'男','1'),('6',11,135.00,139.60,149.60,154.80,'男','1'),('7',12,139.70,144.30,156.40,162.20,'男','1'),('8',13,145.70,151.60,164.50,169.40,'男','1'),('9',14,152.80,158.60,169.40,173.80,'男','1');
+/*!40000 ALTER TABLE `standard_height` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `standard_lungs`
+--
+
+DROP TABLE IF EXISTS `standard_lungs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `standard_lungs` (
+  `id` varchar(255) NOT NULL,
+  `age` int(11) DEFAULT NULL,
+  `p10` decimal(19,2) DEFAULT NULL,
+  `p25` decimal(19,2) DEFAULT NULL,
+  `p75` decimal(19,2) DEFAULT NULL,
+  `p90` decimal(19,2) DEFAULT NULL,
+  `sex` varchar(255) DEFAULT NULL,
+  `version` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `standard_lungs`
+--
+
+LOCK TABLES `standard_lungs` WRITE;
+/*!40000 ALTER TABLE `standard_lungs` DISABLE KEYS */;
+INSERT INTO `standard_lungs` VALUES ('1',6,585.00,714.00,1100.00,1295.00,'男','1'),('10',15,2075.00,2490.00,3507.80,4030.00,'男','1'),('11',16,2390.00,2829.00,3815.00,4290.80,'男','1'),('12',17,2505.00,2955.00,3915.00,4385.30,'男','1'),('13',18,2591.00,3020.00,4009.00,4475.00,'男','1'),('14',19,2767.00,3215.00,4151.50,4605.00,'男','1'),('15',20,2840.00,3260.00,4191.00,4630.20,'男','1'),('16',21,2815.00,3250.00,4200.00,4640.80,'男','1'),('17',22,2855.00,3250.00,4204.50,4660.70,'男','1'),('18',6,530.00,640.00,985.00,1180.00,'女','1'),('19',7,590.00,720.00,1115.00,1310.00,'女','1'),('2',7,640.00,800.00,1245.00,1484.20,'男','1'),('20',8,690.00,865.00,1300.00,1505.00,'女','1'),('21',9,795.00,986.50,1470.00,1711.00,'女','1'),('22',10,900.00,1115.00,1668.00,1930.60,'女','1'),('23',11,1015.00,1266.00,1900.00,2208.00,'女','1'),('24',12,1106.00,1380.00,2051.00,2368.00,'女','1'),('25',13,1267.00,1542.80,2233.50,2585.30,'女','1'),('26',14,1350.00,1625.00,2362.00,2691.00,'女','1'),('27',15,1445.00,1735.00,2465.00,2800.00,'女','1'),('28',16,1560.00,1870.00,2575.00,2915.00,'女','1'),('29',17,1600.00,1888.80,2609.00,2940.00,'女','1'),('3',8,765.00,970.00,1460.00,1705.00,'男','1'),('30',18,1605.00,1925.00,2626.00,2980.00,'女','1'),('31',19,1715.00,2050.00,2779.80,3100.00,'女','1'),('32',20,1781.00,2100.00,2800.00,3129.00,'女','1'),('33',21,1780.00,2105.00,2823.00,3143.00,'女','1'),('34',22,1757.00,2065.00,2801.00,3130.00,'女','1'),('4',9,905.00,1115.00,1655.00,1915.00,'男','1'),('5',10,1040.00,1275.00,1860.00,2145.40,'男','1'),('6',11,1163.10,1440.00,2090.00,2400.00,'男','1'),('7',12,1300.00,1624.50,2340.00,2735.00,'男','1'),('8',13,1570.00,1910.00,2800.00,3250.90,'男','1'),('9',14,1800.00,2195.00,3165.00,3625.00,'男','1');
+/*!40000 ALTER TABLE `standard_lungs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `standard_nutrition`
+--
+
+DROP TABLE IF EXISTS `standard_nutrition`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `standard_nutrition` (
+  `id` varchar(255) NOT NULL,
+  `grade` int(11) DEFAULT NULL,
+  `p10` decimal(19,2) DEFAULT NULL,
+  `p25` decimal(19,2) DEFAULT NULL,
+  `p75` decimal(19,2) DEFAULT NULL,
+  `p90` decimal(19,2) DEFAULT NULL,
+  `sex` varchar(255) DEFAULT NULL,
+  `sg` int(11) DEFAULT NULL,
+  `version` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `standard_nutrition`
+--
+
+LOCK TABLES `standard_nutrition` WRITE;
+/*!40000 ALTER TABLE `standard_nutrition` DISABLE KEYS */;
+INSERT INTO `standard_nutrition` VALUES ('1',11,14.80,16.80,19.10,19.80,'男',106,'1'),('10',11,17.30,19.90,22.80,23.60,'男',115,'1'),('100',12,37.10,43.30,51.10,53.40,'男',155,'1'),('1000',16,40.10,45.80,54.80,57.80,'女',163,'1'),('1001',16,40.60,46.50,55.70,58.70,'女',164,'1'),('1002',16,41.20,47.10,56.40,59.50,'女',165,'1'),('1003',16,41.80,47.70,57.00,60.10,'女',166,'1'),('1004',16,42.40,48.40,58.00,61.20,'女',167,'1'),('1005',16,42.80,49.10,58.90,62.10,'女',168,'1'),('1006',21,19.80,25.40,30.90,32.60,'女',121,'1'),('1007',21,20.30,25.90,31.70,33.70,'女',122,'1'),('1008',21,20.60,26.50,32.50,34.50,'女',123,'1'),('1009',21,21.10,27.00,33.10,35.20,'女',124,'1'),('101',13,14.80,16.80,19.10,19.80,'男',106,'1'),('1010',21,21.60,27.50,33.60,35.70,'女',125,'1'),('1011',21,22.10,28.00,34.40,36.40,'女',126,'1'),('1012',21,22.60,28.50,35.00,37.10,'女',127,'1'),('1013',21,23.00,29.00,35.40,37.60,'女',128,'1'),('1014',21,23.50,29.60,36.20,38.40,'女',129,'1'),('1015',21,23.90,30.10,36.80,39.10,'女',130,'1'),('1016',21,24.40,30.60,37.50,39.80,'女',131,'1'),('1017',21,24.90,31.10,38.10,40.30,'女',132,'1'),('1018',21,25.30,31.60,38.70,41.00,'女',133,'1'),('1019',21,25.60,32.10,39.20,41.50,'女',134,'1'),('102',13,15.10,17.10,19.50,20.30,'男',107,'1'),('1020',21,26.20,32.70,39.70,42.10,'女',135,'1'),('1021',21,27.30,33.20,40.40,42.80,'女',136,'1'),('1022',21,27.40,33.60,40.70,43.20,'女',137,'1'),('1023',21,27.70,34.10,41.50,43.70,'女',138,'1'),('1024',21,28.10,34.60,41.90,44.40,'女',139,'1'),('1025',21,28.60,35.20,42.50,45.00,'女',140,'1'),('1026',21,29.10,35.80,43.10,45.60,'女',141,'1'),('1027',21,29.60,36.40,43.90,46.40,'女',142,'1'),('1028',21,30.20,37.00,44.40,46.80,'女',143,'1'),('1029',21,30.80,37.70,45.00,47.50,'女',144,'1'),('103',13,15.30,17.50,19.90,20.70,'男',108,'1'),('1030',21,31.50,38.30,45.70,48.10,'女',145,'1'),('1031',21,32.10,38.90,46.20,48.70,'女',146,'1'),('1032',21,32.70,39.60,47.10,49.60,'女',147,'1'),('1033',21,33.30,40.30,47.90,50.30,'女',148,'1'),('1034',21,33.80,40.90,48.50,50.90,'女',149,'1'),('1035',21,34.30,41.40,49.00,51.60,'女',150,'1'),('1036',21,34.90,42.00,49.60,52.20,'女',151,'1'),('1037',21,35.50,42.60,50.30,52.80,'女',152,'1'),('1038',21,36.10,43.20,51.00,53.60,'女',153,'1'),('1039',21,36.60,43.70,51.60,54.10,'女',154,'1'),('104',13,15.60,17.90,20.30,21.10,'男',109,'1'),('1040',21,37.30,44.50,52.30,54.90,'女',155,'1'),('1041',21,37.80,45.00,52.90,55.40,'女',156,'1'),('1042',21,38.30,45.50,53.50,56.10,'女',157,'1'),('1043',21,38.70,46.10,54.20,56.90,'女',158,'1'),('1044',21,39.30,46.70,54.90,57.50,'女',159,'1'),('1045',21,39.80,47.20,55.70,58.20,'女',160,'1'),('1046',21,40.40,47.90,56.20,58.90,'女',161,'1'),('1047',21,41.00,48.50,56.90,59.70,'女',162,'1'),('1048',21,41.70,49.20,57.70,60.60,'女',163,'1'),('1049',21,42.20,49.80,58.60,61.60,'女',164,'1'),('105',13,15.80,18.30,20.70,21.50,'男',110,'1'),('1050',21,42.70,50.40,59.20,62.20,'女',165,'1'),('1051',21,43.30,51.00,59.80,62.80,'女',166,'1'),('1052',21,43.80,51.50,60.40,63.30,'女',167,'1'),('1053',21,44.50,52.20,61.10,64.00,'女',168,'1'),('1054',21,45.10,52.90,61.70,64.70,'女',169,'1'),('1055',21,45.60,53.50,62.30,65.30,'女',170,'1'),('1056',21,46.10,54.00,63.00,66.00,'女',171,'1'),('1057',21,46.50,54.50,63.60,66.50,'女',172,'1'),('1058',21,47.00,55.00,64.20,67.20,'女',173,'1'),('1059',21,47.60,55.60,64.80,67.80,'女',174,'1'),('106',13,16.10,18.60,21.10,21.90,'男',111,'1'),('1060',21,48.20,56.30,65.70,68.70,'女',175,'1'),('1061',21,48.70,57.00,66.50,69.60,'女',176,'1'),('1062',21,49.20,57.80,67.40,70.60,'女',177,'1'),('1063',22,19.80,25.40,30.90,32.60,'女',121,'1'),('1064',22,20.30,25.90,31.70,33.70,'女',122,'1'),('1065',22,20.60,26.50,32.50,34.50,'女',123,'1'),('1066',22,21.10,27.00,33.10,35.20,'女',124,'1'),('1067',22,21.60,27.50,33.60,35.70,'女',125,'1'),('1068',22,22.10,28.00,34.40,36.40,'女',126,'1'),('1069',22,22.60,28.50,35.00,37.10,'女',127,'1'),('107',13,16.40,18.90,21.50,22.30,'男',112,'1'),('1070',22,23.00,29.00,35.40,37.60,'女',128,'1'),('1071',22,23.50,29.60,36.20,38.40,'女',129,'1'),('1072',22,23.90,30.10,36.80,39.10,'女',130,'1'),('1073',22,24.40,30.60,37.50,39.80,'女',131,'1'),('1074',22,24.90,31.10,38.10,40.30,'女',132,'1'),('1075',22,25.30,31.60,38.70,41.00,'女',133,'1'),('1076',22,25.60,32.10,39.20,41.50,'女',134,'1'),('1077',22,26.20,32.70,39.70,42.10,'女',135,'1'),('1078',22,27.30,33.20,40.40,42.80,'女',136,'1'),('1079',22,27.40,33.60,40.70,43.20,'女',137,'1'),('108',13,16.70,19.20,22.00,22.80,'男',113,'1'),('1080',22,27.70,34.10,41.50,43.70,'女',138,'1'),('1081',22,28.10,34.60,41.90,44.40,'女',139,'1'),('1082',22,28.60,35.20,42.50,45.00,'女',140,'1'),('1083',22,29.10,35.80,43.10,45.60,'女',141,'1'),('1084',22,29.60,36.40,43.90,46.40,'女',142,'1'),('1085',22,30.20,37.00,44.40,46.80,'女',143,'1'),('1086',22,30.80,37.70,45.00,47.50,'女',144,'1'),('1087',22,31.50,38.30,45.70,48.10,'女',145,'1'),('1088',22,32.10,38.90,46.20,48.70,'女',146,'1'),('1089',22,32.70,39.60,47.10,49.60,'女',147,'1'),('109',13,17.00,19.60,22.40,23.20,'男',114,'1'),('1090',22,33.30,40.30,47.90,50.30,'女',148,'1'),('1091',22,33.80,40.90,48.50,50.90,'女',149,'1'),('1092',22,34.30,41.40,49.00,51.60,'女',150,'1'),('1093',22,34.90,42.00,49.60,52.20,'女',151,'1'),('1094',22,35.50,42.60,50.30,52.80,'女',152,'1'),('1095',22,36.10,43.20,51.00,53.60,'女',153,'1'),('1096',22,36.60,43.70,51.60,54.10,'女',154,'1'),('1097',22,37.30,44.50,52.30,54.90,'女',155,'1'),('1098',22,37.80,45.00,52.90,55.40,'女',156,'1'),('1099',22,38.30,45.50,53.50,56.10,'女',157,'1'),('11',11,17.60,20.30,23.20,24.10,'男',116,'1'),('110',13,17.30,19.90,22.80,23.60,'男',115,'1'),('1100',22,38.70,46.10,54.20,56.90,'女',158,'1'),('1101',22,39.30,46.70,54.90,57.50,'女',159,'1'),('1102',22,39.80,47.20,55.70,58.20,'女',160,'1'),('1103',22,40.40,47.90,56.20,58.90,'女',161,'1'),('1104',22,41.00,48.50,56.90,59.70,'女',162,'1'),('1105',22,41.70,49.20,57.70,60.60,'女',163,'1'),('1106',22,42.20,49.80,58.60,61.60,'女',164,'1'),('1107',22,42.70,50.40,59.20,62.20,'女',165,'1'),('1108',22,43.30,51.00,59.80,62.80,'女',166,'1'),('1109',22,43.80,51.50,60.40,63.30,'女',167,'1'),('111',13,17.60,20.30,23.20,24.10,'男',116,'1'),('1110',22,44.50,52.20,61.10,64.00,'女',168,'1'),('1111',22,45.10,52.90,61.70,64.70,'女',169,'1'),('1112',22,45.60,53.50,62.30,65.30,'女',170,'1'),('1113',22,46.10,54.00,63.00,66.00,'女',171,'1'),('1114',22,46.50,54.50,63.60,66.50,'女',172,'1'),('1115',22,47.00,55.00,64.20,67.20,'女',173,'1'),('1116',22,47.60,55.60,64.80,67.80,'女',174,'1'),('1117',22,48.20,56.30,65.70,68.70,'女',175,'1'),('1118',22,48.70,57.00,66.50,69.60,'女',176,'1'),('1119',22,49.20,57.80,67.40,70.60,'女',177,'1'),('112',13,18.00,20.60,23.60,24.60,'男',117,'1'),('1120',23,19.80,25.40,30.90,32.60,'女',121,'1'),('1121',23,20.30,25.90,31.70,33.70,'女',122,'1'),('1122',23,20.60,26.50,32.50,34.50,'女',123,'1'),('1123',23,21.10,27.00,33.10,35.20,'女',124,'1'),('1124',23,21.60,27.50,33.60,35.70,'女',125,'1'),('1125',23,22.10,28.00,34.40,36.40,'女',126,'1'),('1126',23,22.60,28.50,35.00,37.10,'女',127,'1'),('1127',23,23.00,29.00,35.40,37.60,'女',128,'1'),('1128',23,23.50,29.60,36.20,38.40,'女',129,'1'),('1129',23,23.90,30.10,36.80,39.10,'女',130,'1'),('113',13,18.30,21.00,24.10,25.00,'男',118,'1'),('1130',23,24.40,30.60,37.50,39.80,'女',131,'1'),('1131',23,24.90,31.10,38.10,40.30,'女',132,'1'),('1132',23,25.30,31.60,38.70,41.00,'女',133,'1'),('1133',23,25.60,32.10,39.20,41.50,'女',134,'1'),('1134',23,26.20,32.70,39.70,42.10,'女',135,'1'),('1135',23,27.30,33.20,40.40,42.80,'女',136,'1'),('1136',23,27.40,33.60,40.70,43.20,'女',137,'1'),('1137',23,27.70,34.10,41.50,43.70,'女',138,'1'),('1138',23,28.10,34.60,41.90,44.40,'女',139,'1'),('1139',23,28.60,35.20,42.50,45.00,'女',140,'1'),('114',13,18.60,21.40,24.60,25.50,'男',119,'1'),('1140',23,29.10,35.80,43.10,45.60,'女',141,'1'),('1141',23,29.60,36.40,43.90,46.40,'女',142,'1'),('1142',23,30.20,37.00,44.40,46.80,'女',143,'1'),('1143',23,30.80,37.70,45.00,47.50,'女',144,'1'),('1144',23,31.50,38.30,45.70,48.10,'女',145,'1'),('1145',23,32.10,38.90,46.20,48.70,'女',146,'1'),('1146',23,32.70,39.60,47.10,49.60,'女',147,'1'),('1147',23,33.30,40.30,47.90,50.30,'女',148,'1'),('1148',23,33.80,40.90,48.50,50.90,'女',149,'1'),('1149',23,34.30,41.40,49.00,51.60,'女',150,'1'),('115',13,19.00,21.80,25.10,26.20,'男',120,'1'),('1150',23,34.90,42.00,49.60,52.20,'女',151,'1'),('1151',23,35.50,42.60,50.30,52.80,'女',152,'1'),('1152',23,36.10,43.20,51.00,53.60,'女',153,'1'),('1153',23,36.60,43.70,51.60,54.10,'女',154,'1'),('1154',23,37.30,44.50,52.30,54.90,'女',155,'1'),('1155',23,37.80,45.00,52.90,55.40,'女',156,'1'),('1156',23,38.30,45.50,53.50,56.10,'女',157,'1'),('1157',23,38.70,46.10,54.20,56.90,'女',158,'1'),('1158',23,39.30,46.70,54.90,57.50,'女',159,'1'),('1159',23,39.80,47.20,55.70,58.20,'女',160,'1'),('116',13,19.40,22.20,25.60,26.80,'男',121,'1'),('1160',23,40.40,47.90,56.20,58.90,'女',161,'1'),('1161',23,41.00,48.50,56.90,59.70,'女',162,'1'),('1162',23,41.70,49.20,57.70,60.60,'女',163,'1'),('1163',23,42.20,49.80,58.60,61.60,'女',164,'1'),('1164',23,42.70,50.40,59.20,62.20,'女',165,'1'),('1165',23,43.30,51.00,59.80,62.80,'女',166,'1'),('1166',23,43.80,51.50,60.40,63.30,'女',167,'1'),('1167',23,44.50,52.20,61.10,64.00,'女',168,'1'),('1168',23,45.10,52.90,61.70,64.70,'女',169,'1'),('1169',23,45.60,53.50,62.30,65.30,'女',170,'1'),('117',13,19.70,22.60,26.20,27.40,'男',122,'1'),('1170',23,46.10,54.00,63.00,66.00,'女',171,'1'),('1171',23,46.50,54.50,63.60,66.50,'女',172,'1'),('1172',23,47.00,55.00,64.20,67.20,'女',173,'1'),('1173',23,47.60,55.60,64.80,67.80,'女',174,'1'),('1174',23,48.20,56.30,65.70,68.70,'女',175,'1'),('1175',23,48.70,57.00,66.50,69.60,'女',176,'1'),('1176',23,49.20,57.80,67.40,70.60,'女',177,'1'),('1177',24,19.80,25.40,30.90,32.60,'女',121,'1'),('1178',24,20.30,25.90,31.70,33.70,'女',122,'1'),('1179',24,20.60,26.50,32.50,34.50,'女',123,'1'),('118',13,20.10,23.00,26.80,28.00,'男',123,'1'),('1180',24,21.10,27.00,33.10,35.20,'女',124,'1'),('1181',24,21.60,27.50,33.60,35.70,'女',125,'1'),('1182',24,22.10,28.00,34.40,36.40,'女',126,'1'),('1183',24,22.60,28.50,35.00,37.10,'女',127,'1'),('1184',24,23.00,29.00,35.40,37.60,'女',128,'1'),('1185',24,23.50,29.60,36.20,38.40,'女',129,'1'),('1186',24,23.90,30.10,36.80,39.10,'女',130,'1'),('1187',24,24.40,30.60,37.50,39.80,'女',131,'1'),('1188',24,24.90,31.10,38.10,40.30,'女',132,'1'),('1189',24,25.30,31.60,38.70,41.00,'女',133,'1'),('119',13,20.50,23.40,27.30,28.60,'男',124,'1'),('1190',24,25.60,32.10,39.20,41.50,'女',134,'1'),('1191',24,26.20,32.70,39.70,42.10,'女',135,'1'),('1192',24,27.30,33.20,40.40,42.80,'女',136,'1'),('1193',24,27.40,33.60,40.70,43.20,'女',137,'1'),('1194',24,27.70,34.10,41.50,43.70,'女',138,'1'),('1195',24,28.10,34.60,41.90,44.40,'女',139,'1'),('1196',24,28.60,35.20,42.50,45.00,'女',140,'1'),('1197',24,29.10,35.80,43.10,45.60,'女',141,'1'),('1198',24,29.60,36.40,43.90,46.40,'女',142,'1'),('1199',24,30.20,37.00,44.40,46.80,'女',143,'1'),('12',11,18.00,20.60,23.60,24.60,'男',117,'1'),('120',13,20.90,23.80,27.80,29.20,'男',125,'1'),('1200',24,30.80,37.70,45.00,47.50,'女',144,'1'),('1201',24,31.50,38.30,45.70,48.10,'女',145,'1'),('1202',24,32.10,38.90,46.20,48.70,'女',146,'1'),('1203',24,32.70,39.60,47.10,49.60,'女',147,'1'),('1204',24,33.30,40.30,47.90,50.30,'女',148,'1'),('1205',24,33.80,40.90,48.50,50.90,'女',149,'1'),('1206',24,34.30,41.40,49.00,51.60,'女',150,'1'),('1207',24,34.90,42.00,49.60,52.20,'女',151,'1'),('1208',24,35.50,42.60,50.30,52.80,'女',152,'1'),('1209',24,36.10,43.20,51.00,53.60,'女',153,'1'),('121',13,21.30,24.30,28.50,29.80,'男',126,'1'),('1210',24,36.60,43.70,51.60,54.10,'女',154,'1'),('1211',24,37.30,44.50,52.30,54.90,'女',155,'1'),('1212',24,37.80,45.00,52.90,55.40,'女',156,'1'),('1213',24,38.30,45.50,53.50,56.10,'女',157,'1'),('1214',24,38.70,46.10,54.20,56.90,'女',158,'1'),('1215',24,39.30,46.70,54.90,57.50,'女',159,'1'),('1216',24,39.80,47.20,55.70,58.20,'女',160,'1'),('1217',24,40.40,47.90,56.20,58.90,'女',161,'1'),('1218',24,41.00,48.50,56.90,59.70,'女',162,'1'),('1219',24,41.70,49.20,57.70,60.60,'女',163,'1'),('122',13,21.70,24.70,29.00,30.40,'男',127,'1'),('1220',24,42.20,49.80,58.60,61.60,'女',164,'1'),('1221',24,42.70,50.40,59.20,62.20,'女',165,'1'),('1222',24,43.30,51.00,59.80,62.80,'女',166,'1'),('1223',24,43.80,51.50,60.40,63.30,'女',167,'1'),('1224',24,44.50,52.20,61.10,64.00,'女',168,'1'),('1225',24,45.10,52.90,61.70,64.70,'女',169,'1'),('1226',24,45.60,53.50,62.30,65.30,'女',170,'1'),('1227',24,46.10,54.00,63.00,66.00,'女',171,'1'),('1228',24,46.50,54.50,63.60,66.50,'女',172,'1'),('1229',24,47.00,55.00,64.20,67.20,'女',173,'1'),('123',13,22.10,25.10,29.50,31.00,'男',128,'1'),('1230',24,47.60,55.60,64.80,67.80,'女',174,'1'),('1231',24,48.20,56.30,65.70,68.70,'女',175,'1'),('1232',24,48.70,57.00,66.50,69.60,'女',176,'1'),('1233',24,49.20,57.80,67.40,70.60,'女',177,'1'),('1234',31,33.80,40.30,48.00,50.50,'女',140,'1'),('1235',31,34.30,40.90,48.70,51.30,'女',141,'1'),('1236',31,34.60,41.40,49.20,51.80,'女',142,'1'),('1237',31,35.00,41.80,49.90,52.60,'女',143,'1'),('1238',31,35.30,42.20,50.30,53.00,'女',144,'1'),('1239',31,35.60,42.70,51.00,53.70,'女',145,'1'),('124',13,22.60,25.60,30.10,31.60,'男',129,'1'),('1240',31,36.10,43.20,51.60,54.40,'女',146,'1'),('1241',31,36.70,43.80,52.40,55.20,'女',147,'1'),('1242',31,37.00,44.30,52.90,55.70,'女',148,'1'),('1243',31,37.40,44.80,53.40,56.20,'女',149,'1'),('1244',31,37.90,45.30,54.00,56.90,'女',150,'1'),('1245',31,38.40,45.80,54.50,57.40,'女',151,'1'),('1246',31,38.90,46.30,55.20,57.90,'女',152,'1'),('1247',31,39.40,46.80,55.70,58.60,'女',153,'1'),('1248',31,40.00,47.40,56.40,59.40,'女',154,'1'),('1249',31,40.50,47.90,56.90,59.90,'女',155,'1'),('125',13,23.00,26.10,30.90,32.30,'男',130,'1'),('1250',31,41.10,48.50,57.50,60.50,'女',156,'1'),('1251',31,41.60,49.10,58.10,61.10,'女',157,'1'),('1252',31,42.00,49.60,58.80,61.80,'女',158,'1'),('1253',31,42.50,50.20,59.50,62.60,'女',159,'1'),('1254',31,43.00,50.70,60.00,63.10,'女',160,'1'),('1255',31,43.50,51.20,60.70,63.80,'女',161,'1'),('1256',31,44.00,51.70,61.20,64.30,'女',162,'1'),('1257',31,44.40,52.20,61.80,65.00,'女',163,'1'),('1258',31,44.80,52.70,62.30,65.50,'女',164,'1'),('1259',31,45.20,53.10,62.70,65.90,'女',165,'1'),('126',13,23.50,26.60,31.60,33.20,'男',131,'1'),('1260',31,45.60,53.60,63.40,66.60,'女',166,'1'),('1261',31,46.10,54.10,64.10,67.10,'女',167,'1'),('1262',31,46.60,54.60,64.90,67.60,'女',168,'1'),('1263',31,47.10,55.20,65.30,68.40,'女',169,'1'),('1264',31,47.60,55.70,65.80,68.90,'女',170,'1'),('1265',31,48.10,56.40,66.30,69.60,'女',171,'1'),('1266',31,48.70,57.00,67.10,70.40,'女',172,'1'),('1267',31,49.30,57.60,67.70,71.00,'女',173,'1'),('1268',31,49.90,58.20,68.30,71.60,'女',174,'1'),('1269',31,50.50,58.90,69.10,72.50,'女',175,'1'),('127',13,23.90,27.10,32.30,34.00,'男',132,'1'),('1270',31,50.90,59.50,69.90,73.30,'女',176,'1'),('1271',31,51.60,60.20,70.60,74.00,'女',177,'1'),('1272',31,52.10,60.90,71.40,74.90,'女',178,'1'),('1273',31,52.60,61.50,72.00,75.50,'女',179,'1'),('1274',31,53.30,62.20,72.70,76.20,'女',180,'1'),('1275',31,53.80,62.80,73.30,76.80,'女',181,'1'),('1276',31,54.40,63.40,73.90,77.40,'女',182,'1'),('1277',31,55.00,64.00,74.70,78.20,'女',183,'1'),('1278',31,55.40,64.60,75.30,78.80,'女',184,'1'),('1279',31,55.80,65.30,76.10,79.70,'女',185,'1'),('128',13,24.40,27.70,32.90,34.70,'男',133,'1'),('1280',32,33.80,40.30,48.00,50.50,'女',140,'1'),('1281',32,34.30,40.90,48.70,51.30,'女',141,'1'),('1282',32,34.60,41.40,49.20,51.80,'女',142,'1'),('1283',32,35.00,41.80,49.90,52.60,'女',143,'1'),('1284',32,35.30,42.20,50.30,53.00,'女',144,'1'),('1285',32,35.60,42.70,51.00,53.70,'女',145,'1'),('1286',32,36.10,43.20,51.60,54.40,'女',146,'1'),('1287',32,36.70,43.80,52.40,55.20,'女',147,'1'),('1288',32,37.00,44.30,52.90,55.70,'女',148,'1'),('1289',32,37.40,44.80,53.40,56.20,'女',149,'1'),('129',13,24.90,28.30,33.60,35.30,'男',134,'1'),('1290',32,37.90,45.30,54.00,56.90,'女',150,'1'),('1291',32,38.40,45.80,54.50,57.40,'女',151,'1'),('1292',32,38.90,46.30,55.20,57.90,'女',152,'1'),('1293',32,39.40,46.80,55.70,58.60,'女',153,'1'),('1294',32,40.00,47.40,56.40,59.40,'女',154,'1'),('1295',32,40.50,47.90,56.90,59.90,'女',155,'1'),('1296',32,41.10,48.50,57.50,60.50,'女',156,'1'),('1297',32,41.60,49.10,58.10,61.10,'女',157,'1'),('1298',32,42.00,49.60,58.80,61.80,'女',158,'1'),('1299',32,42.50,50.20,59.50,62.60,'女',159,'1'),('13',11,18.30,21.00,24.10,25.00,'男',118,'1'),('130',13,25.30,28.90,34.20,36.00,'男',135,'1'),('1300',32,43.00,50.70,60.00,63.10,'女',160,'1'),('1301',32,43.50,51.20,60.70,63.80,'女',161,'1'),('1302',32,44.00,51.70,61.20,64.30,'女',162,'1'),('1303',32,44.40,52.20,61.80,65.00,'女',163,'1'),('1304',32,44.80,52.70,62.30,65.50,'女',164,'1'),('1305',32,45.20,53.10,62.70,65.90,'女',165,'1'),('1306',32,45.60,53.60,63.40,66.60,'女',166,'1'),('1307',32,46.10,54.10,64.10,67.10,'女',167,'1'),('1308',32,46.60,54.60,64.90,67.60,'女',168,'1'),('1309',32,47.10,55.20,65.30,68.40,'女',169,'1'),('131',13,25.80,29.50,34.90,36.70,'男',136,'1'),('1310',32,47.60,55.70,65.80,68.90,'女',170,'1'),('1311',32,48.10,56.40,66.30,69.60,'女',171,'1'),('1312',32,48.70,57.00,67.10,70.40,'女',172,'1'),('1313',32,49.30,57.60,67.70,71.00,'女',173,'1'),('1314',32,49.90,58.20,68.30,71.60,'女',174,'1'),('1315',32,50.50,58.90,69.10,72.50,'女',175,'1'),('1316',32,50.90,59.50,69.90,73.30,'女',176,'1'),('1317',32,51.60,60.20,70.60,74.00,'女',177,'1'),('1318',32,52.10,60.90,71.40,74.90,'女',178,'1'),('1319',32,52.60,61.50,72.00,75.50,'女',179,'1'),('132',13,26.40,30.10,35.60,37.40,'男',137,'1'),('1320',32,53.30,62.20,72.70,76.20,'女',180,'1'),('1321',32,53.80,62.80,73.30,76.80,'女',181,'1'),('1322',32,54.40,63.40,73.90,77.40,'女',182,'1'),('1323',32,55.00,64.00,74.70,78.20,'女',183,'1'),('1324',32,55.40,64.60,75.30,78.80,'女',184,'1'),('1325',32,55.80,65.30,76.10,79.70,'女',185,'1'),('1326',33,33.80,40.30,48.00,50.50,'女',140,'1'),('1327',33,34.30,40.90,48.70,51.30,'女',141,'1'),('1328',33,34.60,41.40,49.20,51.80,'女',142,'1'),('1329',33,35.00,41.80,49.90,52.60,'女',143,'1'),('133',13,27.00,30.80,36.30,38.20,'男',138,'1'),('1330',33,35.30,42.20,50.30,53.00,'女',144,'1'),('1331',33,35.60,42.70,51.00,53.70,'女',145,'1'),('1332',33,36.10,43.20,51.60,54.40,'女',146,'1'),('1333',33,36.70,43.80,52.40,55.20,'女',147,'1'),('1334',33,37.00,44.30,52.90,55.70,'女',148,'1'),('1335',33,37.40,44.80,53.40,56.20,'女',149,'1'),('1336',33,37.90,45.30,54.00,56.90,'女',150,'1'),('1337',33,38.40,45.80,54.50,57.40,'女',151,'1'),('1338',33,38.90,46.30,55.20,57.90,'女',152,'1'),('1339',33,39.40,46.80,55.70,58.60,'女',153,'1'),('134',13,27.60,31.50,37.10,39.10,'男',139,'1'),('1340',33,40.00,47.40,56.40,59.40,'女',154,'1'),('1341',33,40.50,47.90,56.90,59.90,'女',155,'1'),('1342',33,41.10,48.50,57.50,60.50,'女',156,'1'),('1343',33,41.60,49.10,58.10,61.10,'女',157,'1'),('1344',33,42.00,49.60,58.80,61.80,'女',158,'1'),('1345',33,42.50,50.20,59.50,62.60,'女',159,'1'),('1346',33,43.00,50.70,60.00,63.10,'女',160,'1'),('1347',33,43.50,51.20,60.70,63.80,'女',161,'1'),('1348',33,44.00,51.70,61.20,64.30,'女',162,'1'),('1349',33,44.40,52.20,61.80,65.00,'女',163,'1'),('135',13,28.10,32.20,38.00,40.00,'男',140,'1'),('1350',33,44.80,52.70,62.30,65.50,'女',164,'1'),('1351',33,45.20,53.10,62.70,65.90,'女',165,'1'),('1352',33,45.60,53.60,63.40,66.60,'女',166,'1'),('1353',33,46.10,54.10,64.10,67.10,'女',167,'1'),('1354',33,46.60,54.60,64.90,67.60,'女',168,'1'),('1355',33,47.10,55.20,65.30,68.40,'女',169,'1'),('1356',33,47.60,55.70,65.80,68.90,'女',170,'1'),('1357',33,48.10,56.40,66.30,69.60,'女',171,'1'),('1358',33,48.70,57.00,67.10,70.40,'女',172,'1'),('1359',33,49.30,57.60,67.70,71.00,'女',173,'1'),('136',13,28.60,32.90,38.90,40.90,'男',141,'1'),('1360',33,49.90,58.20,68.30,71.60,'女',174,'1'),('1361',33,50.50,58.90,69.10,72.50,'女',175,'1'),('1362',33,50.90,59.50,69.90,73.30,'女',176,'1'),('1363',33,51.60,60.20,70.60,74.00,'女',177,'1'),('1364',33,52.10,60.90,71.40,74.90,'女',178,'1'),('1365',33,52.60,61.50,72.00,75.50,'女',179,'1'),('1366',33,53.30,62.20,72.70,76.20,'女',180,'1'),('1367',33,53.80,62.80,73.30,76.80,'女',181,'1'),('1368',33,54.40,63.40,73.90,77.40,'女',182,'1'),('1369',33,55.00,64.00,74.70,78.20,'女',183,'1'),('137',13,29.10,33.70,39.80,41.80,'男',142,'1'),('1370',33,55.40,64.60,75.30,78.80,'女',184,'1'),('1371',33,55.80,65.30,76.10,79.70,'女',185,'1'),('1372',34,33.80,40.30,48.00,50.50,'女',140,'1'),('1373',34,34.30,40.90,48.70,51.30,'女',141,'1'),('1374',34,34.60,41.40,49.20,51.80,'女',142,'1'),('1375',34,35.00,41.80,49.90,52.60,'女',143,'1'),('1376',34,35.30,42.20,50.30,53.00,'女',144,'1'),('1377',34,35.60,42.70,51.00,53.70,'女',145,'1'),('1378',34,36.10,43.20,51.60,54.40,'女',146,'1'),('1379',34,36.70,43.80,52.40,55.20,'女',147,'1'),('138',13,29.70,34.50,40.70,42.70,'男',143,'1'),('1380',34,37.00,44.30,52.90,55.70,'女',148,'1'),('1381',34,37.40,44.80,53.40,56.20,'女',149,'1'),('1382',34,37.90,45.30,54.00,56.90,'女',150,'1'),('1383',34,38.40,45.80,54.50,57.40,'女',151,'1'),('1384',34,38.90,46.30,55.20,57.90,'女',152,'1'),('1385',34,39.40,46.80,55.70,58.60,'女',153,'1'),('1386',34,40.00,47.40,56.40,59.40,'女',154,'1'),('1387',34,40.50,47.90,56.90,59.90,'女',155,'1'),('1388',34,41.10,48.50,57.50,60.50,'女',156,'1'),('1389',34,41.60,49.10,58.10,61.10,'女',157,'1'),('139',13,30.30,35.20,41.70,43.60,'男',144,'1'),('1390',34,42.00,49.60,58.80,61.80,'女',158,'1'),('1391',34,42.50,50.20,59.50,62.60,'女',159,'1'),('1392',34,43.00,50.70,60.00,63.10,'女',160,'1'),('1393',34,43.50,51.20,60.70,63.80,'女',161,'1'),('1394',34,44.00,51.70,61.20,64.30,'女',162,'1'),('1395',34,44.40,52.20,61.80,65.00,'女',163,'1'),('1396',34,44.80,52.70,62.30,65.50,'女',164,'1'),('1397',34,45.20,53.10,62.70,65.90,'女',165,'1'),('1398',34,45.60,53.60,63.40,66.60,'女',166,'1'),('1399',34,46.10,54.10,64.10,67.10,'女',167,'1'),('14',11,18.60,21.40,24.60,25.50,'男',119,'1'),('140',13,30.90,35.90,42.30,44.50,'男',145,'1'),('1400',34,46.60,54.60,64.90,67.60,'女',168,'1'),('1401',34,47.10,55.20,65.30,68.40,'女',169,'1'),('1402',34,47.60,55.70,65.80,68.90,'女',170,'1'),('1403',34,48.10,56.40,66.30,69.60,'女',171,'1'),('1404',34,48.70,57.00,67.10,70.40,'女',172,'1'),('1405',34,49.30,57.60,67.70,71.00,'女',173,'1'),('1406',34,49.90,58.20,68.30,71.60,'女',174,'1'),('1407',34,50.50,58.90,69.10,72.50,'女',175,'1'),('1408',34,50.90,59.50,69.90,73.30,'女',176,'1'),('1409',34,51.60,60.20,70.60,74.00,'女',177,'1'),('141',13,31.50,36.60,43.20,45.40,'男',146,'1'),('1410',34,52.10,60.90,71.40,74.90,'女',178,'1'),('1411',34,52.60,61.50,72.00,75.50,'女',179,'1'),('1412',34,53.30,62.20,72.70,76.20,'女',180,'1'),('1413',34,53.80,62.80,73.30,76.80,'女',181,'1'),('1414',34,54.40,63.40,73.90,77.40,'女',182,'1'),('1415',34,55.00,64.00,74.70,78.20,'女',183,'1'),('1416',34,55.40,64.60,75.30,78.80,'女',184,'1'),('1417',34,55.80,65.30,76.10,79.70,'女',185,'1'),('142',13,32.10,37.40,44.20,46.40,'男',147,'1'),('143',13,32.70,38.10,45.00,47.30,'男',148,'1'),('144',13,33.30,38.80,45.90,48.20,'男',149,'1'),('145',13,34.00,39.50,46.70,49.10,'男',150,'1'),('146',13,34.60,40.10,47.50,49.90,'男',151,'1'),('147',13,35.20,40.90,48.40,50.70,'男',152,'1'),('148',13,35.90,41.60,49.10,51.50,'男',153,'1'),('149',13,36.50,42.40,49.90,52.40,'男',154,'1'),('15',11,19.00,21.80,25.10,26.20,'男',120,'1'),('150',13,37.10,43.30,51.10,53.40,'男',155,'1'),('151',14,14.80,16.80,19.10,19.80,'男',106,'1'),('152',14,15.10,17.10,19.50,20.30,'男',107,'1'),('153',14,15.30,17.50,19.90,20.70,'男',108,'1'),('154',14,15.60,17.90,20.30,21.10,'男',109,'1'),('155',14,15.80,18.30,20.70,21.50,'男',110,'1'),('156',14,16.10,18.60,21.10,21.90,'男',111,'1'),('157',14,16.40,18.90,21.50,22.30,'男',112,'1'),('158',14,16.70,19.20,22.00,22.80,'男',113,'1'),('159',14,17.00,19.60,22.40,23.20,'男',114,'1'),('16',11,19.40,22.20,25.60,26.80,'男',121,'1'),('160',14,17.30,19.90,22.80,23.60,'男',115,'1'),('161',14,17.60,20.30,23.20,24.10,'男',116,'1'),('162',14,18.00,20.60,23.60,24.60,'男',117,'1'),('163',14,18.30,21.00,24.10,25.00,'男',118,'1'),('164',14,18.60,21.40,24.60,25.50,'男',119,'1'),('165',14,19.00,21.80,25.10,26.20,'男',120,'1'),('166',14,19.40,22.20,25.60,26.80,'男',121,'1'),('167',14,19.70,22.60,26.20,27.40,'男',122,'1'),('168',14,20.10,23.00,26.80,28.00,'男',123,'1'),('169',14,20.50,23.40,27.30,28.60,'男',124,'1'),('17',11,19.70,22.60,26.20,27.40,'男',122,'1'),('170',14,20.90,23.80,27.80,29.20,'男',125,'1'),('171',14,21.30,24.30,28.50,29.80,'男',126,'1'),('172',14,21.70,24.70,29.00,30.40,'男',127,'1'),('173',14,22.10,25.10,29.50,31.00,'男',128,'1'),('174',14,22.60,25.60,30.10,31.60,'男',129,'1'),('175',14,23.00,26.10,30.90,32.30,'男',130,'1'),('176',14,23.50,26.60,31.60,33.20,'男',131,'1'),('177',14,23.90,27.10,32.30,34.00,'男',132,'1'),('178',14,24.40,27.70,32.90,34.70,'男',133,'1'),('179',14,24.90,28.30,33.60,35.30,'男',134,'1'),('18',11,20.10,23.00,26.80,28.00,'男',123,'1'),('180',14,25.30,28.90,34.20,36.00,'男',135,'1'),('181',14,25.80,29.50,34.90,36.70,'男',136,'1'),('182',14,26.40,30.10,35.60,37.40,'男',137,'1'),('183',14,27.00,30.80,36.30,38.20,'男',138,'1'),('184',14,27.60,31.50,37.10,39.10,'男',139,'1'),('185',14,28.10,32.20,38.00,40.00,'男',140,'1'),('186',14,28.60,32.90,38.90,40.90,'男',141,'1'),('187',14,29.10,33.70,39.80,41.80,'男',142,'1'),('188',14,29.70,34.50,40.70,42.70,'男',143,'1'),('189',14,30.30,35.20,41.70,43.60,'男',144,'1'),('19',11,20.50,23.40,27.30,28.60,'男',124,'1'),('190',14,30.90,35.90,42.30,44.50,'男',145,'1'),('191',14,31.50,36.60,43.20,45.40,'男',146,'1'),('192',14,32.10,37.40,44.20,46.40,'男',147,'1'),('193',14,32.70,38.10,45.00,47.30,'男',148,'1'),('194',14,33.30,38.80,45.90,48.20,'男',149,'1'),('195',14,34.00,39.50,46.70,49.10,'男',150,'1'),('196',14,34.60,40.10,47.50,49.90,'男',151,'1'),('197',14,35.20,40.90,48.40,50.70,'男',152,'1'),('198',14,35.90,41.60,49.10,51.50,'男',153,'1'),('199',14,36.50,42.40,49.90,52.40,'男',154,'1'),('2',11,15.10,17.10,19.50,20.30,'男',107,'1'),('20',11,20.90,23.80,27.80,29.20,'男',125,'1'),('200',14,37.10,43.30,51.10,53.40,'男',155,'1'),('201',15,14.80,16.80,19.10,19.80,'男',106,'1'),('202',15,15.10,17.10,19.50,20.30,'男',107,'1'),('203',15,15.30,17.50,19.90,20.70,'男',108,'1'),('204',15,15.60,17.90,20.30,21.10,'男',109,'1'),('205',15,15.80,18.30,20.70,21.50,'男',110,'1'),('206',15,16.10,18.60,21.10,21.90,'男',111,'1'),('207',15,16.40,18.90,21.50,22.30,'男',112,'1'),('208',15,16.70,19.20,22.00,22.80,'男',113,'1'),('209',15,17.00,19.60,22.40,23.20,'男',114,'1'),('21',11,21.30,24.30,28.50,29.80,'男',126,'1'),('210',15,17.30,19.90,22.80,23.60,'男',115,'1'),('211',15,17.60,20.30,23.20,24.10,'男',116,'1'),('212',15,18.00,20.60,23.60,24.60,'男',117,'1'),('213',15,18.30,21.00,24.10,25.00,'男',118,'1'),('214',15,18.60,21.40,24.60,25.50,'男',119,'1'),('215',15,19.00,21.80,25.10,26.20,'男',120,'1'),('216',15,19.40,22.20,25.60,26.80,'男',121,'1'),('217',15,19.70,22.60,26.20,27.40,'男',122,'1'),('218',15,20.10,23.00,26.80,28.00,'男',123,'1'),('219',15,20.50,23.40,27.30,28.60,'男',124,'1'),('22',11,21.70,24.70,29.00,30.40,'男',127,'1'),('220',15,20.90,23.80,27.80,29.20,'男',125,'1'),('221',15,21.30,24.30,28.50,29.80,'男',126,'1'),('222',15,21.70,24.70,29.00,30.40,'男',127,'1'),('223',15,22.10,25.10,29.50,31.00,'男',128,'1'),('224',15,22.60,25.60,30.10,31.60,'男',129,'1'),('225',15,23.00,26.10,30.90,32.30,'男',130,'1'),('226',15,23.50,26.60,31.60,33.20,'男',131,'1'),('227',15,23.90,27.10,32.30,34.00,'男',132,'1'),('228',15,24.40,27.70,32.90,34.70,'男',133,'1'),('229',15,24.90,28.30,33.60,35.30,'男',134,'1'),('23',11,22.10,25.10,29.50,31.00,'男',128,'1'),('230',15,25.30,28.90,34.20,36.00,'男',135,'1'),('231',15,25.80,29.50,34.90,36.70,'男',136,'1'),('232',15,26.40,30.10,35.60,37.40,'男',137,'1'),('233',15,27.00,30.80,36.30,38.20,'男',138,'1'),('234',15,27.60,31.50,37.10,39.10,'男',139,'1'),('235',15,28.10,32.20,38.00,40.00,'男',140,'1'),('236',15,28.60,32.90,38.90,40.90,'男',141,'1'),('237',15,29.10,33.70,39.80,41.80,'男',142,'1'),('238',15,29.70,34.50,40.70,42.70,'男',143,'1'),('239',15,30.30,35.20,41.70,43.60,'男',144,'1'),('24',11,22.60,25.60,30.10,31.60,'男',129,'1'),('240',15,30.90,35.90,42.30,44.50,'男',145,'1'),('241',15,31.50,36.60,43.20,45.40,'男',146,'1'),('242',15,32.10,37.40,44.20,46.40,'男',147,'1'),('243',15,32.70,38.10,45.00,47.30,'男',148,'1'),('244',15,33.30,38.80,45.90,48.20,'男',149,'1'),('245',15,34.00,39.50,46.70,49.10,'男',150,'1'),('246',15,34.60,40.10,47.50,49.90,'男',151,'1'),('247',15,35.20,40.90,48.40,50.70,'男',152,'1'),('248',15,35.90,41.60,49.10,51.50,'男',153,'1'),('249',15,36.50,42.40,49.90,52.40,'男',154,'1'),('25',11,23.00,26.10,30.90,32.30,'男',130,'1'),('250',15,37.10,43.30,51.10,53.40,'男',155,'1'),('251',16,14.80,16.80,19.10,19.80,'男',106,'1'),('252',16,15.10,17.10,19.50,20.30,'男',107,'1'),('253',16,15.30,17.50,19.90,20.70,'男',108,'1'),('254',16,15.60,17.90,20.30,21.10,'男',109,'1'),('255',16,15.80,18.30,20.70,21.50,'男',110,'1'),('256',16,16.10,18.60,21.10,21.90,'男',111,'1'),('257',16,16.40,18.90,21.50,22.30,'男',112,'1'),('258',16,16.70,19.20,22.00,22.80,'男',113,'1'),('259',16,17.00,19.60,22.40,23.20,'男',114,'1'),('26',11,23.50,26.60,31.60,33.20,'男',131,'1'),('260',16,17.30,19.90,22.80,23.60,'男',115,'1'),('261',16,17.60,20.30,23.20,24.10,'男',116,'1'),('262',16,18.00,20.60,23.60,24.60,'男',117,'1'),('263',16,18.30,21.00,24.10,25.00,'男',118,'1'),('264',16,18.60,21.40,24.60,25.50,'男',119,'1'),('265',16,19.00,21.80,25.10,26.20,'男',120,'1'),('266',16,19.40,22.20,25.60,26.80,'男',121,'1'),('267',16,19.70,22.60,26.20,27.40,'男',122,'1'),('268',16,20.10,23.00,26.80,28.00,'男',123,'1'),('269',16,20.50,23.40,27.30,28.60,'男',124,'1'),('27',11,23.90,27.10,32.30,34.00,'男',132,'1'),('270',16,20.90,23.80,27.80,29.20,'男',125,'1'),('271',16,21.30,24.30,28.50,29.80,'男',126,'1'),('272',16,21.70,24.70,29.00,30.40,'男',127,'1'),('273',16,22.10,25.10,29.50,31.00,'男',128,'1'),('274',16,22.60,25.60,30.10,31.60,'男',129,'1'),('275',16,23.00,26.10,30.90,32.30,'男',130,'1'),('276',16,23.50,26.60,31.60,33.20,'男',131,'1'),('277',16,23.90,27.10,32.30,34.00,'男',132,'1'),('278',16,24.40,27.70,32.90,34.70,'男',133,'1'),('279',16,24.90,28.30,33.60,35.30,'男',134,'1'),('28',11,24.40,27.70,32.90,34.70,'男',133,'1'),('280',16,25.30,28.90,34.20,36.00,'男',135,'1'),('281',16,25.80,29.50,34.90,36.70,'男',136,'1'),('282',16,26.40,30.10,35.60,37.40,'男',137,'1'),('283',16,27.00,30.80,36.30,38.20,'男',138,'1'),('284',16,27.60,31.50,37.10,39.10,'男',139,'1'),('285',16,28.10,32.20,38.00,40.00,'男',140,'1'),('286',16,28.60,32.90,38.90,40.90,'男',141,'1'),('287',16,29.10,33.70,39.80,41.80,'男',142,'1'),('288',16,29.70,34.50,40.70,42.70,'男',143,'1'),('289',16,30.30,35.20,41.70,43.60,'男',144,'1'),('29',11,24.90,28.30,33.60,35.30,'男',134,'1'),('290',16,30.90,35.90,42.30,44.50,'男',145,'1'),('291',16,31.50,36.60,43.20,45.40,'男',146,'1'),('292',16,32.10,37.40,44.20,46.40,'男',147,'1'),('293',16,32.70,38.10,45.00,47.30,'男',148,'1'),('294',16,33.30,38.80,45.90,48.20,'男',149,'1'),('295',16,34.00,39.50,46.70,49.10,'男',150,'1'),('296',16,34.60,40.10,47.50,49.90,'男',151,'1'),('297',16,35.20,40.90,48.40,50.70,'男',152,'1'),('298',16,35.90,41.60,49.10,51.50,'男',153,'1'),('299',16,36.50,42.40,49.90,52.40,'男',154,'1'),('3',11,15.30,17.50,19.90,20.70,'男',108,'1'),('30',11,25.30,28.90,34.20,36.00,'男',135,'1'),('300',16,37.10,43.30,51.10,53.40,'男',155,'1'),('301',21,21.40,28.50,34.20,36.20,'男',123,'1'),('302',21,21.60,29.00,34.80,36.90,'男',124,'1'),('303',21,22.20,29.60,35.40,37.50,'男',125,'1'),('304',21,22.60,30.40,36.20,38.40,'男',126,'1'),('305',21,22.80,30.90,36.90,39.10,'男',127,'1'),('306',21,23.40,31.50,37.60,39.80,'男',128,'1'),('307',21,24.10,32.20,38.20,40.40,'男',129,'1'),('308',21,24.60,32.80,39.10,41.30,'男',130,'1'),('309',21,25.10,33.40,39.70,41.90,'男',131,'1'),('31',11,25.80,29.50,34.90,36.70,'男',136,'1'),('310',21,25.70,34.00,40.30,42.50,'男',132,'1'),('311',21,26.30,34.60,41.30,43.20,'男',133,'1'),('312',21,26.80,35.20,41.60,43.90,'男',134,'1'),('313',21,27.20,35.80,42.20,44.50,'男',135,'1'),('314',21,27.80,36.40,42.80,45.10,'男',136,'1'),('315',21,28.20,37.00,43.40,45.70,'男',137,'1'),('316',21,28.70,37.60,44.10,46.40,'男',138,'1'),('317',21,29.40,38.30,44.70,47.00,'男',139,'1'),('318',21,30.10,39.00,45.60,47.90,'男',140,'1'),('319',21,30.80,39.70,46.30,48.60,'男',141,'1'),('32',11,26.40,30.10,35.60,37.40,'男',137,'1'),('320',21,31.50,40.40,47.00,49.30,'男',142,'1'),('321',21,32.20,41.10,47.70,50.00,'男',143,'1'),('322',21,32.80,41.80,48.40,50.70,'男',144,'1'),('323',21,33.50,42.50,49.20,51.60,'男',145,'1'),('324',21,34.10,43.10,49.80,52.20,'男',146,'1'),('325',21,34.60,43.80,50.50,52.90,'男',147,'1'),('326',21,35.30,44.50,51.40,53.80,'男',148,'1'),('327',21,35.80,45.10,52.00,54.40,'男',149,'1'),('328',21,36.50,45.80,52.70,55.10,'男',150,'1'),('329',21,37.00,46.50,53.50,56.00,'男',151,'1'),('33',11,27.00,30.80,36.30,38.20,'男',138,'1'),('330',21,37.60,47.10,54.10,56.60,'男',152,'1'),('331',21,38.30,47.80,54.80,57.30,'男',153,'1'),('332',21,39.00,48.50,55.50,58.00,'男',154,'1'),('333',21,39.60,49.10,56.10,58.60,'男',155,'1'),('334',21,40.30,49.80,56.80,59.30,'男',156,'1'),('335',21,40.90,50.50,57.70,60.20,'男',157,'1'),('336',21,41.40,51.20,58.40,60.90,'男',158,'1'),('337',21,42.20,51.90,59.10,61.60,'男',159,'1'),('338',21,42.90,52.70,59.90,62.40,'男',160,'1'),('339',21,43.60,53.40,60.60,63.10,'男',161,'1'),('34',11,27.60,31.50,37.10,39.10,'男',139,'1'),('340',21,44.30,54.10,61.40,64.00,'男',162,'1'),('341',21,44.80,54.70,62.00,64.60,'男',163,'1'),('342',21,45.40,55.40,62.70,65.10,'男',164,'1'),('343',21,46.20,56.10,63.40,66.00,'男',165,'1'),('344',21,46.80,56.70,64.00,66.60,'男',166,'1'),('345',21,47.40,57.40,64.90,67.50,'男',167,'1'),('346',21,48.00,58.10,65.60,68.20,'男',168,'1'),('347',21,48.70,58.80,66.40,69.10,'男',169,'1'),('348',21,49.40,59.50,67.10,69.80,'男',170,'1'),('349',21,50.00,60.20,68.00,70.70,'男',171,'1'),('35',11,28.10,32.20,38.00,40.00,'男',140,'1'),('350',21,50.60,60.80,69.00,71.80,'男',172,'1'),('351',21,51.20,61.50,69.90,72.80,'男',173,'1'),('352',21,51.90,62.30,70.90,73.90,'男',174,'1'),('353',21,52.70,63.10,71.80,74.80,'男',175,'1'),('354',21,53.30,63.80,72.80,75.90,'男',176,'1'),('355',21,54.00,64.60,73.90,77.10,'男',177,'1'),('356',21,54.70,65.40,74.80,78.10,'男',178,'1'),('357',21,55.80,66.20,75.80,79.10,'男',179,'1'),('358',21,56.30,66.90,76.70,80.10,'男',180,'1'),('359',21,56.90,67.70,77.70,81.20,'男',181,'1'),('36',11,28.60,32.90,38.90,40.90,'男',141,'1'),('360',21,57.50,68.40,78.60,82.10,'男',182,'1'),('361',21,58.10,69.10,79.40,83.00,'男',183,'1'),('362',21,58.70,69.80,80.40,84.10,'男',184,'1'),('363',21,59.50,70.50,81.30,85.00,'男',185,'1'),('364',21,60.30,71.30,82.30,86.10,'男',186,'1'),('365',22,21.40,28.50,34.20,36.20,'男',123,'1'),('366',22,21.60,29.00,34.80,36.90,'男',124,'1'),('367',22,22.20,29.60,35.40,37.50,'男',125,'1'),('368',22,22.60,30.40,36.20,38.40,'男',126,'1'),('369',22,22.80,30.90,36.90,39.10,'男',127,'1'),('37',11,29.10,33.70,39.80,41.80,'男',142,'1'),('370',22,23.40,31.50,37.60,39.80,'男',128,'1'),('371',22,24.10,32.20,38.20,40.40,'男',129,'1'),('372',22,24.60,32.80,39.10,41.30,'男',130,'1'),('373',22,25.10,33.40,39.70,41.90,'男',131,'1'),('374',22,25.70,34.00,40.30,42.50,'男',132,'1'),('375',22,26.30,34.60,41.30,43.20,'男',133,'1'),('376',22,26.80,35.20,41.60,43.90,'男',134,'1'),('377',22,27.20,35.80,42.20,44.50,'男',135,'1'),('378',22,27.80,36.40,42.80,45.10,'男',136,'1'),('379',22,28.20,37.00,43.40,45.70,'男',137,'1'),('38',11,29.70,34.50,40.70,42.70,'男',143,'1'),('380',22,28.70,37.60,44.10,46.40,'男',138,'1'),('381',22,29.40,38.30,44.70,47.00,'男',139,'1'),('382',22,30.10,39.00,45.60,47.90,'男',140,'1'),('383',22,30.80,39.70,46.30,48.60,'男',141,'1'),('384',22,31.50,40.40,47.00,49.30,'男',142,'1'),('385',22,32.20,41.10,47.70,50.00,'男',143,'1'),('386',22,32.80,41.80,48.40,50.70,'男',144,'1'),('387',22,33.50,42.50,49.20,51.60,'男',145,'1'),('388',22,34.10,43.10,49.80,52.20,'男',146,'1'),('389',22,34.60,43.80,50.50,52.90,'男',147,'1'),('39',11,30.30,35.20,41.70,43.60,'男',144,'1'),('390',22,35.30,44.50,51.40,53.80,'男',148,'1'),('391',22,35.80,45.10,52.00,54.40,'男',149,'1'),('392',22,36.50,45.80,52.70,55.10,'男',150,'1'),('393',22,37.00,46.50,53.50,56.00,'男',151,'1'),('394',22,37.60,47.10,54.10,56.60,'男',152,'1'),('395',22,38.30,47.80,54.80,57.30,'男',153,'1'),('396',22,39.00,48.50,55.50,58.00,'男',154,'1'),('397',22,39.60,49.10,56.10,58.60,'男',155,'1'),('398',22,40.30,49.80,56.80,59.30,'男',156,'1'),('399',22,40.90,50.50,57.70,60.20,'男',157,'1'),('4',11,15.60,17.90,20.30,21.10,'男',109,'1'),('40',11,30.90,35.90,42.30,44.50,'男',145,'1'),('400',22,41.40,51.20,58.40,60.90,'男',158,'1'),('401',22,42.20,51.90,59.10,61.60,'男',159,'1'),('402',22,42.90,52.70,59.90,62.40,'男',160,'1'),('403',22,43.60,53.40,60.60,63.10,'男',161,'1'),('404',22,44.30,54.10,61.40,64.00,'男',162,'1'),('405',22,44.80,54.70,62.00,64.60,'男',163,'1'),('406',22,45.40,55.40,62.70,65.10,'男',164,'1'),('407',22,46.20,56.10,63.40,66.00,'男',165,'1'),('408',22,46.80,56.70,64.00,66.60,'男',166,'1'),('409',22,47.40,57.40,64.90,67.50,'男',167,'1'),('41',11,31.50,36.60,43.20,45.40,'男',146,'1'),('410',22,48.00,58.10,65.60,68.20,'男',168,'1'),('411',22,48.70,58.80,66.40,69.10,'男',169,'1'),('412',22,49.40,59.50,67.10,69.80,'男',170,'1'),('413',22,50.00,60.20,68.00,70.70,'男',171,'1'),('414',22,50.60,60.80,69.00,71.80,'男',172,'1'),('415',22,51.20,61.50,69.90,72.80,'男',173,'1'),('416',22,51.90,62.30,70.90,73.90,'男',174,'1'),('417',22,52.70,63.10,71.80,74.80,'男',175,'1'),('418',22,53.30,63.80,72.80,75.90,'男',176,'1'),('419',22,54.00,64.60,73.90,77.10,'男',177,'1'),('42',11,32.10,37.40,44.20,46.40,'男',147,'1'),('420',22,54.70,65.40,74.80,78.10,'男',178,'1'),('421',22,55.80,66.20,75.80,79.10,'男',179,'1'),('422',22,56.30,66.90,76.70,80.10,'男',180,'1'),('423',22,56.90,67.70,77.70,81.20,'男',181,'1'),('424',22,57.50,68.40,78.60,82.10,'男',182,'1'),('425',22,58.10,69.10,79.40,83.00,'男',183,'1'),('426',22,58.70,69.80,80.40,84.10,'男',184,'1'),('427',22,59.50,70.50,81.30,85.00,'男',185,'1'),('428',22,60.30,71.30,82.30,86.10,'男',186,'1'),('429',23,21.40,28.50,34.20,36.20,'男',123,'1'),('43',11,32.70,38.10,45.00,47.30,'男',148,'1'),('430',23,21.60,29.00,34.80,36.90,'男',124,'1'),('431',23,22.20,29.60,35.40,37.50,'男',125,'1'),('432',23,22.60,30.40,36.20,38.40,'男',126,'1'),('433',23,22.80,30.90,36.90,39.10,'男',127,'1'),('434',23,23.40,31.50,37.60,39.80,'男',128,'1'),('435',23,24.10,32.20,38.20,40.40,'男',129,'1'),('436',23,24.60,32.80,39.10,41.30,'男',130,'1'),('437',23,25.10,33.40,39.70,41.90,'男',131,'1'),('438',23,25.70,34.00,40.30,42.50,'男',132,'1'),('439',23,26.30,34.60,41.30,43.20,'男',133,'1'),('44',11,33.30,38.80,45.90,48.20,'男',149,'1'),('440',23,26.80,35.20,41.60,43.90,'男',134,'1'),('441',23,27.20,35.80,42.20,44.50,'男',135,'1'),('442',23,27.80,36.40,42.80,45.10,'男',136,'1'),('443',23,28.20,37.00,43.40,45.70,'男',137,'1'),('444',23,28.70,37.60,44.10,46.40,'男',138,'1'),('445',23,29.40,38.30,44.70,47.00,'男',139,'1'),('446',23,30.10,39.00,45.60,47.90,'男',140,'1'),('447',23,30.80,39.70,46.30,48.60,'男',141,'1'),('448',23,31.50,40.40,47.00,49.30,'男',142,'1'),('449',23,32.20,41.10,47.70,50.00,'男',143,'1'),('45',11,34.00,39.50,46.70,49.10,'男',150,'1'),('450',23,32.80,41.80,48.40,50.70,'男',144,'1'),('451',23,33.50,42.50,49.20,51.60,'男',145,'1'),('452',23,34.10,43.10,49.80,52.20,'男',146,'1'),('453',23,34.60,43.80,50.50,52.90,'男',147,'1'),('454',23,35.30,44.50,51.40,53.80,'男',148,'1'),('455',23,35.80,45.10,52.00,54.40,'男',149,'1'),('456',23,36.50,45.80,52.70,55.10,'男',150,'1'),('457',23,37.00,46.50,53.50,56.00,'男',151,'1'),('458',23,37.60,47.10,54.10,56.60,'男',152,'1'),('459',23,38.30,47.80,54.80,57.30,'男',153,'1'),('46',11,34.60,40.10,47.50,49.90,'男',151,'1'),('460',23,39.00,48.50,55.50,58.00,'男',154,'1'),('461',23,39.60,49.10,56.10,58.60,'男',155,'1'),('462',23,40.30,49.80,56.80,59.30,'男',156,'1'),('463',23,40.90,50.50,57.70,60.20,'男',157,'1'),('464',23,41.40,51.20,58.40,60.90,'男',158,'1'),('465',23,42.20,51.90,59.10,61.60,'男',159,'1'),('466',23,42.90,52.70,59.90,62.40,'男',160,'1'),('467',23,43.60,53.40,60.60,63.10,'男',161,'1'),('468',23,44.30,54.10,61.40,64.00,'男',162,'1'),('469',23,44.80,54.70,62.00,64.60,'男',163,'1'),('47',11,35.20,40.90,48.40,50.70,'男',152,'1'),('470',23,45.40,55.40,62.70,65.10,'男',164,'1'),('471',23,46.20,56.10,63.40,66.00,'男',165,'1'),('472',23,46.80,56.70,64.00,66.60,'男',166,'1'),('473',23,47.40,57.40,64.90,67.50,'男',167,'1'),('474',23,48.00,58.10,65.60,68.20,'男',168,'1'),('475',23,48.70,58.80,66.40,69.10,'男',169,'1'),('476',23,49.40,59.50,67.10,69.80,'男',170,'1'),('477',23,50.00,60.20,68.00,70.70,'男',171,'1'),('478',23,50.60,60.80,69.00,71.80,'男',172,'1'),('479',23,51.20,61.50,69.90,72.80,'男',173,'1'),('48',11,35.90,41.60,49.10,51.50,'男',153,'1'),('480',23,51.90,62.30,70.90,73.90,'男',174,'1'),('481',23,52.70,63.10,71.80,74.80,'男',175,'1'),('482',23,53.30,63.80,72.80,75.90,'男',176,'1'),('483',23,54.00,64.60,73.90,77.10,'男',177,'1'),('484',23,54.70,65.40,74.80,78.10,'男',178,'1'),('485',23,55.80,66.20,75.80,79.10,'男',179,'1'),('486',23,56.30,66.90,76.70,80.10,'男',180,'1'),('487',23,56.90,67.70,77.70,81.20,'男',181,'1'),('488',23,57.50,68.40,78.60,82.10,'男',182,'1'),('489',23,58.10,69.10,79.40,83.00,'男',183,'1'),('49',11,36.50,42.40,49.90,52.40,'男',154,'1'),('490',23,58.70,69.80,80.40,84.10,'男',184,'1'),('491',23,59.50,70.50,81.30,85.00,'男',185,'1'),('492',23,60.30,71.30,82.30,86.10,'男',186,'1'),('493',24,21.40,28.50,34.20,36.20,'男',123,'1'),('494',24,21.60,29.00,34.80,36.90,'男',124,'1'),('495',24,22.20,29.60,35.40,37.50,'男',125,'1'),('496',24,22.60,30.40,36.20,38.40,'男',126,'1'),('497',24,22.80,30.90,36.90,39.10,'男',127,'1'),('498',24,23.40,31.50,37.60,39.80,'男',128,'1'),('499',24,24.10,32.20,38.20,40.40,'男',129,'1'),('5',11,15.80,18.30,20.70,21.50,'男',110,'1'),('50',11,37.10,43.30,51.10,53.40,'男',155,'1'),('500',24,24.60,32.80,39.10,41.30,'男',130,'1'),('501',24,25.10,33.40,39.70,41.90,'男',131,'1'),('502',24,25.70,34.00,40.30,42.50,'男',132,'1'),('503',24,26.30,34.60,41.30,43.20,'男',133,'1'),('504',24,26.80,35.20,41.60,43.90,'男',134,'1'),('505',24,27.20,35.80,42.20,44.50,'男',135,'1'),('506',24,27.80,36.40,42.80,45.10,'男',136,'1'),('507',24,28.20,37.00,43.40,45.70,'男',137,'1'),('508',24,28.70,37.60,44.10,46.40,'男',138,'1'),('509',24,29.40,38.30,44.70,47.00,'男',139,'1'),('51',12,14.80,16.80,19.10,19.80,'男',106,'1'),('510',24,30.10,39.00,45.60,47.90,'男',140,'1'),('511',24,30.80,39.70,46.30,48.60,'男',141,'1'),('512',24,31.50,40.40,47.00,49.30,'男',142,'1'),('513',24,32.20,41.10,47.70,50.00,'男',143,'1'),('514',24,32.80,41.80,48.40,50.70,'男',144,'1'),('515',24,33.50,42.50,49.20,51.60,'男',145,'1'),('516',24,34.10,43.10,49.80,52.20,'男',146,'1'),('517',24,34.60,43.80,50.50,52.90,'男',147,'1'),('518',24,35.30,44.50,51.40,53.80,'男',148,'1'),('519',24,35.80,45.10,52.00,54.40,'男',149,'1'),('52',12,15.10,17.10,19.50,20.30,'男',107,'1'),('520',24,36.50,45.80,52.70,55.10,'男',150,'1'),('521',24,37.00,46.50,53.50,56.00,'男',151,'1'),('522',24,37.60,47.10,54.10,56.60,'男',152,'1'),('523',24,38.30,47.80,54.80,57.30,'男',153,'1'),('524',24,39.00,48.50,55.50,58.00,'男',154,'1'),('525',24,39.60,49.10,56.10,58.60,'男',155,'1'),('526',24,40.30,49.80,56.80,59.30,'男',156,'1'),('527',24,40.90,50.50,57.70,60.20,'男',157,'1'),('528',24,41.40,51.20,58.40,60.90,'男',158,'1'),('529',24,42.20,51.90,59.10,61.60,'男',159,'1'),('53',12,15.30,17.50,19.90,20.70,'男',108,'1'),('530',24,42.90,52.70,59.90,62.40,'男',160,'1'),('531',24,43.60,53.40,60.60,63.10,'男',161,'1'),('532',24,44.30,54.10,61.40,64.00,'男',162,'1'),('533',24,44.80,54.70,62.00,64.60,'男',163,'1'),('534',24,45.40,55.40,62.70,65.10,'男',164,'1'),('535',24,46.20,56.10,63.40,66.00,'男',165,'1'),('536',24,46.80,56.70,64.00,66.60,'男',166,'1'),('537',24,47.40,57.40,64.90,67.50,'男',167,'1'),('538',24,48.00,58.10,65.60,68.20,'男',168,'1'),('539',24,48.70,58.80,66.40,69.10,'男',169,'1'),('54',12,15.60,17.90,20.30,21.10,'男',109,'1'),('540',24,49.40,59.50,67.10,69.80,'男',170,'1'),('541',24,50.00,60.20,68.00,70.70,'男',171,'1'),('542',24,50.60,60.80,69.00,71.80,'男',172,'1'),('543',24,51.20,61.50,69.90,72.80,'男',173,'1'),('544',24,51.90,62.30,70.90,73.90,'男',174,'1'),('545',24,52.70,63.10,71.80,74.80,'男',175,'1'),('546',24,53.30,63.80,72.80,75.90,'男',176,'1'),('547',24,54.00,64.60,73.90,77.10,'男',177,'1'),('548',24,54.70,65.40,74.80,78.10,'男',178,'1'),('549',24,55.80,66.20,75.80,79.10,'男',179,'1'),('55',12,15.80,18.30,20.70,21.50,'男',110,'1'),('550',24,56.30,66.90,76.70,80.10,'男',180,'1'),('551',24,56.90,67.70,77.70,81.20,'男',181,'1'),('552',24,57.50,68.40,78.60,82.10,'男',182,'1'),('553',24,58.10,69.10,79.40,83.00,'男',183,'1'),('554',24,58.70,69.80,80.40,84.10,'男',184,'1'),('555',24,59.50,70.50,81.30,85.00,'男',185,'1'),('556',24,60.30,71.30,82.30,86.10,'男',186,'1'),('557',32,37.70,46.80,54.00,56.40,'男',152,'1'),('558',32,38.20,47.40,54.60,57.00,'男',153,'1'),('559',32,38.90,48.10,55.30,57.70,'男',154,'1'),('56',12,16.10,18.60,21.10,21.90,'男',111,'1'),('560',32,39.60,48.80,56.00,58.40,'男',155,'1'),('561',32,40.40,49.60,57.00,59.40,'男',156,'1'),('562',32,41.00,50.30,57.70,60.10,'男',157,'1'),('563',32,41.70,51.00,58.50,61.00,'男',158,'1'),('564',32,42.40,51.70,59.20,61.70,'男',159,'1'),('565',32,43.10,52.50,60.00,62.50,'男',160,'1'),('566',32,43.80,53.30,60.80,63.30,'男',161,'1'),('567',32,44.50,54.00,61.50,64.00,'男',162,'1'),('568',32,45.30,54.80,62.50,65.00,'男',163,'1'),('569',32,45.90,55.50,63.20,65.70,'男',164,'1'),('57',12,16.40,18.90,21.50,22.30,'男',112,'1'),('570',32,46.50,56.30,64.00,66.50,'男',165,'1'),('571',32,47.10,57.00,64.70,67.20,'男',166,'1'),('572',32,48.00,57.80,65.60,68.20,'男',167,'1'),('573',32,48.70,58.50,66.30,68.90,'男',168,'1'),('574',32,49.30,59.20,67.00,69.60,'男',169,'1'),('575',32,50.10,60.00,67.80,70.40,'男',170,'1'),('576',32,50.70,60.60,68.80,71.20,'男',171,'1'),('577',32,51.40,61.50,69.50,72.10,'男',172,'1'),('578',32,52.10,62.20,70.30,73.00,'男',173,'1'),('579',32,52.90,63.00,71.30,74.00,'男',174,'1'),('58',12,16.70,19.20,22.00,22.80,'男',113,'1'),('580',32,53.70,63.80,72.20,75.00,'男',175,'1'),('581',32,54.40,64.50,73.10,75.90,'男',176,'1'),('582',32,55.20,65.20,73.90,76.80,'男',177,'1'),('583',32,55.70,66.00,74.90,77.80,'男',178,'1'),('584',32,56.40,66.70,75.70,78.70,'男',179,'1'),('585',32,57.10,67.40,76.40,79.40,'男',180,'1'),('586',32,57.70,68.10,77.40,80.60,'男',181,'1'),('587',32,58.50,68.90,78.50,81.70,'男',182,'1'),('588',32,59.20,69.60,79.40,82.60,'男',183,'1'),('589',32,60.00,70.40,80.30,83.60,'男',184,'1'),('59',12,17.00,19.60,22.40,23.20,'男',114,'1'),('590',32,60.80,71.20,81.30,84.60,'男',185,'1'),('591',32,61.50,72.00,82.20,85.60,'男',186,'1'),('592',32,62.30,72.90,83.30,86.70,'男',187,'1'),('593',32,63.00,73.70,84.20,87.70,'男',188,'1'),('594',32,63.90,74.50,85.00,88.50,'男',189,'1'),('595',32,64.60,75.40,86.20,89.80,'男',190,'1'),('596',33,32.10,40.30,46.30,48.30,'男',140,'1'),('597',33,32.40,40.70,47.00,49.10,'男',141,'1'),('598',33,32.80,41.20,47.70,49.80,'男',142,'1'),('599',33,33.30,41.70,48.20,50.30,'男',143,'1'),('6',11,16.10,18.60,21.10,21.90,'男',111,'1'),('60',12,17.30,19.90,22.80,23.60,'男',115,'1'),('600',33,33.60,42.20,48.80,51.00,'男',144,'1'),('601',33,34.00,42.70,49.50,51.70,'男',145,'1'),('602',33,34.40,43.30,50.10,52.30,'男',146,'1'),('603',33,35.00,43.90,50.80,53.10,'男',147,'1'),('604',33,35.60,44.50,51.40,53.70,'男',148,'1'),('605',33,36.20,45.10,52.20,54.50,'男',149,'1'),('606',33,36.70,45.70,52.80,55.10,'男',150,'1'),('607',33,37.30,46.20,53.40,55.80,'男',151,'1'),('608',33,37.70,46.80,54.00,56.40,'男',152,'1'),('609',33,38.20,47.40,54.60,57.00,'男',153,'1'),('61',12,17.60,20.30,23.20,24.10,'男',116,'1'),('610',33,38.90,48.10,55.30,57.70,'男',154,'1'),('611',33,39.60,48.80,56.00,58.40,'男',155,'1'),('612',33,40.40,49.60,57.00,59.40,'男',156,'1'),('613',33,41.00,50.30,57.70,60.10,'男',157,'1'),('614',33,41.70,51.00,58.50,61.00,'男',158,'1'),('615',33,42.40,51.70,59.20,61.70,'男',159,'1'),('616',33,43.10,52.50,60.00,62.50,'男',160,'1'),('617',33,43.80,53.30,60.80,63.30,'男',161,'1'),('618',33,44.50,54.00,61.50,64.00,'男',162,'1'),('619',33,45.30,54.80,62.50,65.00,'男',163,'1'),('62',12,18.00,20.60,23.60,24.60,'男',117,'1'),('620',33,45.90,55.50,63.20,65.70,'男',164,'1'),('621',33,46.50,56.30,64.00,66.50,'男',165,'1'),('622',33,47.10,57.00,64.70,67.20,'男',166,'1'),('623',33,48.00,57.80,65.60,68.20,'男',167,'1'),('624',33,48.70,58.50,66.30,68.90,'男',168,'1'),('625',33,49.30,59.20,67.00,69.60,'男',169,'1'),('626',33,50.10,60.00,67.80,70.40,'男',170,'1'),('627',33,50.70,60.60,68.80,71.20,'男',171,'1'),('628',33,51.40,61.50,69.50,72.10,'男',172,'1'),('629',33,52.10,62.20,70.30,73.00,'男',173,'1'),('63',12,18.30,21.00,24.10,25.00,'男',118,'1'),('630',33,52.90,63.00,71.30,74.00,'男',174,'1'),('631',33,53.70,63.80,72.20,75.00,'男',175,'1'),('632',33,54.40,64.50,73.10,75.90,'男',176,'1'),('633',33,55.20,65.20,73.90,76.80,'男',177,'1'),('634',33,55.70,66.00,74.90,77.80,'男',178,'1'),('635',33,56.40,66.70,75.70,78.70,'男',179,'1'),('636',33,57.10,67.40,76.40,79.40,'男',180,'1'),('637',33,57.70,68.10,77.40,80.60,'男',181,'1'),('638',33,58.50,68.90,78.50,81.70,'男',182,'1'),('639',33,59.20,69.60,79.40,82.60,'男',183,'1'),('64',12,18.60,21.40,24.60,25.50,'男',119,'1'),('640',33,60.00,70.40,80.30,83.60,'男',184,'1'),('641',33,60.80,71.20,81.30,84.60,'男',185,'1'),('642',33,61.50,72.00,82.20,85.60,'男',186,'1'),('643',33,62.30,72.90,83.30,86.70,'男',187,'1'),('644',33,63.00,73.70,84.20,87.70,'男',188,'1'),('645',33,63.90,74.50,85.00,88.50,'男',189,'1'),('646',33,64.60,75.40,86.20,89.80,'男',190,'1'),('647',34,32.10,40.30,46.30,48.30,'男',140,'1'),('648',34,32.40,40.70,47.00,49.10,'男',141,'1'),('649',34,32.80,41.20,47.70,49.80,'男',142,'1'),('65',12,19.00,21.80,25.10,26.20,'男',120,'1'),('650',34,33.30,41.70,48.20,50.30,'男',143,'1'),('651',34,33.60,42.20,48.80,51.00,'男',144,'1'),('652',34,34.00,42.70,49.50,51.70,'男',145,'1'),('653',34,34.40,43.30,50.10,52.30,'男',146,'1'),('654',34,35.00,43.90,50.80,53.10,'男',147,'1'),('655',34,35.60,44.50,51.40,53.70,'男',148,'1'),('656',34,36.20,45.10,52.20,54.50,'男',149,'1'),('657',34,36.70,45.70,52.80,55.10,'男',150,'1'),('658',34,37.30,46.20,53.40,55.80,'男',151,'1'),('659',34,37.70,46.80,54.00,56.40,'男',152,'1'),('66',12,19.40,22.20,25.60,26.80,'男',121,'1'),('660',34,38.20,47.40,54.60,57.00,'男',153,'1'),('661',34,38.90,48.10,55.30,57.70,'男',154,'1'),('662',34,39.60,48.80,56.00,58.40,'男',155,'1'),('663',34,40.40,49.60,57.00,59.40,'男',156,'1'),('664',34,41.00,50.30,57.70,60.10,'男',157,'1'),('665',34,41.70,51.00,58.50,61.00,'男',158,'1'),('666',34,42.40,51.70,59.20,61.70,'男',159,'1'),('667',34,43.10,52.50,60.00,62.50,'男',160,'1'),('668',34,43.80,53.30,60.80,63.30,'男',161,'1'),('669',34,44.50,54.00,61.50,64.00,'男',162,'1'),('67',12,19.70,22.60,26.20,27.40,'男',122,'1'),('670',34,45.30,54.80,62.50,65.00,'男',163,'1'),('671',34,45.90,55.50,63.20,65.70,'男',164,'1'),('672',34,46.50,56.30,64.00,66.50,'男',165,'1'),('673',34,47.10,57.00,64.70,67.20,'男',166,'1'),('674',34,48.00,57.80,65.60,68.20,'男',167,'1'),('675',34,48.70,58.50,66.30,68.90,'男',168,'1'),('676',34,49.30,59.20,67.00,69.60,'男',169,'1'),('677',34,50.10,60.00,67.80,70.40,'男',170,'1'),('678',34,50.70,60.60,68.80,71.20,'男',171,'1'),('679',34,51.40,61.50,69.50,72.10,'男',172,'1'),('68',12,20.10,23.00,26.80,28.00,'男',123,'1'),('680',34,52.10,62.20,70.30,73.00,'男',173,'1'),('681',34,52.90,63.00,71.30,74.00,'男',174,'1'),('682',34,53.70,63.80,72.20,75.00,'男',175,'1'),('683',34,54.40,64.50,73.10,75.90,'男',176,'1'),('684',34,55.20,65.20,73.90,76.80,'男',177,'1'),('685',34,55.70,66.00,74.90,77.80,'男',178,'1'),('686',34,56.40,66.70,75.70,78.70,'男',179,'1'),('687',34,57.10,67.40,76.40,79.40,'男',180,'1'),('688',34,57.70,68.10,77.40,80.60,'男',181,'1'),('689',34,58.50,68.90,78.50,81.70,'男',182,'1'),('69',12,20.50,23.40,27.30,28.60,'男',124,'1'),('690',34,59.20,69.60,79.40,82.60,'男',183,'1'),('691',34,60.00,70.40,80.30,83.60,'男',184,'1'),('692',34,60.80,71.20,81.30,84.60,'男',185,'1'),('693',34,61.50,72.00,82.20,85.60,'男',186,'1'),('694',34,62.30,72.90,83.30,86.70,'男',187,'1'),('695',34,63.00,73.70,84.20,87.70,'男',188,'1'),('696',34,63.90,74.50,85.00,88.50,'男',189,'1'),('697',34,64.60,75.40,86.20,89.80,'男',190,'1'),('698',11,14.80,16.90,19.40,20.30,'女',106,'1'),('699',11,14.90,17.00,19.60,20.40,'女',107,'1'),('7',11,16.40,18.90,21.50,22.30,'男',112,'1'),('70',12,20.90,23.80,27.80,29.20,'男',125,'1'),('700',11,15.00,17.20,19.80,20.60,'女',108,'1'),('701',11,15.20,17.50,20.00,20.80,'女',109,'1'),('702',11,15.50,17.80,20.30,21.10,'女',110,'1'),('703',11,15.70,18.10,20.60,21.50,'女',111,'1'),('704',11,16.00,18.50,21.10,21.90,'女',112,'1'),('705',11,16.20,18.80,21.50,22.30,'女',113,'1'),('706',11,16.50,19.10,21.80,22.70,'女',114,'1'),('707',11,16.80,19.40,22.30,23.20,'女',115,'1'),('708',11,17.20,19.80,22.60,23.70,'女',116,'1'),('709',11,17.50,20.20,23.00,24.20,'女',117,'1'),('71',12,21.30,24.30,28.50,29.80,'男',126,'1'),('710',11,17.90,20.60,23.40,24.70,'女',118,'1'),('711',11,18.20,20.90,24.00,25.20,'女',119,'1'),('712',11,18.40,21.30,24.50,25.70,'女',120,'1'),('713',11,18.80,21.70,25.00,26.10,'女',121,'1'),('714',11,19.20,22.10,25.40,26.60,'女',122,'1'),('715',11,19.60,22.60,25.90,27.10,'女',123,'1'),('716',11,20.00,23.10,26.50,27.60,'女',124,'1'),('717',11,20.40,23.60,27.00,28.20,'女',125,'1'),('718',11,20.90,24.00,27.50,28.80,'女',126,'1'),('719',11,21.40,24.60,28.10,29.40,'女',127,'1'),('72',12,21.70,24.70,29.00,30.40,'男',127,'1'),('720',11,21.80,25.00,28.80,30.10,'女',128,'1'),('721',11,22.30,25.60,29.60,31.00,'女',129,'1'),('722',11,22.70,26.20,30.50,31.80,'女',130,'1'),('723',11,23.20,26.70,31.10,32.50,'女',131,'1'),('724',11,23.70,27.30,31.80,33.30,'女',132,'1'),('725',11,24.10,27.70,32.60,34.10,'女',133,'1'),('726',11,24.70,28.50,33.30,34.90,'女',134,'1'),('727',11,25.10,29.20,34.30,36.00,'女',135,'1'),('728',11,25.70,29.90,35.20,36.90,'女',136,'1'),('729',11,26.30,30.70,36.00,37.70,'女',137,'1'),('73',12,22.10,25.10,29.50,31.00,'男',128,'1'),('730',11,27.00,31.50,36.90,38.70,'女',138,'1'),('731',11,27.40,32.10,37.80,39.70,'女',139,'1'),('732',11,27.80,32.80,38.70,40.60,'女',140,'1'),('733',11,28.50,33.50,39.70,41.70,'女',141,'1'),('734',11,29.10,34.20,40.70,42.80,'女',142,'1'),('735',11,29.70,35.00,41.60,43.80,'女',143,'1'),('736',11,30.30,35.70,42.60,44.90,'女',144,'1'),('737',11,30.80,36.40,43.60,46.00,'女',145,'1'),('738',11,31.40,37.10,44.50,46.90,'女',146,'1'),('739',11,32.10,37.80,45.30,47.80,'女',147,'1'),('74',12,22.60,25.60,30.10,31.60,'男',129,'1'),('740',11,32.60,38.50,46.20,48.70,'女',148,'1'),('741',11,33.20,39.10,46.90,49.50,'女',149,'1'),('742',11,33.70,39.70,47.70,50.50,'女',150,'1'),('743',11,34.40,40.40,48.70,51.40,'女',151,'1'),('744',11,34.90,41.10,49.50,52.30,'女',152,'1'),('745',11,35.60,41.80,50.40,53.20,'女',153,'1'),('746',11,36.20,42.50,51.10,54.00,'女',154,'1'),('747',11,36.90,43.20,52.00,54.80,'女',155,'1'),('748',12,14.80,16.90,19.40,20.30,'女',106,'1'),('749',12,14.90,17.00,19.60,20.40,'女',107,'1'),('75',12,23.00,26.10,30.90,32.30,'男',130,'1'),('750',12,15.00,17.20,19.80,20.60,'女',108,'1'),('751',12,15.20,17.50,20.00,20.80,'女',109,'1'),('752',12,15.50,17.80,20.30,21.10,'女',110,'1'),('753',12,15.70,18.10,20.60,21.50,'女',111,'1'),('754',12,16.00,18.50,21.10,21.90,'女',112,'1'),('755',12,16.20,18.80,21.50,22.30,'女',113,'1'),('756',12,16.50,19.10,21.80,22.70,'女',114,'1'),('757',12,16.80,19.40,22.30,23.20,'女',115,'1'),('758',12,17.20,19.80,22.60,23.70,'女',116,'1'),('759',12,17.50,20.20,23.00,24.20,'女',117,'1'),('76',12,23.50,26.60,31.60,33.20,'男',131,'1'),('760',12,17.90,20.60,23.40,24.70,'女',118,'1'),('761',12,18.20,20.90,24.00,25.20,'女',119,'1'),('762',12,18.40,21.30,24.50,25.70,'女',120,'1'),('763',12,18.80,21.70,25.00,26.10,'女',121,'1'),('764',12,19.20,22.10,25.40,26.60,'女',122,'1'),('765',12,19.60,22.60,25.90,27.10,'女',123,'1'),('766',12,20.00,23.10,26.50,27.60,'女',124,'1'),('767',12,20.40,23.60,27.00,28.20,'女',125,'1'),('768',12,20.90,24.00,27.50,28.80,'女',126,'1'),('769',12,21.40,24.60,28.10,29.40,'女',127,'1'),('77',12,23.90,27.10,32.30,34.00,'男',132,'1'),('770',12,21.80,25.00,28.80,30.10,'女',128,'1'),('771',12,22.30,25.60,29.60,31.00,'女',129,'1'),('772',12,22.70,26.20,30.50,31.80,'女',130,'1'),('773',12,23.20,26.70,31.10,32.50,'女',131,'1'),('774',12,23.70,27.30,31.80,33.30,'女',132,'1'),('775',12,24.10,27.70,32.60,34.10,'女',133,'1'),('776',12,24.70,28.50,33.30,34.90,'女',134,'1'),('777',12,25.10,29.20,34.30,36.00,'女',135,'1'),('778',12,25.70,29.90,35.20,36.90,'女',136,'1'),('779',12,26.30,30.70,36.00,37.70,'女',137,'1'),('78',12,24.40,27.70,32.90,34.70,'男',133,'1'),('780',12,27.00,31.50,36.90,38.70,'女',138,'1'),('781',12,27.40,32.10,37.80,39.70,'女',139,'1'),('782',12,27.80,32.80,38.70,40.60,'女',140,'1'),('783',12,28.50,33.50,39.70,41.70,'女',141,'1'),('784',12,29.10,34.20,40.70,42.80,'女',142,'1'),('785',12,29.70,35.00,41.60,43.80,'女',143,'1'),('786',12,30.30,35.70,42.60,44.90,'女',144,'1'),('787',12,30.80,36.40,43.60,46.00,'女',145,'1'),('788',12,31.40,37.10,44.50,46.90,'女',146,'1'),('789',12,32.10,37.80,45.30,47.80,'女',147,'1'),('79',12,24.90,28.30,33.60,35.30,'男',134,'1'),('790',12,32.60,38.50,46.20,48.70,'女',148,'1'),('791',12,33.20,39.10,46.90,49.50,'女',149,'1'),('792',12,33.70,39.70,47.70,50.50,'女',150,'1'),('793',12,34.40,40.40,48.70,51.40,'女',151,'1'),('794',12,34.90,41.10,49.50,52.30,'女',152,'1'),('795',12,35.60,41.80,50.40,53.20,'女',153,'1'),('796',12,36.20,42.50,51.10,54.00,'女',154,'1'),('797',12,36.90,43.20,52.00,54.80,'女',155,'1'),('798',13,14.80,16.90,19.40,20.30,'女',106,'1'),('799',13,14.90,17.00,19.60,20.40,'女',107,'1'),('8',11,16.70,19.20,22.00,22.80,'男',113,'1'),('80',12,25.30,28.90,34.20,36.00,'男',135,'1'),('800',13,15.00,17.20,19.80,20.60,'女',108,'1'),('801',13,15.20,17.50,20.00,20.80,'女',109,'1'),('802',13,15.50,17.80,20.30,21.10,'女',110,'1'),('803',13,15.70,18.10,20.60,21.50,'女',111,'1'),('804',13,16.00,18.50,21.10,21.90,'女',112,'1'),('805',13,16.20,18.80,21.50,22.30,'女',113,'1'),('806',13,16.50,19.10,21.80,22.70,'女',114,'1'),('807',13,16.80,19.40,22.30,23.20,'女',115,'1'),('808',13,17.20,19.80,22.60,23.70,'女',116,'1'),('809',13,17.50,20.20,23.00,24.20,'女',117,'1'),('81',12,25.80,29.50,34.90,36.70,'男',136,'1'),('810',13,17.90,20.60,23.40,24.70,'女',118,'1'),('811',13,18.20,20.90,24.00,25.20,'女',119,'1'),('812',13,18.40,21.30,24.50,25.70,'女',120,'1'),('813',13,18.80,21.70,25.00,26.10,'女',121,'1'),('814',13,19.20,22.10,25.40,26.60,'女',122,'1'),('815',13,19.60,22.60,25.90,27.10,'女',123,'1'),('816',13,20.00,23.10,26.50,27.60,'女',124,'1'),('817',13,20.40,23.60,27.00,28.20,'女',125,'1'),('818',13,20.90,24.00,27.50,28.80,'女',126,'1'),('819',13,21.40,24.60,28.10,29.40,'女',127,'1'),('82',12,26.40,30.10,35.60,37.40,'男',137,'1'),('820',13,21.80,25.00,28.80,30.10,'女',128,'1'),('821',13,22.30,25.60,29.60,31.00,'女',129,'1'),('822',13,22.70,26.20,30.50,31.80,'女',130,'1'),('823',13,23.20,26.70,31.10,32.50,'女',131,'1'),('824',13,23.70,27.30,31.80,33.30,'女',132,'1'),('825',13,24.10,27.70,32.60,34.10,'女',133,'1'),('826',13,24.70,28.50,33.30,34.90,'女',134,'1'),('827',13,25.10,29.20,34.30,36.00,'女',135,'1'),('828',13,25.70,29.90,35.20,36.90,'女',136,'1'),('829',13,26.30,30.70,36.00,37.70,'女',137,'1'),('83',12,27.00,30.80,36.30,38.20,'男',138,'1'),('830',13,27.00,31.50,36.90,38.70,'女',138,'1'),('831',13,27.40,32.10,37.80,39.70,'女',139,'1'),('832',13,27.80,32.80,38.70,40.60,'女',140,'1'),('833',13,28.50,33.50,39.70,41.70,'女',141,'1'),('834',13,29.10,34.20,40.70,42.80,'女',142,'1'),('835',13,29.70,35.00,41.60,43.80,'女',143,'1'),('836',13,30.30,35.70,42.60,44.90,'女',144,'1'),('837',13,30.80,36.40,43.60,46.00,'女',145,'1'),('838',13,31.40,37.10,44.50,46.90,'女',146,'1'),('839',13,32.10,37.80,45.30,47.80,'女',147,'1'),('84',12,27.60,31.50,37.10,39.10,'男',139,'1'),('840',13,32.60,38.50,46.20,48.70,'女',148,'1'),('841',13,33.20,39.10,46.90,49.50,'女',149,'1'),('842',13,33.70,39.70,47.70,50.50,'女',150,'1'),('843',13,34.40,40.40,48.70,51.40,'女',151,'1'),('844',13,34.90,41.10,49.50,52.30,'女',152,'1'),('845',13,35.60,41.80,50.40,53.20,'女',153,'1'),('846',13,36.20,42.50,51.10,54.00,'女',154,'1'),('847',13,36.90,43.20,52.00,54.80,'女',155,'1'),('848',14,14.80,16.90,19.40,20.30,'女',106,'1'),('849',14,14.90,17.00,19.60,20.40,'女',107,'1'),('85',12,28.10,32.20,38.00,40.00,'男',140,'1'),('850',14,15.00,17.20,19.80,20.60,'女',108,'1'),('851',14,15.20,17.50,20.00,20.80,'女',109,'1'),('852',14,15.50,17.80,20.30,21.10,'女',110,'1'),('853',14,15.70,18.10,20.60,21.50,'女',111,'1'),('854',14,16.00,18.50,21.10,21.90,'女',112,'1'),('855',14,16.20,18.80,21.50,22.30,'女',113,'1'),('856',14,16.50,19.10,21.80,22.70,'女',114,'1'),('857',14,16.80,19.40,22.30,23.20,'女',115,'1'),('858',14,17.20,19.80,22.60,23.70,'女',116,'1'),('859',14,17.50,20.20,23.00,24.20,'女',117,'1'),('86',12,28.60,32.90,38.90,40.90,'男',141,'1'),('860',14,17.90,20.60,23.40,24.70,'女',118,'1'),('861',14,18.20,20.90,24.00,25.20,'女',119,'1'),('862',14,18.40,21.30,24.50,25.70,'女',120,'1'),('863',14,18.80,21.70,25.00,26.10,'女',121,'1'),('864',14,19.20,22.10,25.40,26.60,'女',122,'1'),('865',14,19.60,22.60,25.90,27.10,'女',123,'1'),('866',14,20.00,23.10,26.50,27.60,'女',124,'1'),('867',14,20.40,23.60,27.00,28.20,'女',125,'1'),('868',14,20.90,24.00,27.50,28.80,'女',126,'1'),('869',14,21.40,24.60,28.10,29.40,'女',127,'1'),('87',12,29.10,33.70,39.80,41.80,'男',142,'1'),('870',14,21.80,25.00,28.80,30.10,'女',128,'1'),('871',14,22.30,25.60,29.60,31.00,'女',129,'1'),('872',14,22.70,26.20,30.50,31.80,'女',130,'1'),('873',14,23.20,26.70,31.10,32.50,'女',131,'1'),('874',14,23.70,27.30,31.80,33.30,'女',132,'1'),('875',14,24.10,27.70,32.60,34.10,'女',133,'1'),('876',14,24.70,28.50,33.30,34.90,'女',134,'1'),('877',14,25.10,29.20,34.30,36.00,'女',135,'1'),('878',14,25.70,29.90,35.20,36.90,'女',136,'1'),('879',14,26.30,30.70,36.00,37.70,'女',137,'1'),('88',12,29.70,34.50,40.70,42.70,'男',143,'1'),('880',14,27.00,31.50,36.90,38.70,'女',138,'1'),('881',14,27.40,32.10,37.80,39.70,'女',139,'1'),('882',14,27.80,32.80,38.70,40.60,'女',140,'1'),('883',14,28.50,33.50,39.70,41.70,'女',141,'1'),('884',14,29.10,34.20,40.70,42.80,'女',142,'1'),('885',14,29.70,35.00,41.60,43.80,'女',143,'1'),('886',14,30.30,35.70,42.60,44.90,'女',144,'1'),('887',14,30.80,36.40,43.60,46.00,'女',145,'1'),('888',14,31.40,37.10,44.50,46.90,'女',146,'1'),('889',14,32.10,37.80,45.30,47.80,'女',147,'1'),('89',12,30.30,35.20,41.70,43.60,'男',144,'1'),('890',14,32.60,38.50,46.20,48.70,'女',148,'1'),('891',14,33.20,39.10,46.90,49.50,'女',149,'1'),('892',14,33.70,39.70,47.70,50.50,'女',150,'1'),('893',14,34.40,40.40,48.70,51.40,'女',151,'1'),('894',14,34.90,41.10,49.50,52.30,'女',152,'1'),('895',14,35.60,41.80,50.40,53.20,'女',153,'1'),('896',14,36.20,42.50,51.10,54.00,'女',154,'1'),('897',14,36.90,43.20,52.00,54.80,'女',155,'1'),('898',15,17.10,19.40,24.10,25.60,'女',115,'1'),('899',15,17.40,19.70,24.50,26.10,'女',116,'1'),('9',11,17.00,19.60,22.40,23.20,'男',114,'1'),('90',12,30.90,35.90,42.30,44.50,'男',145,'1'),('900',15,17.70,20.30,25.10,26.70,'女',117,'1'),('901',15,18.10,20.70,25.70,27.30,'女',118,'1'),('902',15,18.30,21.10,26.20,27.90,'女',119,'1'),('903',15,18.40,21.30,26.60,28.30,'女',120,'1'),('904',15,18.90,21.80,27.20,29.00,'女',121,'1'),('905',15,19.20,22.10,27.80,29.70,'女',122,'1'),('906',15,19.60,22.50,28.10,30.50,'女',123,'1'),('907',15,19.80,22.70,28.70,30.70,'女',124,'1'),('908',15,20.30,23.30,29.30,31.30,'女',125,'1'),('909',15,20.70,23.70,29.70,31.70,'女',126,'1'),('91',12,31.50,36.60,43.20,45.40,'男',146,'1'),('910',15,21.10,24.20,30.40,32.40,'女',127,'1'),('911',15,21.40,24.60,30.80,32.80,'女',128,'1'),('912',15,21.90,25.10,31.40,33.50,'女',129,'1'),('913',15,22.40,25.60,31.90,34.00,'女',130,'1'),('914',15,22.80,26.10,32.60,34.70,'女',131,'1'),('915',15,23.30,26.60,33.20,35.40,'女',132,'1'),('916',15,23.80,27.10,33.90,36.10,'女',133,'1'),('917',15,24.20,27.60,34.50,36.80,'女',134,'1'),('918',15,24.70,28.20,35.30,37.60,'女',135,'1'),('919',15,25.20,28.70,35.80,38.10,'女',136,'1'),('92',12,32.10,37.40,44.20,46.40,'男',147,'1'),('920',15,25.70,29.30,36.70,38.90,'女',137,'1'),('921',15,26.30,30.00,37.20,39.60,'女',138,'1'),('922',15,26.90,30.60,38.00,40.40,'女',139,'1'),('923',15,27.30,31.10,38.50,40.90,'女',140,'1'),('924',15,27.80,31.60,39.00,41.40,'女',141,'1'),('925',15,28.30,32.20,39.70,42.20,'女',142,'1'),('926',15,28.90,32.70,40.20,42.70,'女',143,'1'),('927',15,29.20,33.30,41.00,43.50,'女',144,'1'),('928',15,29.80,33.90,41.70,44.10,'女',145,'1'),('929',15,30.40,34.60,42.60,45.20,'女',146,'1'),('93',12,32.70,38.10,45.00,47.30,'男',148,'1'),('930',15,30.80,35.20,43.30,46.00,'女',147,'1'),('931',15,31.50,35.90,44.00,46.70,'女',148,'1'),('932',15,32.30,36.60,44.90,47.60,'女',149,'1'),('933',15,32.80,37.30,45.60,48.30,'女',150,'1'),('934',15,33.20,37.90,46.20,48.90,'女',151,'1'),('935',15,33.80,38.50,46.80,49.50,'女',152,'1'),('936',15,34.50,39.20,47.60,50.40,'女',153,'1'),('937',15,35.00,39.90,48.30,51.10,'女',154,'1'),('938',15,35.60,40.60,49.00,51.80,'女',155,'1'),('939',15,36.20,41.20,49.80,52.60,'女',156,'1'),('94',12,33.30,38.80,45.90,48.20,'男',149,'1'),('940',15,36.80,41.90,50.60,53.50,'女',157,'1'),('941',15,37.20,42.50,51.40,54.30,'女',158,'1'),('942',15,37.80,43.20,52.10,55.10,'女',159,'1'),('943',15,38.30,43.90,52.90,55.90,'女',160,'1'),('944',15,38.90,44.50,53.50,56.50,'女',161,'1'),('945',15,39.40,45.10,54.10,57.10,'女',162,'1'),('946',15,40.10,45.80,54.80,57.80,'女',163,'1'),('947',15,40.60,46.50,55.70,58.70,'女',164,'1'),('948',15,41.20,47.10,56.40,59.50,'女',165,'1'),('949',15,41.80,47.70,57.00,60.10,'女',166,'1'),('95',12,34.00,39.50,46.70,49.10,'男',150,'1'),('950',15,42.40,48.40,58.00,61.20,'女',167,'1'),('951',15,42.80,49.10,58.90,62.10,'女',168,'1'),('952',16,17.10,19.40,24.10,25.60,'女',115,'1'),('953',16,17.40,19.70,24.50,26.10,'女',116,'1'),('954',16,17.70,20.30,25.10,26.70,'女',117,'1'),('955',16,18.10,20.70,25.70,27.30,'女',118,'1'),('956',16,18.30,21.10,26.20,27.90,'女',119,'1'),('957',16,18.40,21.30,26.60,28.30,'女',120,'1'),('958',16,18.90,21.80,27.20,29.00,'女',121,'1'),('959',16,19.20,22.10,27.80,29.70,'女',122,'1'),('96',12,34.60,40.10,47.50,49.90,'男',151,'1'),('960',16,19.60,22.50,28.10,30.50,'女',123,'1'),('961',16,19.80,22.70,28.70,30.70,'女',124,'1'),('962',16,20.30,23.30,29.30,31.30,'女',125,'1'),('963',16,20.70,23.70,29.70,31.70,'女',126,'1'),('964',16,21.10,24.20,30.40,32.40,'女',127,'1'),('965',16,21.40,24.60,30.80,32.80,'女',128,'1'),('966',16,21.90,25.10,31.40,33.50,'女',129,'1'),('967',16,22.40,25.60,31.90,34.00,'女',130,'1'),('968',16,22.80,26.10,32.60,34.70,'女',131,'1'),('969',16,23.30,26.60,33.20,35.40,'女',132,'1'),('97',12,35.20,40.90,48.40,50.70,'男',152,'1'),('970',16,23.80,27.10,33.90,36.10,'女',133,'1'),('971',16,24.20,27.60,34.50,36.80,'女',134,'1'),('972',16,24.70,28.20,35.30,37.60,'女',135,'1'),('973',16,25.20,28.70,35.80,38.10,'女',136,'1'),('974',16,25.70,29.30,36.70,38.90,'女',137,'1'),('975',16,26.30,30.00,37.20,39.60,'女',138,'1'),('976',16,26.90,30.60,38.00,40.40,'女',139,'1'),('977',16,27.30,31.10,38.50,40.90,'女',140,'1'),('978',16,27.80,31.60,39.00,41.40,'女',141,'1'),('979',16,28.30,32.20,39.70,42.20,'女',142,'1'),('98',12,35.90,41.60,49.10,51.50,'男',153,'1'),('980',16,28.90,32.70,40.20,42.70,'女',143,'1'),('981',16,29.20,33.30,41.00,43.50,'女',144,'1'),('982',16,29.80,33.90,41.70,44.10,'女',145,'1'),('983',16,30.40,34.60,42.60,45.20,'女',146,'1'),('984',16,30.80,35.20,43.30,46.00,'女',147,'1'),('985',16,31.50,35.90,44.00,46.70,'女',148,'1'),('986',16,32.30,36.60,44.90,47.60,'女',149,'1'),('987',16,32.80,37.30,45.60,48.30,'女',150,'1'),('988',16,33.20,37.90,46.20,48.90,'女',151,'1'),('989',16,33.80,38.50,46.80,49.50,'女',152,'1'),('99',12,36.50,42.40,49.90,52.40,'男',154,'1'),('990',16,34.50,39.20,47.60,50.40,'女',153,'1'),('991',16,35.00,39.90,48.30,51.10,'女',154,'1'),('992',16,35.60,40.60,49.00,51.80,'女',155,'1'),('993',16,36.20,41.20,49.80,52.60,'女',156,'1'),('994',16,36.80,41.90,50.60,53.50,'女',157,'1'),('995',16,37.20,42.50,51.40,54.30,'女',158,'1'),('996',16,37.80,43.20,52.10,55.10,'女',159,'1'),('997',16,38.30,43.90,52.90,55.90,'女',160,'1'),('998',16,38.90,44.50,53.50,56.50,'女',161,'1'),('999',16,39.40,45.10,54.10,57.10,'女',162,'1');
+/*!40000 ALTER TABLE `standard_nutrition` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `standard_pulsation`
+--
+
+DROP TABLE IF EXISTS `standard_pulsation`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `standard_pulsation` (
+  `id` varchar(255) NOT NULL,
+  `age` int(11) DEFAULT NULL,
+  `p10` decimal(19,2) DEFAULT NULL,
+  `p25` decimal(19,2) DEFAULT NULL,
+  `p75` decimal(19,2) DEFAULT NULL,
+  `p90` decimal(19,2) DEFAULT NULL,
+  `sex` varchar(255) DEFAULT NULL,
+  `version` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `standard_pulsation`
+--
+
+LOCK TABLES `standard_pulsation` WRITE;
+/*!40000 ALTER TABLE `standard_pulsation` DISABLE KEYS */;
+INSERT INTO `standard_pulsation` VALUES ('1',6,78.00,84.00,96.00,102.00,'男','1'),('10',15,72.00,76.00,88.00,94.00,'男','1'),('11',16,70.00,74.00,86.00,92.00,'男','1'),('12',17,68.00,72.00,84.00,90.00,'男','1'),('13',18,68.00,72.00,84.00,91.00,'男','1'),('14',19,66.00,72.00,84.00,90.00,'男','1'),('15',20,66.00,72.00,84.00,90.00,'男','1'),('16',21,66.00,72.00,84.00,90.00,'男','1'),('17',22,66.00,72.00,84.00,90.00,'男','1'),('18',6,76.00,84.00,96.00,102.00,'女','1'),('19',7,76.00,82.00,96.00,102.00,'女','1'),('2',7,76.00,82.00,96.00,100.00,'男','1'),('20',8,76.00,80.30,96.00,100.00,'女','1'),('21',9,76.00,80.00,94.00,100.00,'女','1'),('22',10,76.00,80.00,92.00,100.00,'女','1'),('23',11,75.00,80.00,94.00,100.00,'女','1'),('24',12,74.00,80.00,92.00,98.00,'女','1'),('25',13,72.00,78.00,90.00,96.00,'女','1'),('26',14,72.00,78.00,88.00,96.00,'女','1'),('27',15,72.00,76.00,88.00,96.00,'女','1'),('28',16,72.00,76.00,88.00,93.00,'女','1'),('29',17,72.00,76.00,88.00,92.00,'女','1'),('3',8,76.00,80.00,94.00,100.00,'男','1'),('30',18,70.00,76.00,86.00,92.00,'女','1'),('31',19,68.00,72.00,84.00,90.00,'女','1'),('32',20,68.00,72.00,86.00,92.00,'女','1'),('33',21,70.00,74.00,85.00,92.00,'女','1'),('34',22,68.00,74.00,86.00,92.00,'女','1'),('4',9,76.00,80.00,92.00,100.00,'男','1'),('5',10,74.00,80.00,92.00,98.00,'男','1'),('6',11,74.00,80.00,92.00,98.00,'男','1'),('7',12,72.00,78.00,90.00,96.00,'男','1'),('8',13,72.00,78.00,88.00,96.00,'男','1'),('9',14,72.00,76.00,88.00,96.00,'男','1');
+/*!40000 ALTER TABLE `standard_pulsation` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `standard_weight`
+--
+
+DROP TABLE IF EXISTS `standard_weight`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `standard_weight` (
+  `id` varchar(255) NOT NULL,
+  `age` int(11) DEFAULT NULL,
+  `p10` decimal(19,2) DEFAULT NULL,
+  `p25` decimal(19,2) DEFAULT NULL,
+  `p75` decimal(19,2) DEFAULT NULL,
+  `p90` decimal(19,2) DEFAULT NULL,
+  `sex` varchar(255) DEFAULT NULL,
+  `version` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `standard_weight`
+--
+
+LOCK TABLES `standard_weight` WRITE;
+/*!40000 ALTER TABLE `standard_weight` DISABLE KEYS */;
+INSERT INTO `standard_weight` VALUES ('1',6,18.00,19.50,23.80,27.60,'男','1'),('10',15,43.60,47.90,60.50,69.50,'男','1'),('11',16,46.70,50.90,62.80,71.50,'男','1'),('12',17,48.80,52.70,64.30,72.50,'男','1'),('13',18,49.50,53.50,65.00,73.00,'男','1'),('14',19,50.80,55.00,65.00,72.10,'男','1'),('15',20,51.20,55.00,65.50,72.60,'男','1'),('16',21,51.60,55.10,66.00,72.80,'男','1'),('17',22,51.70,55.50,66.20,73.70,'男','1'),('18',6,17.20,18.60,22.50,25.30,'女','1'),('19',7,18.50,20.20,24.90,28.20,'女','1'),('2',7,19.50,21.10,26.70,30.80,'男','1'),('20',8,20.40,22.30,28.00,32.00,'女','1'),('21',9,22.40,24.50,31.50,36.30,'女','1'),('22',10,24.60,27.30,36.20,42.20,'女','1'),('23',11,27.50,30.90,41.40,47.90,'女','1'),('24',12,30.80,34.60,45.30,51.40,'女','1'),('25',13,35.30,39.00,49.00,55.00,'女','1'),('26',14,38.40,42.10,51.60,57.40,'女','1'),('27',15,40.70,44.10,53.30,58.80,'女','1'),('28',16,42.50,45.60,54.40,59.50,'女','1'),('29',17,43.10,46.40,55.00,60.10,'女','1'),('3',8,21.40,23.40,30.10,35.60,'男','1'),('30',18,43.40,46.60,55.10,60.30,'女','1'),('31',19,44.00,47.00,55.10,60.00,'女','1'),('32',20,44.00,47.00,55.00,59.80,'女','1'),('33',21,43.60,46.80,55.00,59.70,'女','1'),('34',22,43.50,46.40,54.30,58.60,'女','1'),('4',9,23.30,25.50,33.80,39.70,'男','1'),('5',10,25.60,28.30,37.80,44.70,'男','1'),('6',11,27.80,30.90,42.20,50.00,'男','1'),('7',12,30.30,34.00,47.20,55.80,'男','1'),('8',13,34.20,38.80,52.60,61.10,'男','1'),('9',14,39.10,44.00,57.20,66.40,'男','1');
+/*!40000 ALTER TABLE `standard_weight` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2013-06-12 18:41:24
